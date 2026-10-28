@@ -1,0 +1,68 @@
+[
+  {
+    "_id": "fixture-file-1",
+    "originalName": "fixture-document-1.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-2",
+    "originalName": "fixture-document-2.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-3",
+    "originalName": "fixture-document-3.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-4",
+    "originalName": "fixture-document-4.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-5",
+    "originalName": "fixture-document-5.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-6",
+    "originalName": "fixture-document-6.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-7",
+    "originalName": "fixture-document-7.docx",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-8",
+    "originalName": "fixture-document-8.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-9",
+    "originalName": "fixture-document-9.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-10",
+    "originalName": "fixture-document-10.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "fixture-file-11",
+    "originalName": "fixture-document-11.pdf",
+    "size": 100,
+    "isFile": true
+  }
+]

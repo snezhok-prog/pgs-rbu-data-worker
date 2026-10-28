@@ -1,0 +1,305 @@
+{
+  "NTOmesto": {
+    "dataType": "NTO",
+    "dataTypeLabel": "НТО",
+    "registryName": "Реестр мест НТО",
+    "serviceFields": [
+      "NTO_REQUIREMENTS",
+      "NTO_PLACE",
+      "NTO_CONTRACT",
+      "NTO_SUBSCRIBE"
+    ],
+    "displayPaths": [
+      "ntoInformation.ntoInfoSchemeNumber",
+      "ntoInformation.FullAddress",
+      "guid"
+    ],
+    "selectorLabel": "Адрес НТО",
+    "nameField": "ntoInformation.FullAddress.fullAddress",
+    "keys": [
+      "generalInformation",
+      "approvalDocuments",
+      "positiveDoc",
+      "negativeDoc",
+      "resolutionBlock",
+      "ntoInformation",
+      "OperatorList",
+      "operatorInformationUL",
+      "operatorInformationFL",
+      "operatorInformationIP",
+      "NTOContract",
+      "NTOContractArchive",
+      "blockDopSogl",
+      "invoice"
+    ],
+    "repeatablePaths": [
+      "approvalDocuments",
+      "ntoInformation.AssortBlock",
+      "NTOContractArchive",
+      "NTOContractArchive.additionalAgreement",
+      "blockDopSogl",
+      "invoice"
+    ],
+    "formKeys": {
+      "generalInformation": "NTOmesto__generalInformation",
+      "approvalDocuments": "NTOmesto__approvalDocuments",
+      "positiveDoc": "NTOmesto__positiveDoc",
+      "negativeDoc": "NTOmesto__negativeDoc",
+      "resolutionBlock": "NTOmesto__resolutionBlock",
+      "ntoInformation": "NTOmesto__ntoInformation",
+      "OperatorList": "NTOmesto__OperatorList",
+      "operatorInformationUL": "NTOmesto__operatorInformationUL",
+      "operatorInformationFL": "NTOmesto__operatorInformationFL",
+      "operatorInformationIP": "NTOmesto__operatorInformationIP",
+      "NTOContract": "NTOmesto__NTOContract",
+      "NTOContractArchive": "NTOmesto__NTOContractArchive",
+      "blockDopSogl": "NTOmesto__blockDopSogl",
+      "invoice": "NTOmesto__invoice"
+    }
+  },
+  "reestrbiddingReestr": {
+    "dataType": "NTO",
+    "dataTypeLabel": "НТО",
+    "registryName": "Реестр торгов НТО",
+    "serviceFields": [
+      "NTO_REQUIREMENTS",
+      "NTO_PLACE",
+      "NTO_CONTRACT",
+      "NTO_SUBSCRIBE"
+    ],
+    "displayPaths": [
+      "GeneralInfoAuction.NotificationDocumentation.NoticeSignedNumber",
+      "InformationOnLots.LotInfo.0.NTOSchemeNumber",
+      "guid"
+    ],
+    "selectorLabel": "Номер извещения / НТО",
+    "nameField": "GeneralInfoAuction.NotificationDocumentation.NoticeSignedNumber",
+    "keys": [
+      "generalInformation",
+      "GeneralInfoAuction",
+      "InformationOnLots"
+    ],
+    "repeatablePaths": [
+      "InformationOnLots.LotInfo",
+      "InformationOnLots.AuctionResults",
+      "InformationOnLots.AuctionResults.participants"
+    ],
+    "formKeys": {
+      "generalInformation": "reestrbiddingReestr__generalInformation",
+      "GeneralInfoAuction": "reestrbiddingReestr__GeneralInfoAuction",
+      "InformationOnLots": "reestrbiddingReestr__InformationOnLots"
+    }
+  },
+  "reestrpermitsReestr": {
+    "dataType": "MARKET",
+    "dataTypeLabel": "Рынки",
+    "registryName": "Реестр разрешений рынков",
+    "serviceFields": [
+      "MARKET_GETPERMISSION",
+      "MARKET_RENEWPERMISSION",
+      "MARKET_PROLONGPERMISSION"
+    ],
+    "displayPaths": [
+      "permission.PermissionNumber",
+      "generalInformation.Disctrict",
+      "guid"
+    ],
+    "selectorLabel": "Номер разрешения",
+    "nameField": "permission.PermissionNumber",
+    "keys": [
+      "generalInformation",
+      "MeetingProtocol",
+      "resolution",
+      "positiveDecisionNotification",
+      "denialNotification",
+      "permission",
+      "InfoRetailMarket",
+      "suspensionDocumentScourtDecision",
+      "violationCorrectionSuspensionDocuments",
+      "omsuPetitionSuspensionDocuments"
+    ],
+    "repeatablePaths": [
+      "MeetingProtocol.CommissionCompositionFormat",
+      "MeetingProtocol.DescriptionPerformancesFormat",
+      "permission.permissionFilesHistory",
+      "InfoRetailMarket.blockMarketAddress"
+    ],
+    "formKeys": {
+      "generalInformation": "reestrpermitsReestr__generalInformation",
+      "MeetingProtocol": "reestrpermitsReestr__MeetingProtocol",
+      "resolution": "reestrpermitsReestr__resolution",
+      "positiveDecisionNotification": "reestrpermitsReestr__positiveDecisionNotification",
+      "denialNotification": "reestrpermitsReestr__denialNotification",
+      "permission": "reestrpermitsReestr__permission",
+      "InfoRetailMarket": "reestrpermitsReestr__InfoRetailMarket",
+      "suspensionDocumentScourtDecision": "reestrpermitsReestr__suspensionDocumentScourtDecision",
+      "violationCorrectionSuspensionDocuments": "reestrpermitsReestr__violationCorrectionSuspensionDocuments",
+      "omsuPetitionSuspensionDocuments": "reestrpermitsReestr__omsuPetitionSuspensionDocuments"
+    }
+  },
+  "reestrmarketReestr": {
+    "dataType": "MARKET",
+    "dataTypeLabel": "Рынки",
+    "registryName": "Реестр рынков",
+    "serviceFields": [
+      "MARKET_GETPERMISSION",
+      "MARKET_RENEWPERMISSION",
+      "MARKET_PROLONGPERMISSION"
+    ],
+    "displayPaths": [
+      "InfoRetailMarket.RetailName",
+      "InfoRetailMarket.PermissionNumber",
+      "guid"
+    ],
+    "selectorLabel": "Рынок / номер разрешения",
+    "nameField": "InfoRetailMarket.RetailName",
+    "keys": [
+      "TotalInfo",
+      "InfoRetailMarket",
+      "InfoCompanyManagerMarket"
+    ],
+    "repeatablePaths": [
+      "InfoRetailMarket.blockMarketAddress",
+      "InfoRetailMarket.blockCadNumber",
+      "InfoRetailMarket.cadsObjects",
+      "InfoRetailMarket.dayOnBlock",
+      "InfoRetailMarket.BlockDayOff"
+    ],
+    "formKeys": {
+      "TotalInfo": "reestrmarketReestr__TotalInfo",
+      "InfoRetailMarket": "reestrmarketReestr__InfoRetailMarket",
+      "InfoCompanyManagerMarket": "reestrmarketReestr__InfoCompanyManagerMarket"
+    }
+  },
+  "FairMesto": {
+    "dataType": "FAIR",
+    "dataTypeLabel": "Ярмарки",
+    "registryName": "Реестр мест ярмарок",
+    "serviceFields": [
+      "FAIR_PLACE",
+      "FAIR_PERMISSION",
+      "FAIR_INFO",
+      "FAIR_SUBSCRIBE"
+    ],
+    "displayPaths": [
+      "placeMarketInfo.marketSchemeNumber",
+      "placeMarketInfo.landAddress",
+      "placeMarketInfo.objectAddress",
+      "guid"
+    ],
+    "selectorLabel": "Номер места / адрес",
+    "nameField": "placeMarketInfo.marketSchemeNumber",
+    "keys": [
+      "generalInformation",
+      "conclusion",
+      "orderFair",
+      "noticeIncludedPlaceScheme",
+      "noticeRefusalPlaceScheme",
+      "placeMarketInfo",
+      "marketInfo"
+    ],
+    "repeatablePaths": [
+      "conclusion",
+      "placeMarketInfo.blockCadNumber",
+      "placeMarketInfo.cadsObjects",
+      "marketInfo"
+    ],
+    "formKeys": {
+      "generalInformation": "FairMesto__generalInformation",
+      "conclusion": "FairMesto__conclusion",
+      "orderFair": "FairMesto__orderFair",
+      "noticeIncludedPlaceScheme": "FairMesto__noticeIncludedPlaceScheme",
+      "noticeRefusalPlaceScheme": "FairMesto__noticeRefusalPlaceScheme",
+      "placeMarketInfo": "FairMesto__placeMarketInfo",
+      "marketInfo": "FairMesto__marketInfo"
+    }
+  },
+  "FairPermits": {
+    "dataType": "FAIR",
+    "dataTypeLabel": "Ярмарки",
+    "registryName": "Реестр разрешений ярмарок",
+    "serviceFields": [
+      "FAIR_PLACE",
+      "FAIR_PERMISSION",
+      "FAIR_INFO",
+      "FAIR_SUBSCRIBE"
+    ],
+    "displayPaths": [
+      "permission.permissionNumber",
+      "permission.fairNumber",
+      "guid"
+    ],
+    "selectorLabel": "Номер разрешения / ярмарки",
+    "nameField": "permission.permissionNumber",
+    "keys": [
+      "generalInformation",
+      "marketInfo",
+      "orderDetails",
+      "permission",
+      "positiveNotification",
+      "negativeNotification",
+      "annulNotification"
+    ],
+    "repeatablePaths": [
+      "marketInfo.blockCadNumber",
+      "marketInfo.cadsObjects"
+    ],
+    "formKeys": {
+      "generalInformation": "FairPermits__generalInformation",
+      "marketInfo": "FairPermits__marketInfo",
+      "orderDetails": "FairPermits__orderDetails",
+      "permission": "FairPermits__permission",
+      "positiveNotification": "FairPermits__positiveNotification",
+      "negativeNotification": "FairPermits__negativeNotification",
+      "annulNotification": "FairPermits__annulNotification"
+    }
+  },
+  "Fair": {
+    "dataType": "FAIR",
+    "dataTypeLabel": "Ярмарки",
+    "registryName": "Реестр ярмарок",
+    "serviceFields": [
+      "FAIR_PLACE",
+      "FAIR_PERMISSION",
+      "FAIR_INFO",
+      "FAIR_SUBSCRIBE"
+    ],
+    "displayPaths": [
+      "marketInfo.marketNumber",
+      "marketInfo.marketName",
+      "guid"
+    ],
+    "selectorLabel": "Номер / наименование ярмарки",
+    "nameField": "marketInfo.marketNumber",
+    "keys": [
+      "generalInformation",
+      "marketInfo",
+      "resultFair",
+      "noticePositiveFair",
+      "noticeNegativeFair",
+      "statusLegal",
+      "chooseAuthorityAsOrganizator",
+      "blockOrganizerAuthority",
+      "blockOrganizerULInfo",
+      "blockOrganizerIPInfo"
+    ],
+    "repeatablePaths": [
+      "marketInfo.blockCadNumber",
+      "marketInfo.cadsObjects",
+      "marketInfo.dayOnBlock",
+      "marketInfo.BlockDayOff"
+    ],
+    "formKeys": {
+      "generalInformation": "Fair__generalInformation",
+      "marketInfo": "Fair__marketInfo",
+      "resultFair": "Fair__resultFair",
+      "noticePositiveFair": "Fair__noticePositiveFair",
+      "noticeNegativeFair": "Fair__noticeNegativeFair",
+      "statusLegal": "Fair__statusLegal",
+      "chooseAuthorityAsOrganizator": "Fair__chooseAuthorityAsOrganizator",
+      "blockOrganizerAuthority": "Fair__blockOrganizerAuthority",
+      "blockOrganizerULInfo": "Fair__blockOrganizerULInfo",
+      "blockOrganizerIPInfo": "Fair__blockOrganizerIPInfo"
+    }
+  }
+}

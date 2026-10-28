@@ -1,0 +1,2628 @@
+{
+  "buildPlaceRow": [
+    {
+      "label": "Субъект РФ",
+      "type": "text",
+      "target": "total",
+      "field": "subject",
+      "groups": []
+    },
+    {
+      "label": "Муниципальный район/округ, городской округ или внутригородская территория",
+      "type": "text",
+      "target": "total",
+      "field": "municipality",
+      "groups": []
+    },
+    {
+      "label": "Номер рекламной конструкции в схеме",
+      "type": "text",
+      "target": "info",
+      "field": "numberRK",
+      "groups": []
+    },
+    {
+      "label": "Координаты размещения рекламной конструкции",
+      "type": "text",
+      "target": "info",
+      "field": "coordinates",
+      "groups": []
+    },
+    {
+      "label": "Дополнительные данные об адресе",
+      "type": "text",
+      "target": "info",
+      "field": "addressData",
+      "groups": []
+    },
+    {
+      "label": "Кадастровый номер",
+      "type": "text",
+      "target": "info",
+      "field": "cadastralNum",
+      "groups": []
+    },
+    {
+      "label": "Тип рекламной конструкции",
+      "type": "text",
+      "target": "typeRk",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Вид рекламной конструкции",
+      "type": "text",
+      "target": "kind",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Иной вид рекламной конструкции",
+      "type": "text",
+      "target": "info",
+      "field": "kindRKOther",
+      "groups": []
+    },
+    {
+      "label": "Адрес",
+      "type": "text",
+      "target": "addrM",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "Количество сторон рекламной конструкции",
+      "type": "text",
+      "target": "sides",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Статус места",
+      "type": "text",
+      "target": "placeStatus",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Спецификация места",
+      "type": "text",
+      "target": "placeStatusSpecific",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Ссылка на торговую процедуру (URL)",
+      "type": "text",
+      "target": "bidding",
+      "field": "linkToTrade",
+      "groups": []
+    },
+    {
+      "label": "Номер договора",
+      "type": "text",
+      "target": "bidding",
+      "field": "contractNum",
+      "groups": []
+    },
+    {
+      "label": "Дата заключения договора",
+      "type": "date",
+      "target": "bidding",
+      "field": "contractDate",
+      "groups": []
+    },
+    {
+      "label": "Срок действия: дата завершения",
+      "type": "date",
+      "target": "bidding",
+      "field": "contractEndDate",
+      "groups": []
+    },
+    {
+      "label": "Срок действия: дата начала",
+      "type": "date",
+      "target": "bidding",
+      "field": "contractStartDate",
+      "groups": []
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "opUl",
+      "field": "phone",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Юридический адрес",
+      "type": "text",
+      "target": "addressLegal",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Фактический адрес",
+      "type": "text",
+      "target": "addressFact",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "opIp",
+      "field": "phone",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addressRegIp",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Почтовый адрес",
+      "type": "text",
+      "target": "addressPostIp",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Дата рождения",
+      "type": "date",
+      "target": "opFl",
+      "field": "birthDate",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "opFl",
+      "field": "phone",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addressRegFl",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес фактического места проживания",
+      "type": "text",
+      "target": "addressFactFl",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Номер разрешения на данную рекламную конструкцию",
+      "type": "text",
+      "target": "solution",
+      "field": "permissionNumber",
+      "groups": []
+    },
+    {
+      "label": "Полное наименование организации",
+      "field": "name",
+      "type": "text",
+      "target": "opUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Сокращенное наименование организации",
+      "field": "shortName",
+      "type": "text",
+      "target": "opUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "ОГРН",
+      "field": "ogrn",
+      "type": "text",
+      "target": "opUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "ИНН",
+      "field": "inn",
+      "type": "text",
+      "target": "opUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "КПП",
+      "field": "kpp",
+      "type": "text",
+      "target": "opUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "opUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Наименование ИП",
+      "field": "nameIP",
+      "type": "text",
+      "target": "opIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "ОГРН ИП",
+      "field": "ogrnIP",
+      "type": "text",
+      "target": "opIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "ИНН ИП",
+      "field": "inn",
+      "type": "text",
+      "target": "opIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "opIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "СНИЛС",
+      "field": "snils",
+      "type": "text",
+      "target": "opFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Серия паспорта",
+      "field": "passportSeries",
+      "type": "text",
+      "target": "opFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Номер паспорта",
+      "field": "passportNumber",
+      "type": "text",
+      "target": "opFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Кем выдан паспорт",
+      "field": "passportAuthority",
+      "type": "text",
+      "target": "opFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Код подразделения",
+      "field": "passportCode",
+      "type": "text",
+      "target": "opFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Место рождения",
+      "field": "placeBirth",
+      "type": "text",
+      "target": "opFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "opFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Дизайн-макет рекламной конструкции",
+      "type": "file",
+      "target": "info",
+      "field": "uploadDesign",
+      "entityPath": "infoRK.uploadDesign",
+      "groups": []
+    },
+    {
+      "label": "НПА для данного места",
+      "type": "file",
+      "target": "info",
+      "field": "NPA",
+      "entityPath": "infoRK.NPA",
+      "groups": []
+    },
+    {
+      "label": "Вид собственности земельного участка",
+      "type": "property",
+      "target": "propertyType",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Правовой статус оператора",
+      "type": "applicant",
+      "target": "operator",
+      "field": "applicantList",
+      "groups": []
+    }
+  ],
+  "buildBiddingRow": [
+    {
+      "label": "Субъект РФ",
+      "type": "text",
+      "target": "total",
+      "field": "subject",
+      "groups": []
+    },
+    {
+      "label": "Муниципальный район/округ, городской округ или внутригородская территория",
+      "type": "text",
+      "target": "total",
+      "field": "municipality",
+      "groups": []
+    },
+    {
+      "label": "Полное наименование",
+      "type": "text",
+      "target": "bidInitiator",
+      "field": "name",
+      "groups": [
+        [
+          "инициатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "type": "text",
+      "target": "bidInitiator",
+      "field": "email",
+      "groups": [
+        [
+          "инициатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "Контактный телефон",
+      "type": "phone",
+      "target": "bidInitiator",
+      "field": "phone",
+      "groups": [
+        [
+          "инициатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "Контактное лицо",
+      "type": "text",
+      "target": "bidInitiator",
+      "field": "contact",
+      "groups": [
+        [
+          "инициатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "Фактический адрес",
+      "type": "text",
+      "target": "addressFactInit",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "инициатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "Юридический адрес",
+      "type": "text",
+      "target": "addressLegalInit",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "инициатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "юридический адрес организатора",
+      "type": "text",
+      "target": "addressLegalOrg",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "фактический адрес организатора",
+      "type": "text",
+      "target": "addressFactOrg",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "контактный телефон организатора",
+      "type": "phone",
+      "target": "bidOrganizer",
+      "field": "phone",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "юридический адрес",
+      "type": "text",
+      "target": "addressLegalCopy",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "фактический адрес",
+      "type": "text",
+      "target": "addressFactCopy",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "контактный телефон",
+      "type": "phone",
+      "target": "copyrightInfo",
+      "field": "phone",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "номер извещения",
+      "type": "text",
+      "target": "notice",
+      "field": "gisNumber",
+      "groups": [
+        [
+          "извещение",
+          "документация"
+        ]
+      ]
+    },
+    {
+      "label": "ссылка на торговую процедуру (url)",
+      "type": "text",
+      "target": "notice",
+      "field": "bidProcedureUrl",
+      "groups": [
+        [
+          "извещение",
+          "документация"
+        ]
+      ]
+    },
+    {
+      "label": "форма проведения торгов",
+      "type": "text",
+      "target": "notice",
+      "field": "biddingForm",
+      "groups": [
+        [
+          "извещение",
+          "документация"
+        ]
+      ]
+    },
+    {
+      "label": "требования к документам",
+      "type": "text",
+      "target": "requirements",
+      "field": "forDocs",
+      "groups": [
+        [
+          "требования к заявкам"
+        ]
+      ]
+    },
+    {
+      "label": "критерии для определения победителя",
+      "type": "text",
+      "target": "requirements",
+      "field": "winnerCriteria",
+      "groups": [
+        [
+          "требования к заявкам"
+        ]
+      ]
+    },
+    {
+      "label": "требования к участникам",
+      "type": "text",
+      "target": "requirements",
+      "field": "forParticipants",
+      "groups": [
+        [
+          "требования к заявкам"
+        ]
+      ]
+    },
+    {
+      "label": "место (адрес) подачи заявок на участие в торгах (для бумажных торгов)",
+      "type": "text",
+      "target": "inPersonApply",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "место (адрес) проведения торгов (для бумажных торгов)",
+      "type": "text",
+      "target": "inPersonBid",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата протокола",
+      "type": "date",
+      "target": "protocol",
+      "field": "protocolDate",
+      "groups": [
+        [
+          "протокол по результатам проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "номер протокола",
+      "type": "text",
+      "target": "protocol",
+      "field": "protocolNumber",
+      "groups": [
+        [
+          "протокол по результатам проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "статус проведения торгов",
+      "type": "text",
+      "target": "statusBid",
+      "field": "name",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "наименование победителя",
+      "type": "text",
+      "target": "winner",
+      "field": "name",
+      "groups": [
+        [
+          "победитель"
+        ]
+      ]
+    },
+    {
+      "label": "предложение о цене, руб",
+      "type": "text",
+      "target": "winner",
+      "field": "priceOffer",
+      "groups": [
+        [
+          "победитель"
+        ]
+      ]
+    },
+    {
+      "label": "вид рекламной конструкции",
+      "type": "text",
+      "target": "kind",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "тип рекламной конструкции",
+      "type": "text",
+      "target": "typeRk",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Иной вид рекламной конструкции",
+      "type": "text",
+      "target": "info",
+      "field": "kindRKOther",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "адрес",
+      "type": "text",
+      "target": "addressRk",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "номер рекламной конструкции в схеме",
+      "type": "text",
+      "target": "info",
+      "field": "numberRK",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "общая площадь информационного поля рекламной конструкции, кв. м",
+      "type": "text",
+      "target": "info",
+      "field": "totalArea",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "количество сторон рекламной конструкции",
+      "type": "text",
+      "target": "sides",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Сокращенное наименование организации",
+      "field": "shortName",
+      "type": "text",
+      "target": "bidOrganizer",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "инн",
+      "field": "inn",
+      "type": "text",
+      "target": "bidOrganizer",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "кпп",
+      "field": "kpp",
+      "type": "text",
+      "target": "bidOrganizer",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "огрн",
+      "field": "ogrn",
+      "type": "text",
+      "target": "bidOrganizer",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "код организации / окпо",
+      "field": "okpo",
+      "type": "text",
+      "target": "bidOrganizer",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "адрес электронной почты организатора",
+      "field": "email",
+      "type": "text",
+      "target": "bidOrganizer",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "контактное лицо",
+      "field": "contact",
+      "type": "text",
+      "target": "bidOrganizer",
+      "groups": [
+        [
+          "организатор торговой процедуры"
+        ]
+      ]
+    },
+    {
+      "label": "сокращенное наименование организации",
+      "field": "shortName",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "инн",
+      "field": "inn",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "кпп",
+      "field": "kpp",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "огрн",
+      "field": "ogrn",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "окфс",
+      "field": "okfs",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "код организации / окпо",
+      "field": "okpo",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "адрес электронной почты",
+      "field": "email",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "контактное лицо",
+      "field": "contact",
+      "type": "text",
+      "target": "copyrightInfo",
+      "groups": [
+        [
+          "сведения о правообладателе"
+        ]
+      ]
+    },
+    {
+      "label": "бик",
+      "field": "bik",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "инн",
+      "field": "inn",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "кбк",
+      "field": "kbk",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "кпп",
+      "field": "kpp",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "наименование получателя",
+      "field": "name",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "октмо",
+      "field": "oktmo",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "наименование банка",
+      "field": "bankName",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "лицевой счет",
+      "field": "bankAccount",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "расчетный счет (казначеский счет)",
+      "field": "currentAccount",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "назначение платежа",
+      "field": "paymentPurpose",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "корреспондентский счет",
+      "field": "correspondentAccount",
+      "type": "text",
+      "target": "deposit",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "основание для проведения торгов",
+      "field": "reason",
+      "type": "text",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "электронный адрес площадки, где будет размещена информация о торгах (url)",
+      "field": "bidWebsite",
+      "type": "text",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "наименование оператора электронной площадки",
+      "field": "operatorName",
+      "type": "text",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "срок заключения договора, лет",
+      "field": "contractYears",
+      "type": "text",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "порядок заключения договора",
+      "field": "contractCourse",
+      "type": "text",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата проведения торгов",
+      "field": "bidDate",
+      "type": "date",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата, до которой организатор вправе отказаться от проведения торгов",
+      "field": "refuseDate",
+      "type": "date",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата подведения итогов",
+      "field": "summaryDate",
+      "type": "date",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата окончания рассмотрения заявок",
+      "field": "reviewEndDate",
+      "type": "date",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата окончания приема заявок",
+      "field": "recieveEndDate",
+      "type": "date",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата начала рассмотрения заявок",
+      "field": "reviewStartDate",
+      "type": "date",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "дата начала приема заявок",
+      "field": "recieveStartDate",
+      "type": "date",
+      "target": "bidProc",
+      "groups": [
+        [
+          "сведения о процедуре проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "размер задатка, руб.",
+      "field": "deposit",
+      "type": "text",
+      "target": "info",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "наименование лота",
+      "field": "lotName",
+      "type": "text",
+      "target": "info",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "ставка ндс, %",
+      "field": "vatRate",
+      "type": "text",
+      "target": "info",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "начальная (минимальная) цена, руб.",
+      "field": "minPrice",
+      "type": "text",
+      "target": "info",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "шаг аукциона, руб. (если тип извещения - аукцион)",
+      "field": "auctionStep",
+      "type": "text",
+      "target": "info",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "шаг аукциона, руб. (если тип извещения – аукцион)",
+      "field": "auctionStep",
+      "type": "text",
+      "target": "info",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "описание лота",
+      "field": "lotDescription",
+      "type": "text",
+      "target": "info",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "требования к рекламной конструкции (изображение)",
+      "type": "file",
+      "target": "requirements",
+      "field": "forRKPic",
+      "entityPath": "procedureInfo.requirements.forRKPic",
+      "groups": [
+        [
+          "требования к заявкам"
+        ]
+      ]
+    },
+    {
+      "label": "протокол по результатам проведения торгов",
+      "type": "file",
+      "target": "protocol",
+      "field": "resultsProtocol",
+      "entityPath": "lots.protocol.resultsProtocol",
+      "groups": [
+        [
+          "протокол по результатам проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "подписанный договор на размещение рекламной конструкции",
+      "type": "file",
+      "target": "protocol",
+      "field": "biddingProtocol",
+      "entityPath": "lots.protocol.biddingProtocol",
+      "groups": [
+        [
+          "протокол по результатам проведения торгов"
+        ]
+      ]
+    },
+    {
+      "label": "тип извещения",
+      "type": "notice",
+      "target": "notice",
+      "field": "noticeType",
+      "groups": [
+        [
+          "извещение",
+          "документация"
+        ]
+      ]
+    },
+    {
+      "label": "задаток перечисляется на счет площадки (для электронных торгов)",
+      "type": "yesno",
+      "target": "deposit",
+      "field": "siteAccount",
+      "groups": [
+        [
+          "реквизиты для перечисления задатка"
+        ]
+      ]
+    },
+    {
+      "label": "наличие ндс",
+      "type": "yesno",
+      "target": "info",
+      "field": "isVat",
+      "groups": [
+        [
+          "информация о лоте для выставления на торги"
+        ]
+      ]
+    },
+    {
+      "label": "вид собственности земельного участка",
+      "type": "property",
+      "target": "propertyType",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    }
+  ],
+  "buildContractRow": [
+    {
+      "label": "Номер рекламной конструкции в схеме",
+      "type": "text",
+      "target": "changeOmsu",
+      "field": "numberRK",
+      "groups": []
+    },
+    {
+      "label": "Дата заключения договора",
+      "type": "date",
+      "target": "contract",
+      "field": "date",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "Срок действия: дата начала",
+      "type": "date",
+      "target": "termDates",
+      "field": "dateStart",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "Срок действия: дата завершения",
+      "type": "date",
+      "target": "termDates",
+      "field": "dateEnd",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "memberUl",
+      "field": "phone",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Фактический адрес",
+      "type": "text",
+      "target": "addressFact",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Юридический адрес",
+      "type": "text",
+      "target": "addressLegal",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "memberIp",
+      "field": "phone",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addressReg",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Почтовый адрес",
+      "type": "text",
+      "target": "addressPost",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Дата рождения",
+      "type": "date",
+      "target": "memberFl",
+      "field": "birthDate",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "memberFl",
+      "field": "phone",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addressRegFl",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес фактического места проживания",
+      "type": "text",
+      "target": "addressFactFl",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Общий размер платы по договору, руб.",
+      "field": "sum",
+      "type": "text",
+      "target": "contract",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "Номер договора",
+      "field": "number",
+      "type": "text",
+      "target": "contract",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "Размер платы за период, руб.",
+      "field": "payment",
+      "type": "text",
+      "target": "contract",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "Предмет договора",
+      "field": "subject",
+      "type": "text",
+      "target": "contract",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "Периодичность внесения платежей",
+      "field": "periodicity",
+      "type": "text",
+      "target": "contract",
+      "groups": [
+        [
+          "информация по договору"
+        ]
+      ]
+    },
+    {
+      "label": "ИНН",
+      "field": "inn",
+      "type": "text",
+      "target": "memberUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "КПП",
+      "field": "kpp",
+      "type": "text",
+      "target": "memberUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Полное наименование организации",
+      "field": "name",
+      "type": "text",
+      "target": "memberUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "ОГРН",
+      "field": "ogrn",
+      "type": "text",
+      "target": "memberUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "memberUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Сокращенное наименование организации",
+      "field": "shortName",
+      "type": "text",
+      "target": "memberUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Наименование ИП",
+      "field": "nameIP",
+      "type": "text",
+      "target": "memberIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "ОГРН ИП",
+      "field": "ogrnIP",
+      "type": "text",
+      "target": "memberIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "ИНН ИП",
+      "field": "inn",
+      "type": "text",
+      "target": "memberIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "memberIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "СНИЛС",
+      "field": "snils",
+      "type": "text",
+      "target": "memberFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Серия паспорта",
+      "field": "passportSeries",
+      "type": "text",
+      "target": "memberFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Номер паспорта",
+      "field": "passportNumber",
+      "type": "text",
+      "target": "memberFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Кем выдан паспорт",
+      "field": "passportAuthority",
+      "type": "text",
+      "target": "memberFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Код подразделения",
+      "field": "passportCode",
+      "type": "text",
+      "target": "memberFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Место рождения",
+      "field": "placeBirth",
+      "type": "text",
+      "target": "memberFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "memberFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Правовой статус оператора",
+      "type": "applicant",
+      "target": "memberInfo",
+      "field": "applicantList",
+      "groups": []
+    }
+  ],
+  "buildObligationRow": [
+    {
+      "label": "Вид рекламной конструкции",
+      "type": "text",
+      "target": "kind",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Тип рекламной конструкции",
+      "type": "text",
+      "target": "typeRk",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Номер рекламной конструкции в схеме",
+      "type": "text",
+      "target": "info",
+      "field": "numberRK",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Общая площадь информационного поля рекламной конструкции, кв. м",
+      "type": "text",
+      "target": "info",
+      "field": "totalArea",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Иной вид рекламной конструкции",
+      "type": "text",
+      "target": "info",
+      "field": "kindRKOther",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Количество сторон рекламной конструкции",
+      "type": "text",
+      "target": "sides",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес",
+      "type": "text",
+      "target": "address",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Координаты размещения рекламной конструкции",
+      "type": "text",
+      "target": "infoLoc",
+      "field": "coordinates",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Дополнительные данные об адресе",
+      "type": "text",
+      "target": "infoLoc",
+      "field": "locationAddressDetails",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    },
+    {
+      "label": "Наименование согласующего органа",
+      "type": "text",
+      "target": "current",
+      "field": "specialist",
+      "groups": [
+        [
+          "информация о согласовании места",
+          "согласование места"
+        ]
+      ]
+    },
+    {
+      "label": "Текст заключения",
+      "type": "text",
+      "target": "current",
+      "field": "conclusionText",
+      "groups": [
+        [
+          "информация о согласовании места",
+          "согласование места"
+        ]
+      ]
+    },
+    {
+      "label": "Вид собственности земельного участка",
+      "type": "property",
+      "target": "propertyType",
+      "field": "name",
+      "groups": [
+        [
+          "информация о рекламной конструкции"
+        ]
+      ]
+    }
+  ],
+  "buildOwnerBlocks": [
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "ul",
+      "field": "phone",
+      "groups": []
+    },
+    {
+      "label": "Фактический адрес",
+      "type": "text",
+      "target": "addrFactUl",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "Юридический адрес",
+      "type": "text",
+      "target": "addrLegalUl",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "ip",
+      "field": "phone",
+      "groups": []
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addrRegIp",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "Почтовый адрес",
+      "type": "text",
+      "target": "addrPostIp",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "Дата рождения",
+      "type": "date",
+      "target": "fl",
+      "field": "birthDate",
+      "groups": []
+    },
+    {
+      "label": "Дата выдачи паспорта",
+      "type": "date",
+      "target": "fl",
+      "field": "passportIssueDate",
+      "groups": []
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "fl",
+      "field": "phone",
+      "groups": []
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addrRegFl",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "Адрес фактического места проживания",
+      "type": "text",
+      "target": "addrFactFl",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "ИНН",
+      "field": "inn",
+      "type": "text",
+      "target": "ul",
+      "groups": []
+    },
+    {
+      "label": "КПП",
+      "field": "kpp",
+      "type": "text",
+      "target": "ul",
+      "groups": []
+    },
+    {
+      "label": "ОГРН",
+      "field": "ogrn",
+      "type": "text",
+      "target": "ul",
+      "groups": []
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "ul",
+      "groups": []
+    },
+    {
+      "label": "Сокращенное наименование организации",
+      "field": "shortName",
+      "type": "text",
+      "target": "ul",
+      "groups": []
+    },
+    {
+      "label": "Полное наименование организации",
+      "field": "name",
+      "type": "text",
+      "target": "ul",
+      "groups": []
+    },
+    {
+      "label": "Наименование ИП",
+      "field": "nameIP",
+      "type": "text",
+      "target": "ip",
+      "groups": []
+    },
+    {
+      "label": "ОГРН ИП",
+      "field": "ogrnIP",
+      "type": "text",
+      "target": "ip",
+      "groups": []
+    },
+    {
+      "label": "ИНН ИП",
+      "field": "inn",
+      "type": "text",
+      "target": "ip",
+      "groups": []
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "ip",
+      "groups": []
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "fl",
+      "groups": []
+    },
+    {
+      "label": "СНИЛС",
+      "field": "snils",
+      "type": "text",
+      "target": "fl",
+      "groups": []
+    },
+    {
+      "label": "Место рождения",
+      "field": "placeBirth",
+      "type": "text",
+      "target": "fl",
+      "groups": []
+    },
+    {
+      "label": "Код подразделения",
+      "field": "passportCode",
+      "type": "text",
+      "target": "fl",
+      "groups": []
+    },
+    {
+      "label": "Номер паспорта",
+      "field": "passportNumber",
+      "type": "text",
+      "target": "fl",
+      "groups": []
+    },
+    {
+      "label": "Серия паспорта",
+      "field": "passportSeries",
+      "type": "text",
+      "target": "fl",
+      "groups": []
+    },
+    {
+      "label": "Кем выдан паспорт",
+      "field": "passportAuthority",
+      "type": "text",
+      "target": "fl",
+      "groups": []
+    }
+  ],
+  "buildNoPermRow": [
+    {
+      "label": "Вид рекламной конструкции",
+      "type": "text",
+      "target": "kind",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Иной вид рекламной конструкции",
+      "type": "text",
+      "target": "info",
+      "field": "kindRKOther",
+      "groups": []
+    },
+    {
+      "label": "Тип рекламной конструкции",
+      "type": "text",
+      "target": "typeRk",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Адрес",
+      "type": "text",
+      "target": "addr",
+      "field": "fullAddress",
+      "groups": []
+    },
+    {
+      "label": "Номер рекламной конструкции в схеме",
+      "type": "text",
+      "target": "info",
+      "field": "numberRK",
+      "groups": []
+    },
+    {
+      "label": "Общая площадь информационного поля рекламной конструкции, кв. м",
+      "type": "text",
+      "target": "info",
+      "field": "totalArea",
+      "groups": []
+    },
+    {
+      "label": "Дополнительные данные об адресе",
+      "type": "text",
+      "target": "info",
+      "field": "addressData",
+      "groups": []
+    },
+    {
+      "label": "Координаты размещения рекламной конструкции",
+      "type": "text",
+      "target": "info",
+      "field": "coordinates",
+      "groups": []
+    },
+    {
+      "label": "Количество сторон рекламной конструкции",
+      "type": "text",
+      "target": "sides",
+      "field": "name",
+      "groups": []
+    },
+    {
+      "label": "Вид собственности земельного участка",
+      "type": "property",
+      "target": "propertyType",
+      "field": "name",
+      "groups": []
+    }
+  ],
+  "buildDismantlingRow": [
+    {
+      "label": "Номер предписания",
+      "type": "text",
+      "target": "order",
+      "field": "orderNumber",
+      "groups": []
+    },
+    {
+      "label": "Тип нарушения",
+      "type": "text",
+      "target": "order",
+      "field": "violationType",
+      "groups": []
+    },
+    {
+      "label": "Срок до какого числа необходимо устранить нарушение",
+      "type": "date",
+      "target": "order",
+      "field": "violationCorrectionDeadline",
+      "groups": []
+    },
+    {
+      "label": "Предписание на демонтаж",
+      "type": "file",
+      "target": "order",
+      "field": "dismantlingOrderFile",
+      "entityPath": "dismantlingOrderInfo.dismantlingOrderFile",
+      "groups": []
+    }
+  ],
+  "buildSocialRow": [
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "dataUl",
+      "field": "phone",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "dataIp",
+      "field": "phone",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Дата рождения",
+      "type": "date",
+      "target": "dataFl",
+      "field": "birthDate",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Номер телефона",
+      "type": "phone",
+      "target": "dataFl",
+      "field": "phone",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Тема рекламы",
+      "type": "text",
+      "target": "theme",
+      "field": "name",
+      "groups": [
+        [
+          "данные о социальной рекламе"
+        ]
+      ]
+    },
+    {
+      "label": "Номер социальной рекламы",
+      "type": "text",
+      "target": "info",
+      "field": "numSoc",
+      "groups": [
+        [
+          "данные о социальной рекламе"
+        ]
+      ]
+    },
+    {
+      "label": "Населенный пункт для размещения рекламы",
+      "type": "text",
+      "target": "info",
+      "field": "placeForAdd",
+      "groups": [
+        [
+          "данные о социальной рекламе"
+        ]
+      ]
+    },
+    {
+      "label": "Уточнение темы социальной рекламы",
+      "type": "text",
+      "target": "info",
+      "field": "themeClarification",
+      "groups": [
+        [
+          "данные о социальной рекламе"
+        ]
+      ]
+    },
+    {
+      "label": "Наименование согласующего органа",
+      "type": "text",
+      "target": "current",
+      "field": "org",
+      "groups": [
+        [
+          "согласование социальной рекламы",
+          "согласовании социальной рекламы"
+        ]
+      ]
+    },
+    {
+      "label": "Текст заключения",
+      "type": "text",
+      "target": "current",
+      "field": "conclusionText",
+      "groups": [
+        [
+          "согласование социальной рекламы",
+          "согласовании социальной рекламы"
+        ]
+      ]
+    },
+    {
+      "label": "ИНН",
+      "field": "inn",
+      "type": "text",
+      "target": "dataUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "КПП",
+      "field": "kpp",
+      "type": "text",
+      "target": "dataUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Полное наименование организации",
+      "field": "name",
+      "type": "text",
+      "target": "dataUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "ОГРН",
+      "field": "ogrn",
+      "type": "text",
+      "target": "dataUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "dataUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Сокращенное наименование организации",
+      "field": "shortName",
+      "type": "text",
+      "target": "dataUl",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Наименование ИП",
+      "field": "nameIP",
+      "type": "text",
+      "target": "dataIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "ОГРН ИП",
+      "field": "ogrnIP",
+      "type": "text",
+      "target": "dataIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "ИНН ИП",
+      "field": "inn",
+      "type": "text",
+      "target": "dataIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "dataIp",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Электронная почта",
+      "field": "email",
+      "type": "text",
+      "target": "dataFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "СНИЛС",
+      "field": "snils",
+      "type": "text",
+      "target": "dataFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Место рождения",
+      "field": "placeBirth",
+      "type": "text",
+      "target": "dataFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Код подразделения",
+      "field": "passportCode",
+      "type": "text",
+      "target": "dataFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Номер паспорта",
+      "field": "passportNumber",
+      "type": "text",
+      "target": "dataFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Серия паспорта",
+      "field": "passportSeries",
+      "type": "text",
+      "target": "dataFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Кем выдан паспорт",
+      "field": "passportAuthority",
+      "type": "text",
+      "target": "dataFl",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Дизайн-макет социальной рекламы",
+      "type": "file",
+      "target": "info",
+      "field": "uploadDesign",
+      "entityPath": "infoSocialAdv.uploadDesign",
+      "groups": [
+        [
+          "данные о социальной рекламе"
+        ]
+      ]
+    },
+    {
+      "label": "Фактический адрес",
+      "type": "text",
+      "target": "addrFact",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Юридический адрес",
+      "type": "text",
+      "target": "addrLegal",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "организация"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addrReg",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Почтовый адрес",
+      "type": "text",
+      "target": "addrPost",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "индивидуальный предприниматель"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес постоянной регистрации",
+      "type": "text",
+      "target": "addrReg",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    },
+    {
+      "label": "Адрес фактического места проживания",
+      "type": "text",
+      "target": "addrFact",
+      "field": "fullAddress",
+      "groups": [
+        [
+          "физическое лицо"
+        ]
+      ]
+    }
+  ]
+}

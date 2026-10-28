@@ -1,0 +1,2280 @@
+{
+  "provenance": "Header contracts from published 46535, row derived from archived demo workbook and anonymized; no live IDs or credentials.",
+  "dataType": "НТО",
+  "fileSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "parserVersion": "rbu-trade-4.0",
+  "file": {
+    "id": "fixture-xlsx",
+    "originalName": "fixture-nto.xlsx",
+    "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "sheetNames": {
+    "sheet2": "2. Реестр мест",
+    "sheet3": "3. Реестр торгов"
+  },
+  "title": {
+    "region": "Ростовская область",
+    "municipality": "Городской округ город Таганрог"
+  },
+  "referenceLists": {
+    "entries": [
+      {
+        "name": "Субъекты РФ",
+        "values": [
+          "Ростовская область"
+        ]
+      }
+    ]
+  },
+  "sheets": [
+    {
+      "code": "sheet2",
+      "columns": [
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 1,
+          "column": "B",
+          "subBlock": "Общая информация",
+          "attribute": "1",
+          "fieldName": "Субъект РФ",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 2,
+          "column": "C",
+          "subBlock": "Общая информация",
+          "attribute": "2",
+          "fieldName": "Муниципальный район/округ, городской округ или внутригородская территория",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 3,
+          "column": "D",
+          "subBlock": "Общая информация",
+          "attribute": "3",
+          "fieldName": "ОГРН уполномоченного органа",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 4,
+          "column": "E",
+          "subBlock": "Общая информация",
+          "attribute": "4",
+          "fieldName": "ИНН уполномоченного органа",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 5,
+          "column": "F",
+          "subBlock": "Информация о НТО",
+          "attribute": "5",
+          "fieldName": "Кем предложено место",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 6,
+          "column": "G",
+          "subBlock": "Информация о НТО",
+          "attribute": "6",
+          "fieldName": "Номер в схеме",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 7,
+          "column": "H",
+          "subBlock": "Информация о НТО",
+          "attribute": "7",
+          "fieldName": "Адресный ориентир",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 8,
+          "column": "I",
+          "subBlock": "Информация о НТО",
+          "attribute": "8",
+          "fieldName": "Дополнительные данные об адресе",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 9,
+          "column": "J",
+          "subBlock": "Информация о НТО",
+          "attribute": "9",
+          "fieldName": "Кадастровый номер",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 10,
+          "column": "K",
+          "subBlock": "Информация о НТО",
+          "attribute": "10",
+          "fieldName": "Геокоординаты точки размещения НТО",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 11,
+          "column": "L",
+          "subBlock": "Информация о НТО",
+          "attribute": "11",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 1)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 12,
+          "column": "M",
+          "subBlock": "Информация о НТО",
+          "attribute": "12",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 2)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 13,
+          "column": "N",
+          "subBlock": "Информация о НТО",
+          "attribute": "13",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 3)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 14,
+          "column": "O",
+          "subBlock": "Информация о НТО",
+          "attribute": "14",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 4)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 15,
+          "column": "P",
+          "subBlock": "Информация о НТО",
+          "attribute": "15",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 5)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 16,
+          "column": "Q",
+          "subBlock": "Информация о НТО",
+          "attribute": "16",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 6)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 17,
+          "column": "R",
+          "subBlock": "Информация о НТО",
+          "attribute": "17",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 7)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 18,
+          "column": "S",
+          "subBlock": "Информация о НТО",
+          "attribute": "18",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 8)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 19,
+          "column": "T",
+          "subBlock": "Информация о НТО",
+          "attribute": "19",
+          "fieldName": "Геокоординаты полигона размещения НТО (точка 9)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 20,
+          "column": "U",
+          "subBlock": "Информация о НТО",
+          "attribute": "20",
+          "fieldName": "Тип НТО",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 21,
+          "column": "V",
+          "subBlock": "Информация о НТО",
+          "attribute": "21",
+          "fieldName": "Иной тип НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 22,
+          "column": "W",
+          "subBlock": "Информация о НТО",
+          "attribute": "22",
+          "fieldName": "Специализация НТО",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 23,
+          "column": "X",
+          "subBlock": "Информация о НТО",
+          "attribute": "23",
+          "fieldName": "Ассортимент",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 24,
+          "column": "Y",
+          "subBlock": "Информация о НТО",
+          "attribute": "24",
+          "fieldName": "Иной ассортимент",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 25,
+          "column": "Z",
+          "subBlock": "Информация о НТО",
+          "attribute": "25",
+          "fieldName": "Вид продукции",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 26,
+          "column": "AA",
+          "subBlock": "Информация о НТО",
+          "attribute": "26",
+          "fieldName": "Информация об использовании НТО субъектами малого и среднего предпринимательства",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 27,
+          "column": "AB",
+          "subBlock": "Информация о НТО",
+          "attribute": "27",
+          "fieldName": "Площадь участка, кв. м",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 28,
+          "column": "AC",
+          "subBlock": "Информация о НТО",
+          "attribute": "28",
+          "fieldName": "Площадь объекта, кв. м",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 29,
+          "column": "AD",
+          "subBlock": "Информация о НТО",
+          "attribute": "29",
+          "fieldName": "График размещения",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 30,
+          "column": "AE",
+          "subBlock": "Информация о НТО",
+          "attribute": "30",
+          "fieldName": "График",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 31,
+          "column": "AF",
+          "subBlock": "Информация о НТО",
+          "attribute": "31",
+          "fieldName": "1. Сезон",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 32,
+          "column": "AG",
+          "subBlock": "Информация о НТО",
+          "attribute": "32",
+          "fieldName": "2. Сезон",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 33,
+          "column": "AH",
+          "subBlock": "Информация о НТО",
+          "attribute": "33",
+          "fieldName": "3. Сезон",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 34,
+          "column": "AI",
+          "subBlock": "Информация о НТО",
+          "attribute": "34",
+          "fieldName": "Период размещения: дата начала",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 35,
+          "column": "AJ",
+          "subBlock": "Информация о НТО",
+          "attribute": "35",
+          "fieldName": "Период размещения: дата окончания",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 36,
+          "column": "AK",
+          "subBlock": "Информация о НТО",
+          "attribute": "36",
+          "fieldName": "Вид собственности земельного участка",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 37,
+          "column": "AL",
+          "subBlock": "Информация о НТО",
+          "attribute": "37",
+          "fieldName": "Расположение территории в зонах с особыми условиями использования",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 38,
+          "column": "AM",
+          "subBlock": "Информация о НТО",
+          "attribute": "38",
+          "fieldName": "Статус проектного места",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 39,
+          "column": "AN",
+          "subBlock": "Информация о НТО",
+          "attribute": "39",
+          "fieldName": "Спецификация статуса проектного места",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 40,
+          "column": "AO",
+          "subBlock": "Информация о НТО",
+          "attribute": "40",
+          "fieldName": "Статус записи в Реестре мест для размещения НТО",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 41,
+          "column": "AP",
+          "subBlock": "Информация о НТО",
+          "attribute": "41",
+          "fieldName": "Сведения о торговой процедуре",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 42,
+          "column": "AQ",
+          "subBlock": "Информация о НТО",
+          "attribute": "42",
+          "fieldName": "Картографический материал с границами предлагаемого места расположения НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 43,
+          "column": "AR",
+          "subBlock": "Информация о НТО",
+          "attribute": "43",
+          "fieldName": "Фото существующей ситуации без НТО (при наличии)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 44,
+          "column": "AS",
+          "subBlock": "Сведения о постановлении о внесении изменений в схему НТО",
+          "attribute": "44",
+          "fieldName": "Постановление о внесении изменений в схему НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 45,
+          "column": "AT",
+          "subBlock": "Сведения о постановлении о внесении изменений в схему НТО",
+          "attribute": "45",
+          "fieldName": "Номер постановления",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 46,
+          "column": "AU",
+          "subBlock": "Сведения о постановлении о внесении изменений в схему НТО",
+          "attribute": "46",
+          "fieldName": "Дата постановления",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 47,
+          "column": "AV",
+          "subBlock": "Сведения о постановлении о внесении изменений в схему НТО",
+          "attribute": "47",
+          "fieldName": "Правовой статус оператора",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 48,
+          "column": "AW",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "48",
+          "fieldName": "Фамилия Имя Отчество",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 49,
+          "column": "AX",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "49",
+          "fieldName": "Дата рождения",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 50,
+          "column": "AY",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "50",
+          "fieldName": "СНИЛС",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 51,
+          "column": "AZ",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "51",
+          "fieldName": "Серия паспорта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 52,
+          "column": "BA",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "52",
+          "fieldName": "Номер паспорта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 53,
+          "column": "BB",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "53",
+          "fieldName": "Кем выдан паспорт",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 54,
+          "column": "BC",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "54",
+          "fieldName": "Код подразделения",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 55,
+          "column": "BD",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "55",
+          "fieldName": "Место рождения",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 56,
+          "column": "BE",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "56",
+          "fieldName": "Номер телефона",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 57,
+          "column": "BF",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "57",
+          "fieldName": "Электронная почта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 58,
+          "column": "BG",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "58",
+          "fieldName": "Адрес постоянной регистрации",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 59,
+          "column": "BH",
+          "subBlock": "Информация об операторе (Физическое лицо)",
+          "attribute": "59",
+          "fieldName": "Адрес фактического места проживания",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 60,
+          "column": "BI",
+          "subBlock": "Информация об операторе (Индивидуальный предприниматель)",
+          "attribute": "60",
+          "fieldName": "Наименование ИП",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 61,
+          "column": "BJ",
+          "subBlock": "Информация об операторе (Индивидуальный предприниматель)",
+          "attribute": "61",
+          "fieldName": "ОГРН ИП",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 62,
+          "column": "BK",
+          "subBlock": "Информация об операторе (Индивидуальный предприниматель)",
+          "attribute": "62",
+          "fieldName": "ИНН ИП",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 63,
+          "column": "BL",
+          "subBlock": "Информация об операторе (Индивидуальный предприниматель)",
+          "attribute": "63",
+          "fieldName": "Номер телефона",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 64,
+          "column": "BM",
+          "subBlock": "Информация об операторе (Индивидуальный предприниматель)",
+          "attribute": "64",
+          "fieldName": "Электронная почта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 65,
+          "column": "BN",
+          "subBlock": "Информация об операторе (Индивидуальный предприниматель)",
+          "attribute": "65",
+          "fieldName": "Адрес постоянной регистрации",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 66,
+          "column": "BO",
+          "subBlock": "Информация об операторе (Индивидуальный предприниматель)",
+          "attribute": "66",
+          "fieldName": "Почтовый адрес",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 67,
+          "column": "BP",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "67",
+          "fieldName": "Полное наименование организации",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 68,
+          "column": "BQ",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "68",
+          "fieldName": "Организационно-правовая форма",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 69,
+          "column": "BR",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "69",
+          "fieldName": "ОГРН",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 70,
+          "column": "BS",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "70",
+          "fieldName": "ИНН",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 71,
+          "column": "BT",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "71",
+          "fieldName": "КПП",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 72,
+          "column": "BU",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "72",
+          "fieldName": "Номер телефона",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 73,
+          "column": "BV",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "73",
+          "fieldName": "Электронная почта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 74,
+          "column": "BW",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "74",
+          "fieldName": "Юридический адрес",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру мест для размещения НТО",
+          "index": 75,
+          "column": "BX",
+          "subBlock": "Информация об операторе (Организация)",
+          "attribute": "75",
+          "fieldName": "Фактический адрес",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 76,
+          "column": "BY",
+          "subBlock": "Информация по договору",
+          "attribute": "76",
+          "fieldName": "Номер договора",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 77,
+          "column": "BZ",
+          "subBlock": "Информация по договору",
+          "attribute": "77",
+          "fieldName": "Дата заключения договора",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 78,
+          "column": "CA",
+          "subBlock": "Информация по договору",
+          "attribute": "78",
+          "fieldName": "Дата начала действия договора",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 79,
+          "column": "CB",
+          "subBlock": "Информация по договору",
+          "attribute": "79",
+          "fieldName": "Дата завершения действия договора",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 80,
+          "column": "CC",
+          "subBlock": "Информация по договору",
+          "attribute": "80",
+          "fieldName": "Предмет договора",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 81,
+          "column": "CD",
+          "subBlock": "Информация по договору",
+          "attribute": "81",
+          "fieldName": "Общий размер платы по договору, руб.",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 82,
+          "column": "CE",
+          "subBlock": "Информация по договору",
+          "attribute": "82",
+          "fieldName": "Размер платы за период, руб.",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 83,
+          "column": "CF",
+          "subBlock": "Информация по договору",
+          "attribute": "83",
+          "fieldName": "Периодичность внесения платежей",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 84,
+          "column": "CG",
+          "subBlock": "Информация по договору",
+          "attribute": "84",
+          "fieldName": "Договор на право размещения НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 85,
+          "column": "CH",
+          "subBlock": "Сведения о дополнительном соглашении",
+          "attribute": "85",
+          "fieldName": "Дополнительное соглашение к договору",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 86,
+          "column": "CI",
+          "subBlock": "Сведения о дополнительном соглашении",
+          "attribute": "86",
+          "fieldName": "Номер дополнительного соглашения",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 87,
+          "column": "CJ",
+          "subBlock": "Сведения о дополнительном соглашении",
+          "attribute": "87",
+          "fieldName": "Дата заключения дополнительного соглашения",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Информация о договоре на право размещения НТО",
+          "index": 88,
+          "column": "CK",
+          "subBlock": "Сведения о дополнительном соглашении",
+          "attribute": "88",
+          "fieldName": "Причина заключения дополнительного соглашения",
+          "requiredMarker": "Нет"
+        },
+        {
+          "column": "CL",
+          "attribute": "89",
+          "fieldName": "Фотография объекта (основная)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "column": "CM",
+          "attribute": "90",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "column": "CN",
+          "attribute": "91",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "column": "CO",
+          "attribute": "92",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "column": "CP",
+          "attribute": "93",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет"
+        }
+      ],
+      "rows": [
+        {
+          "excelRow": 6,
+          "cells": [
+            {
+              "column": "B",
+              "value": "Ростовская область",
+              "kind": "string"
+            },
+            {
+              "column": "C",
+              "value": "Городской округ город Таганрог",
+              "kind": "string"
+            },
+            {
+              "column": "D",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "E",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "F",
+              "value": "Предложено муниципалитетом",
+              "kind": "string"
+            },
+            {
+              "column": "G",
+              "value": "НТО-20260913-144",
+              "kind": "string"
+            },
+            {
+              "column": "H",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "I",
+              "value": "Тестовый адрес",
+              "kind": "string"
+            },
+            {
+              "column": "J",
+              "value": "50:11:0010412:1845",
+              "kind": "string"
+            },
+            {
+              "column": "K",
+              "value": "55.823742, 37.326518",
+              "kind": "string"
+            },
+            {
+              "column": "L",
+              "value": "55.823792, 37.326451",
+              "kind": "string"
+            },
+            {
+              "column": "M",
+              "value": "55.823805, 37.326583",
+              "kind": "string"
+            },
+            {
+              "column": "N",
+              "value": "55.823700, 37.326601",
+              "kind": "string"
+            },
+            {
+              "column": "O",
+              "value": "55.823688, 37.326470",
+              "kind": "string"
+            },
+            {
+              "column": "P",
+              "value": "55.823792, 37.326451",
+              "kind": "string"
+            },
+            {
+              "column": "Q",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "R",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "S",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "T",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "U",
+              "value": "Павильон",
+              "kind": "string"
+            },
+            {
+              "column": "V",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "W",
+              "value": "Продовольственная",
+              "kind": "string"
+            },
+            {
+              "column": "X",
+              "value": "Выпечка",
+              "kind": "string"
+            },
+            {
+              "column": "Y",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "Z",
+              "value": "Товары",
+              "kind": "string"
+            },
+            {
+              "column": "AA",
+              "value": "Исключительно СМСП",
+              "kind": "string"
+            },
+            {
+              "column": "AB",
+              "value": "24",
+              "kind": "string"
+            },
+            {
+              "column": "AC",
+              "value": "18",
+              "kind": "string"
+            },
+            {
+              "column": "AD",
+              "value": "Круглогодично",
+              "kind": "string"
+            },
+            {
+              "column": "AE",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AF",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AG",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AH",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AI",
+              "value": "10.08.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AJ",
+              "value": "09.08.2031",
+              "kind": "string"
+            },
+            {
+              "column": "AK",
+              "value": "Муниципальная собственность",
+              "kind": "string"
+            },
+            {
+              "column": "AL",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AM",
+              "value": "Утверждено",
+              "kind": "string"
+            },
+            {
+              "column": "AN",
+              "value": "Занято (не подлежащие замене или переносу)",
+              "kind": "string"
+            },
+            {
+              "column": "AO",
+              "value": "Утверждено",
+              "kind": "string"
+            },
+            {
+              "column": "AP",
+              "value": "https://torgi.gov.ru/new/public/lots/lot/НТО-2026-041",
+              "kind": "string"
+            },
+            {
+              "column": "AQ",
+              "value": "fixture-document-1.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "AR",
+              "value": "fixture-document-2.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "AS",
+              "value": "fixture-document-3.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "AT",
+              "value": "1120/5",
+              "kind": "string"
+            },
+            {
+              "column": "AU",
+              "value": "15.05.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AV",
+              "value": "Юридическое лицо",
+              "kind": "string"
+            },
+            {
+              "column": "AW",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AX",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AY",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AZ",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BA",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BB",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BC",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BD",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BE",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BF",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BG",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BH",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BI",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BJ",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BK",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BL",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BM",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BN",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BO",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BP",
+              "value": "Тестовая организация",
+              "kind": "string"
+            },
+            {
+              "column": "BQ",
+              "value": "Общества с ограниченной ответственностью",
+              "kind": "string"
+            },
+            {
+              "column": "BR",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BS",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BT",
+              "value": "111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BU",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "BV",
+              "value": "fixture@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "BW",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "BX",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "BY",
+              "value": "НТО-2026/041-Д",
+              "kind": "string"
+            },
+            {
+              "column": "BZ",
+              "value": "07.08.2026",
+              "kind": "string"
+            },
+            {
+              "column": "CA",
+              "value": "10.08.2026",
+              "kind": "string"
+            },
+            {
+              "column": "CB",
+              "value": "09.08.2031",
+              "kind": "string"
+            },
+            {
+              "column": "CC",
+              "value": "Тестовая организация",
+              "kind": "string"
+            },
+            {
+              "column": "CD",
+              "value": "468000",
+              "kind": "string"
+            },
+            {
+              "column": "CE",
+              "value": "7800",
+              "kind": "string"
+            },
+            {
+              "column": "CF",
+              "value": "Ежемесячно",
+              "kind": "string"
+            },
+            {
+              "column": "CG",
+              "value": "fixture-document-4.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "CH",
+              "value": "fixture-document-5.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "CI",
+              "value": "1",
+              "kind": "string"
+            },
+            {
+              "column": "CJ",
+              "value": "20.08.2026",
+              "kind": "string"
+            },
+            {
+              "column": "CK",
+              "value": "Продление договора",
+              "kind": "string"
+            },
+            {
+              "column": "CL",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "CM",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "CN",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "CO",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "CP",
+              "value": "",
+              "kind": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sheet3",
+      "columns": [
+        {
+          "block": "Данные по реестру торгов",
+          "index": 1,
+          "column": "B",
+          "subBlock": "Общая информация",
+          "attribute": "1",
+          "fieldName": "Субъект РФ",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 2,
+          "column": "C",
+          "subBlock": "Общая информация",
+          "attribute": "2",
+          "fieldName": "Муниципальный район/округ, городской округ или внутригородская территория",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 3,
+          "column": "D",
+          "subBlock": "Общая информация",
+          "attribute": "3",
+          "fieldName": "ОГРН уполномоченного органа",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 4,
+          "column": "E",
+          "subBlock": "Общая информация",
+          "attribute": "4",
+          "fieldName": "ИНН уполномоченного органа",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 5,
+          "column": "F",
+          "subBlock": "Инициатор торговой процедуры",
+          "attribute": "5",
+          "fieldName": "Полное наименование",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 6,
+          "column": "G",
+          "subBlock": "Инициатор торговой процедуры",
+          "attribute": "6",
+          "fieldName": "Юридический адрес",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 7,
+          "column": "H",
+          "subBlock": "Инициатор торговой процедуры",
+          "attribute": "7",
+          "fieldName": "Фактический адрес",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 8,
+          "column": "I",
+          "subBlock": "Инициатор торговой процедуры",
+          "attribute": "8",
+          "fieldName": "Электронная почта",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 9,
+          "column": "J",
+          "subBlock": "Инициатор торговой процедуры",
+          "attribute": "9",
+          "fieldName": "Контактный телефон",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 10,
+          "column": "K",
+          "subBlock": "Инициатор торговой процедуры",
+          "attribute": "10",
+          "fieldName": "Контактное лицо",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 11,
+          "column": "L",
+          "subBlock": "Организатор торговой процедуры",
+          "attribute": "11",
+          "fieldName": "Полное наименование организации",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 12,
+          "column": "M",
+          "subBlock": "Организатор торговой процедуры",
+          "attribute": "12",
+          "fieldName": "Юридический адрес организатора",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 13,
+          "column": "N",
+          "subBlock": "Организатор торговой процедуры",
+          "attribute": "13",
+          "fieldName": "Фактический адрес организатора",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 14,
+          "column": "O",
+          "subBlock": "Организатор торговой процедуры",
+          "attribute": "14",
+          "fieldName": "Адрес электронной почты организатора",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 15,
+          "column": "P",
+          "subBlock": "Организатор торговой процедуры",
+          "attribute": "15",
+          "fieldName": "Контактный телефон организатора",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 16,
+          "column": "Q",
+          "subBlock": "Организатор торговой процедуры",
+          "attribute": "16",
+          "fieldName": "Контактное лицо",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 17,
+          "column": "R",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "17",
+          "fieldName": "Тип извещения",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 18,
+          "column": "S",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "18",
+          "fieldName": "Форма проведения торгов",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 19,
+          "column": "T",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "19",
+          "fieldName": "Извещение о проведении торгов",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 20,
+          "column": "U",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "20",
+          "fieldName": "Проект заявки на участие в торгах",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 21,
+          "column": "V",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "21",
+          "fieldName": "Проект договора на право размещение НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 22,
+          "column": "W",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "22",
+          "fieldName": "Извещение об отказе от проведения торгов",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 23,
+          "column": "X",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "23",
+          "fieldName": "Номер извещения",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 24,
+          "column": "Y",
+          "subBlock": "Извещение и дополнительная документация",
+          "attribute": "24",
+          "fieldName": "Ссылка на торговую процедуру (URL)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 25,
+          "column": "Z",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "25",
+          "fieldName": "Основание для проведения торгов",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 26,
+          "column": "AA",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "26",
+          "fieldName": "Дата начала приема заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 27,
+          "column": "AB",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "27",
+          "fieldName": "Время начала приема заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 28,
+          "column": "AC",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "28",
+          "fieldName": "Дата окончания приема заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 29,
+          "column": "AD",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "29",
+          "fieldName": "Время окончания приема заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 30,
+          "column": "AE",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "30",
+          "fieldName": "Дата начала рассмотрения заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 31,
+          "column": "AF",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "31",
+          "fieldName": "Время начала рассмотрения заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 32,
+          "column": "AG",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "32",
+          "fieldName": "Дата окончания рассмотрения заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 33,
+          "column": "AH",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "33",
+          "fieldName": "Время окончания рассмотрения заявок",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 34,
+          "column": "AI",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "34",
+          "fieldName": "Дата проведения торгов",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 35,
+          "column": "AJ",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "35",
+          "fieldName": "Время проведения торгов",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 36,
+          "column": "AK",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "36",
+          "fieldName": "Дата подведения итогов",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 37,
+          "column": "AL",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "37",
+          "fieldName": "Время подведения итогов",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 38,
+          "column": "AM",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "38",
+          "fieldName": "Дата, до которой организатор вправе отказаться от проведения торгов",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 39,
+          "column": "AN",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "39",
+          "fieldName": "Наименование оператора электронной площадки",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 40,
+          "column": "AO",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "40",
+          "fieldName": "Электронная площадка проведения торгов (URL)",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 41,
+          "column": "AP",
+          "subBlock": "Сведения о процедуре проведения торгов",
+          "attribute": "41",
+          "fieldName": "Срок и порядок заключения договора",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 42,
+          "column": "AQ",
+          "subBlock": "Требования к заявкам",
+          "attribute": "42",
+          "fieldName": "Требования к участникам",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 43,
+          "column": "AR",
+          "subBlock": "Требования к заявкам",
+          "attribute": "43",
+          "fieldName": "Требования к документам",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 44,
+          "column": "AS",
+          "subBlock": "Требования к заявкам",
+          "attribute": "44",
+          "fieldName": "Требования к НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 45,
+          "column": "AT",
+          "subBlock": "Требования к заявкам",
+          "attribute": "45",
+          "fieldName": "Критерии для определения победителя",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 46,
+          "column": "AU",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "46",
+          "fieldName": "Номер НТО в схеме",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 47,
+          "column": "AV",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "47",
+          "fieldName": "Адрес",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 48,
+          "column": "AW",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "48",
+          "fieldName": "Геокоординаты",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 49,
+          "column": "AX",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "49",
+          "fieldName": "Тип НТО",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 50,
+          "column": "AY",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "50",
+          "fieldName": "Иной тип НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 51,
+          "column": "AZ",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "51",
+          "fieldName": "Специализация",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 52,
+          "column": "BA",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "52",
+          "fieldName": "Площадь объекта, кв. м",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 53,
+          "column": "BB",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "53",
+          "fieldName": "Площадь земельного участка, кв. м",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 54,
+          "column": "BC",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "54",
+          "fieldName": "График размещения",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 55,
+          "column": "BD",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "55",
+          "fieldName": "Период размещения: дата начала",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 56,
+          "column": "BE",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "56",
+          "fieldName": "Период размещения: дата окончания",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 57,
+          "column": "BF",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "57",
+          "fieldName": "Начальная (минимальная) цена, руб.",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 58,
+          "column": "BG",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "58",
+          "fieldName": "Шаг аукциона, руб. \r\n (Если тип извещения – Аукцион)",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 59,
+          "column": "BH",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "59",
+          "fieldName": "Размер задатка, руб.",
+          "requiredMarker": "Да"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 60,
+          "column": "BI",
+          "subBlock": "Информация о лотах для выставления на торги",
+          "attribute": "60",
+          "fieldName": "Статус проведения торгов",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 61,
+          "column": "BJ",
+          "subBlock": "Победитель",
+          "attribute": "61",
+          "fieldName": "Наименование победителя",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 62,
+          "column": "BK",
+          "subBlock": "Победитель",
+          "attribute": "62",
+          "fieldName": "Предложение о цене, руб",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 63,
+          "column": "BL",
+          "subBlock": "Протокол по результатам проведения торгов",
+          "attribute": "63",
+          "fieldName": "Номер протокола",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 64,
+          "column": "BM",
+          "subBlock": "Протокол по результатам проведения торгов",
+          "attribute": "64",
+          "fieldName": "Протокол по результатам проведения торгов",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 65,
+          "column": "BN",
+          "subBlock": "Протокол по результатам проведения торгов",
+          "attribute": "65",
+          "fieldName": "Дата протокола",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 66,
+          "column": "BO",
+          "subBlock": "Протокол по результатам проведения торгов",
+          "attribute": "66",
+          "fieldName": "Подписанный договор на размещение НТО",
+          "requiredMarker": "Нет"
+        },
+        {
+          "block": "Данные по реестру торгов",
+          "index": 67,
+          "column": "BP",
+          "subBlock": "Протокол по результатам проведения торгов",
+          "attribute": "67",
+          "fieldName": "Счет на оплату",
+          "requiredMarker": "Нет"
+        }
+      ],
+      "rows": [
+        {
+          "excelRow": 6,
+          "cells": [
+            {
+              "column": "B",
+              "value": "Ростовская область",
+              "kind": "string"
+            },
+            {
+              "column": "C",
+              "value": "Городской округ город Таганрог",
+              "kind": "string"
+            },
+            {
+              "column": "D",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "E",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "F",
+              "value": "Тестовая организация",
+              "kind": "string"
+            },
+            {
+              "column": "G",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "H",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "I",
+              "value": "fixture@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "J",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "K",
+              "value": "Тестовый Тест Тестович",
+              "kind": "string"
+            },
+            {
+              "column": "L",
+              "value": "Тестовая организация",
+              "kind": "string"
+            },
+            {
+              "column": "M",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "N",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "O",
+              "value": "fixture@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "P",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "Q",
+              "value": "Тестовый Тест Тестович",
+              "kind": "string"
+            },
+            {
+              "column": "R",
+              "value": "Аукцион",
+              "kind": "string"
+            },
+            {
+              "column": "S",
+              "value": "Электронный аукцион",
+              "kind": "string"
+            },
+            {
+              "column": "T",
+              "value": "fixture-document-6.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "U",
+              "value": "fixture-document-7.docx",
+              "kind": "string"
+            },
+            {
+              "column": "V",
+              "value": "fixture-document-8.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "W",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "X",
+              "value": "НТО-ЭА-20260913-144",
+              "kind": "string"
+            },
+            {
+              "column": "Y",
+              "value": "https://torgi.gov.ru/new/public/lots/lot/21000000000000001234_1",
+              "kind": "string"
+            },
+            {
+              "column": "Z",
+              "value": "Постановление администрации городского округа Красногорск Московской области от 15.05.2026 № 1120/5 «О проведении открытого аукциона на право размещения нестационарного торгового объекта»",
+              "kind": "string"
+            },
+            {
+              "column": "AA",
+              "value": "01.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AB",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AC",
+              "value": "21.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AD",
+              "value": "18:00",
+              "kind": "string"
+            },
+            {
+              "column": "AE",
+              "value": "22.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AF",
+              "value": "10:00",
+              "kind": "string"
+            },
+            {
+              "column": "AG",
+              "value": "23.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AH",
+              "value": "17:00",
+              "kind": "string"
+            },
+            {
+              "column": "AI",
+              "value": "28.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AJ",
+              "value": "11:00",
+              "kind": "string"
+            },
+            {
+              "column": "AK",
+              "value": "28.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AL",
+              "value": "15:30",
+              "kind": "string"
+            },
+            {
+              "column": "AM",
+              "value": "24.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "AN",
+              "value": "ООО «РТС-тендер»",
+              "kind": "string"
+            },
+            {
+              "column": "AO",
+              "value": "https://www.rts-tender.ru/",
+              "kind": "string"
+            },
+            {
+              "column": "AP",
+              "value": "Договор заключается с победителем в электронной форме не ранее чем через 5 и не позднее чем через 10 рабочих дней со дня размещения итогового протокола; победитель обязан подписать проект договора и внести плату в установленный извещением срок.",
+              "kind": "string"
+            },
+            {
+              "column": "AQ",
+              "value": "Юридические лица и индивидуальные предприниматели, не находящиеся в процессе ликвидации или банкротства, не имеющие просроченной задолженности по обязательным платежам и соответствующие требованиям извещения.",
+              "kind": "string"
+            },
+            {
+              "column": "AR",
+              "value": "Заявка по установленной форме; выписка из ЕГРЮЛ/ЕГРИП; документ о полномочиях представителя; декларация соответствия требованиям; документ, подтверждающий внесение задатка.",
+              "kind": "string"
+            },
+            {
+              "column": "AS",
+              "value": "fixture-document-7.docx",
+              "kind": "string"
+            },
+            {
+              "column": "AT",
+              "value": "Победителем признается участник, предложивший наиболее высокую цену за право размещения НТО.",
+              "kind": "string"
+            },
+            {
+              "column": "AU",
+              "value": 24017,
+              "kind": "string"
+            },
+            {
+              "column": "AV",
+              "value": "123456, Тестовая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "AW",
+              "value": "55.823742, 37.326518",
+              "kind": "string"
+            },
+            {
+              "column": "AX",
+              "value": "Павильон",
+              "kind": "string"
+            },
+            {
+              "column": "AY",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AZ",
+              "value": "Продовольственная",
+              "kind": "string"
+            },
+            {
+              "column": "BA",
+              "value": "18",
+              "kind": "string"
+            },
+            {
+              "column": "BB",
+              "value": "24",
+              "kind": "string"
+            },
+            {
+              "column": "BC",
+              "value": "Круглогодично",
+              "kind": "string"
+            },
+            {
+              "column": "BD",
+              "value": "10.08.2026",
+              "kind": "string"
+            },
+            {
+              "column": "BE",
+              "value": "09.08.2031",
+              "kind": "string"
+            },
+            {
+              "column": "BF",
+              "value": "360000",
+              "kind": "string"
+            },
+            {
+              "column": "BG",
+              "value": "18000",
+              "kind": "string"
+            },
+            {
+              "column": "BH",
+              "value": "72000",
+              "kind": "string"
+            },
+            {
+              "column": "BI",
+              "value": "Состоялись",
+              "kind": "string"
+            },
+            {
+              "column": "BJ",
+              "value": "Тестовый Тест Тестович",
+              "kind": "string"
+            },
+            {
+              "column": "BK",
+              "value": "468000",
+              "kind": "string"
+            },
+            {
+              "column": "BL",
+              "value": "НТО-ЭА-2026/041-П1",
+              "kind": "string"
+            },
+            {
+              "column": "BM",
+              "value": "fixture-document-9.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "BN",
+              "value": "28.07.2026",
+              "kind": "string"
+            },
+            {
+              "column": "BO",
+              "value": "fixture-document-10.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "BP",
+              "value": "fixture-document-11.pdf",
+              "kind": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

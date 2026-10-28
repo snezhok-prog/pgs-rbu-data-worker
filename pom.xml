@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>business-rbu-data-worker</artifactId>
+    <version>8.0.1-SNAPSHOT</version>
+
+    <packaging>jar</packaging>
+
+    <name>business-rbu-data-worker</name>
+    <description>RBU validation, import and rollback external-task worker</description>
+
+    <parent>
+        <groupId>ru.evolenta.sier</groupId>
+        <artifactId>core-commons</artifactId>
+        <version>8.0.7</version>
+        <relativePath/>
+    </parent>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencyManagement>
+        <dependencies>
+            <dependency><groupId>commons-codec</groupId><artifactId>commons-codec</artifactId><version>1.21.0</version></dependency>
+            <dependency><groupId>org.apache.commons</groupId><artifactId>commons-collections4</artifactId><version>4.6.0</version></dependency>
+            <dependency><groupId>commons-io</groupId><artifactId>commons-io</artifactId><version>2.22.0</version></dependency>
+            <dependency><groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>3.20.0</version></dependency>
+            <dependency><groupId>org.apache.logging.log4j</groupId><artifactId>log4j-api</artifactId><version>2.25.5</version></dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+                <dependency>
+                    <groupId>ru.evolenta.sier</groupId>
+                    <artifactId>gostech-commons</artifactId>
+                    <version>8.0.5</version>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>gostech</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>ru.evolenta.sier</groupId>
+                    <artifactId>gostech-commons</artifactId>
+                    <version>8.0.5</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+
+    <properties>
+        <distribution.repository.url>https://git.evolenta.ru/api/v4/projects/1611/packages/maven</distribution.repository.url>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+        <maven.build.timestamp.format>yyyyMMddHHmmssSSS</maven.build.timestamp.format>
+        <skipTests>false</skipTests>
+        <exec.mainClass>ru.evolenta.server.BusinessRbuDataWorker</exec.mainClass>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.21.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.evolenta.sier</groupId>
+            <artifactId>sier-core-external-api</artifactId>
+            <version>8.0.14</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.evolenta.sier</groupId>
+            <artifactId>sier-filestorage-api</artifactId>
+            <version>8.0.11</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.evolenta.sier</groupId>
+            <artifactId>sier-storage-ftp</artifactId>
+            <version>8.0.11</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.evolenta.sier</groupId>
+            <artifactId>sier-storage-s3</artifactId>
+            <version>8.0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId><artifactId>exec-maven-plugin</artifactId><version>3.6.4</version>
+                <configuration><classpathScope>test</classpathScope><skip>${skipTests}</skip></configuration>
+                <executions>
+                    <execution>
+                        <id>worker-self-test</id><phase>test</phase><goals><goal>java</goal></goals>
+                        <configuration><mainClass>ru.evolenta.pgs.worker.SelfTest</mainClass></configuration>
+                    </execution>
+                    <execution>
+                        <id>http-api-contract-test</id><phase>test</phase><goals><goal>java</goal></goals>
+                        <configuration><mainClass>ru.evolenta.pgs.worker.HttpApiContractTest</mainClass></configuration>
+                    </execution>
+                    <execution>
+                        <id>search-completeness-test</id><phase>test</phase><goals><goal>java</goal></goals>
+                        <configuration><mainClass>ru.evolenta.pgs.worker.SearchCompletenessTest</mainClass></configuration>
+                    </execution>
+                    <execution>
+                        <id>advertising-acceptance-fault-test</id><phase>test</phase><goals><goal>java</goal></goals>
+                        <configuration>
+                            <mainClass>ru.evolenta.pgs.worker.AdvertisingAcceptanceFaultTest</mainClass>
+                            <arguments>
+                                <argument>${project.basedir}/src/test/resources/acceptance.json</argument>
+                                <argument>${project.build.directory}/acceptance-${maven.build.timestamp}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <useReleaseProfile>false</useReleaseProfile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <scm>
+	<url>${CI_REPOSITORY_URL}</url>
+        <developerConnection>scm:git:https://${GIT_USERNAME}:${GIT_PASSWORD}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>gitlab-maven</id>
+            <name>Evolenta git package repository</name>
+            <url>https://git.evolenta.ru/api/v4/projects/1611/packages/maven</url>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>gitlab-maven</id>
+            <name>Evolenta git package repository</name>
+            <url>${distribution.repository.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>gitlab-maven</id>
+            <name>Evolenta git package repository</name>
+            <url>${distribution.repository.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

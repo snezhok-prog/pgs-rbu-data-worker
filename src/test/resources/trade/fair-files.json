@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "synthetic-fair-file-1",
+    "originalName": "synthetic-fair-1.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-fair-file-2",
+    "originalName": "synthetic-fair-2.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-fair-file-3",
+    "originalName": "synthetic-fair-3.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-fair-file-4",
+    "originalName": "synthetic-fair-4.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-fair-file-5",
+    "originalName": "synthetic-fair-5.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-fair-file-6",
+    "originalName": "synthetic-fair-6.jpg",
+    "size": 100,
+    "isFile": true
+  }
+]

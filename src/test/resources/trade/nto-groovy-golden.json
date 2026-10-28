@@ -1,0 +1,453 @@
+{
+  "NTOmesto": {
+    "guid": "43e66373-901e-4536-b309-14136d5cead0",
+    "parentEntries": "NTOmesto",
+    "unit": {
+      "id": "organization",
+      "name": "Тестовая организация",
+      "shortName": "Тестовая организация",
+      "inn": "1111111111",
+      "ogrn": "1111111111111",
+      "kpp": "111111111"
+    },
+    "generalInformation": {
+      "Subject": "Ростовская область",
+      "Disctrict": "Городской округ город Таганрог"
+    },
+    "organization": {
+      "_id": "organization",
+      "id": null,
+      "guid": null,
+      "name": "Тестовая организация",
+      "shortName": null,
+      "ogrn": "1111111111111",
+      "inn": "1111111111",
+      "kpp": "111111111"
+    },
+    "approvalDocuments": [],
+    "ntoInformation": {
+      "mainPhotoObject": null,
+      "photosObject": [],
+      "ntoInfoID": "НТО-20260913-144",
+      "ntoInfoSchemeNumber": "НТО-20260913-144",
+      "FullAddress": {
+        "postalCode": "123456",
+        "fullAddress": "Тестовая улица, 1"
+      },
+      "infoAddress": "Тестовый адрес",
+      "OtherInfo": "Тестовый адрес",
+      "cadNumber": "50:11:0010412:1845",
+      "suggestedWhom": "Предложено муниципалитетом",
+      "GeoCoordinates": "55.823742, 37.326518",
+      "GeoCoord1": "55.823792, 37.326451",
+      "GeoCoord2": "55.823805, 37.326583",
+      "GeoCoord3": "55.823700, 37.326601",
+      "GeoCoord4": "55.823688, 37.326470",
+      "GeoCoord5": "55.823792, 37.326451",
+      "GeoCoord6": "",
+      "GeoCoord7": "",
+      "GeoCoord8": "",
+      "GeoCoord9": "",
+      "NtoType": {
+        "code": "TypeNTOPav",
+        "name": "Павильон"
+      },
+      "ntoTypeOther": "",
+      "Specialization": {
+        "code": "SpecificProd",
+        "name": "Продовольственная"
+      },
+      "ntoInfoProductType": {
+        "code": "Goods",
+        "name": "Товары"
+      },
+      "infoSMSP": {
+        "code": "InfoSMSPIskl",
+        "name": "Исключительно СМСП"
+      },
+      "ntoInfoLandArea": 24,
+      "ntoInfoObjectArea": 18,
+      "ntoInfoLandOwnershipType": {
+        "code": "MunLand",
+        "name": "Муниципальная собственность"
+      },
+      "PlacementSchedule": {
+        "code": "YearRound",
+        "name": "Круглогодично"
+      },
+      "seasonPlacementSchedule": [],
+      "TradingData": "https://torgi.gov.ru/new/public/lots/lot/НТО-2026-041",
+      "ProjectStatus": {
+        "code": "StatusProjectPlaceApproved",
+        "name": "Утверждено",
+        "_id": "dict-StatusProjectPlaceApproved"
+      },
+      "SpecProjectStatus": [
+        {
+          "code": "StatusProjectPlaceApprovedOccupiedNoReplacement",
+          "name": "Занято (не подлежащие замене или переносу)",
+          "parentId": "dict-StatusProjectPlaceApproved"
+        }
+      ],
+      "ntoInfoRecordStatus": {
+        "code": "approved",
+        "name": "Утверждено"
+      },
+      "AssortBlock": [
+        {
+          "Assort": {
+            "name": "Выпечка",
+            "code": "SpecificProdBakery"
+          }
+        }
+      ],
+      "ntoInfoSpecialUseZones": null,
+      "ntoInfoPlacementStartDate": "2026-08-10",
+      "ntoInfoPlacementEndDate": "2031-08-09",
+      "Scheduled": "",
+      "fileEnginTopogPlaceNew": {
+        "_id": "fixture-file-1",
+        "originalName": "fixture-document-1.pdf",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "ntoInformation.fileEnginTopogPlaceNew"
+      },
+      "photoSituationNTONew": {
+        "_id": "fixture-file-2",
+        "originalName": "fixture-document-2.jpg",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "ntoInformation.photoSituationNTONew"
+      },
+      "rawAssortment": "Выпечка",
+      "rawAssortmentOther": ""
+    },
+    "resolutionBlock": {
+      "npaAmendmentNumber": "1120/5",
+      "npaAmendmentDate": "2026-05-15",
+      "statusOperator": "Юридическое лицо",
+      "npaAmendmentFile": {
+        "_id": "fixture-file-3",
+        "originalName": "fixture-document-3.pdf",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "resolutionBlock.npaAmendmentFile"
+      }
+    },
+    "operatorInformationFL": {
+      "OperatorName": "",
+      "OperatorBirthday": null,
+      "OperatorSnils": "",
+      "OperatorPassportSeries": "",
+      "OperatorPassportNumber": "",
+      "OperatorPassportWhom": "",
+      "OperatorPassportDepartmentCode": "",
+      "OperatorPlaceBirth": "",
+      "OperatorNumber": "",
+      "OperatorEmail": "",
+      "OperatorPermanentAddress": null,
+      "OperatorFactAddress": null
+    },
+    "operatorInformationIP": {
+      "OperatorName": "",
+      "OperatorOGRNIP": "",
+      "OperatorINN": "",
+      "OperatorNumber": "",
+      "OperatorEmail": "",
+      "OperatorPermanentAddress": null,
+      "OperatorFactAddress": null
+    },
+    "operatorInformationUL": {
+      "OperatorName": "Тестовая организация",
+      "OperatorOGRN": "1111111111111",
+      "OperatorINN": "1111111111",
+      "OperatorKPP": "111111111",
+      "OperatorNumber": "+7 (900) 111-11-11",
+      "OperatorEmail": "fixture@example.invalid",
+      "OperatorUrAddress": {
+        "postalCode": "123456",
+        "fullAddress": "Тестовая улица, 1"
+      },
+      "OperatorFactAddress": {
+        "postalCode": "123456",
+        "fullAddress": "Тестовая улица, 1"
+      },
+      "OrgStateForm": {
+        "code": "12300",
+        "name": "Общества с ограниченной ответственностью"
+      }
+    },
+    "NTOContract": {
+      "ContractNumber": "НТО-2026/041-Д",
+      "ContractStartDate": "2026-08-07",
+      "ContractPeriodStartDate": "2026-08-10",
+      "ContractEndDate": "2031-08-09",
+      "ContractSubject": "Тестовая организация",
+      "TotalContractFee": 468000,
+      "PeriodicContractFee": 7800,
+      "PaymentPeriod": {
+        "code": "monthly",
+        "name": "Ежемесячно"
+      },
+      "NTOPPlacementAgreement": {
+        "_id": "fixture-file-4",
+        "originalName": "fixture-document-4.pdf",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "NTOContract.NTOPPlacementAgreement"
+      }
+    },
+    "blockDopSogl": [
+      {
+        "AdditionalAgreementNumber": "1",
+        "AdditionalAgreementDate": "2026-08-20",
+        "ReasonContract": "Продление договора",
+        "SupplementalAgreementIfAny": {
+          "_id": "fixture-file-5",
+          "originalName": "fixture-document-5.pdf",
+          "size": 100,
+          "isFile": true,
+          "allowExternal": false,
+          "entityFieldPath": "blockDopSogl[0].SupplementalAgreementIfAny"
+        }
+      }
+    ],
+    "migrationSource": {},
+    "OperatorList": "Юридическое лицо"
+  },
+  "nsiLocalObjectNTO": {
+    "guid": "43e66373-901e-4536-b309-14136d5cead0",
+    "LayerId": "1",
+    "Layer": "Нестационарные торговые объекты",
+    "Subject": "Ростовская область",
+    "Disctrict": "Городской округ город Таганрог",
+    "NtoType": "Павильон",
+    "Specialization": "Продовольственная: Выпечка",
+    "NumberNTO": "НТО-20260913-144",
+    "GeoCoordinates": "55.823742, 37.326518",
+    "CadNumber": "50:11:0010412:1845",
+    "FullAddress": "Тестовая улица, 1",
+    "ProjectStatus": "Утверждено: Занято (не подлежащие замене или переносу)",
+    "PlacementSchedule": "Круглогодично",
+    "TradingData": "https://torgi.gov.ru/new/public/lots/lot/НТО-2026-041",
+    "ContractNumber": "НТО-2026/041-Д",
+    "ContractStartDate": "07.08.2026",
+    "ContractEndDate": "09.08.2031",
+    "OperatorName": "Тестовая организация",
+    "OperatorINN": "1111111111",
+    "OperatorOGRN": "1111111111111",
+    "OperatorNumber": "+7 (900) 111-11-11",
+    "OperatorEmail": "fixture@example.invalid",
+    "OtherInfo": "Тестовый адрес",
+    "dictionaryType": "local",
+    "dictionaryUnitId": "organization",
+    "autokey": "43e66373-901e-4536-b309-14136d5cead0",
+    "code": "43e66373-901e-4536-b309-14136d5cead0",
+    "ObjectID": "43e66373-901e-4536-b309-14136d5cead0",
+    "parentEntries": "nsiLocalObjectNTO",
+    "migrationSource": {}
+  },
+  "reestrbiddingReestr": {
+    "guid": "1cfc26eb-5082-40cf-b1b1-e5ee4bcc494e",
+    "parentEntries": "reestrbiddingReestr",
+    "unit": {
+      "id": "organization",
+      "name": "Тестовая организация",
+      "shortName": "Тестовая организация",
+      "inn": "1111111111",
+      "ogrn": "1111111111111",
+      "kpp": "111111111"
+    },
+    "generalInformation": {
+      "Subject": "Ростовская область",
+      "Disctrict": "Городской округ город Таганрог"
+    },
+    "GeneralInfoAuction": {
+      "BiddingInitiator": {
+        "NameInitiator": "Тестовая организация",
+        "UrInitAddress": {
+          "postalCode": "123456",
+          "fullAddress": "Тестовая улица, 1"
+        },
+        "FactInitAddress": {
+          "postalCode": "123456",
+          "fullAddress": "Тестовая улица, 1"
+        },
+        "EmailInit": "fixture@example.invalid",
+        "PhoneInit": "+7 (900) 111-11-11",
+        "ContactPersonInit": "Тестовый Тест Тестович"
+      },
+      "OrgBidding": {
+        "NameOrganizer": "Тестовая организация",
+        "UrOrgAddress": {
+          "postalCode": "123456",
+          "fullAddress": "Тестовая улица, 1"
+        },
+        "FactOrgAdress": {
+          "postalCode": "123456",
+          "fullAddress": "Тестовая улица, 1"
+        },
+        "EmailOrg": "fixture@example.invalid",
+        "PhoneOrg": "+7 (900) 111-11-11",
+        "ContactPersonOrg": "Тестовый Тест Тестович"
+      },
+      "NotificationDocumentation": {
+        "NoticeType": {
+          "code": "auction",
+          "name": "Аукцион"
+        },
+        "BiddingForm": {
+          "code": "Eauction",
+          "name": "Электронный аукцион",
+          "parentCode": "auction"
+        },
+        "NoticeSignedNumber": "НТО-ЭА-20260913-144",
+        "linkTorg": "https://torgi.gov.ru/new/public/lots/lot/21000000000000001234_1",
+        "AgreedNotice": {
+          "_id": "fixture-file-6",
+          "originalName": "fixture-document-6.pdf",
+          "size": 100,
+          "isFile": true,
+          "allowExternal": false,
+          "entityFieldPath": "GeneralInfoAuction.NotificationDocumentation.AgreedNotice"
+        },
+        "ProjectNotice": {
+          "_id": "fixture-file-7",
+          "originalName": "fixture-document-7.docx",
+          "size": 100,
+          "isFile": true,
+          "allowExternal": false,
+          "entityFieldPath": "GeneralInfoAuction.NotificationDocumentation.ProjectNotice"
+        },
+        "ProjectNoticeNTO": {
+          "_id": "fixture-file-8",
+          "originalName": "fixture-document-8.pdf",
+          "size": 100,
+          "isFile": true,
+          "allowExternal": false,
+          "entityFieldPath": "GeneralInfoAuction.NotificationDocumentation.ProjectNoticeNTO"
+        },
+        "ModifiedNoticeRefusalAuction": null
+      },
+      "ProcedureInfo": {
+        "BasisBidding": "Постановление администрации городского округа Красногорск Московской области от 15.05.2026 № 1120/5 «О проведении открытого аукциона на право размещения нестационарного торгового объекта»",
+        "StartOfferDate": "2026-07-01",
+        "StartOfferTime": "09:00",
+        "EndOfferDate": "2026-07-21",
+        "EndOfferTime": "18:00",
+        "StartReviewDate": "2026-07-22",
+        "StartReviewTime": "10:00",
+        "EndReviewDate": "2026-07-23",
+        "EndReviewTime": "17:00",
+        "BiddingDate": "2026-07-28",
+        "BiddingTime": "11:00",
+        "ItogDate": "2026-07-28",
+        "ItogTime": "15:30",
+        "CancelDate": "2026-07-24",
+        "OfferPlaceE": "ООО «РТС-тендер»",
+        "BiddingPlaceE": "https://www.rts-tender.ru/",
+        "TermAndProcedureContract": "Договор заключается с победителем в электронной форме не ранее чем через 5 и не позднее чем через 10 рабочих дней со дня размещения итогового протокола; победитель обязан подписать проект договора и внести плату в установленный извещением срок."
+      },
+      "ApplicationRequirements": {
+        "RequirementsMembers": "Юридические лица и индивидуальные предприниматели, не находящиеся в процессе ликвидации или банкротства, не имеющие просроченной задолженности по обязательным платежам и соответствующие требованиям извещения.",
+        "RequirementsDocs": "Заявка по установленной форме; выписка из ЕГРЮЛ/ЕГРИП; документ о полномочиях представителя; декларация соответствия требованиям; документ, подтверждающий внесение задатка.",
+        "CriteriaWinner": "Победителем признается участник, предложивший наиболее высокую цену за право размещения НТО.",
+        "RequirementsNTO": {
+          "_id": "fixture-file-7",
+          "originalName": "fixture-document-7.docx",
+          "size": 100,
+          "isFile": true,
+          "allowExternal": false,
+          "entityFieldPath": "GeneralInfoAuction.ApplicationRequirements.RequirementsNTO"
+        }
+      }
+    },
+    "InformationOnLots": {
+      "LotInfo": [
+        {
+          "LotName": "",
+          "InfoLot": "",
+          "NTOSchemeNumber": "24017",
+          "LotAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Тестовая улица, 1"
+          },
+          "GeoCoordinates": "55.823742, 37.326518",
+          "TypeNTO": {
+            "code": "TypeNTOPav",
+            "name": "Павильон"
+          },
+          "ntoTypeOther": "",
+          "Specific": {
+            "code": "SpecificProd",
+            "name": "Продовольственная"
+          },
+          "ObjectRange": 18,
+          "LandRange": 24,
+          "PlacementScheduleType": {
+            "code": "YearRound",
+            "name": "Круглогодично"
+          },
+          "StartDate": "2026-08-10",
+          "EndDate": "2031-08-09",
+          "StartPrice": 360000,
+          "StepAuction": 18000,
+          "DepositSize": 72000,
+          "nds": null,
+          "ndsSize": null
+        }
+      ],
+      "AuctionResults": [
+        {
+          "NumberNTO": "24017",
+          "BiddingStatus": {
+            "code": "placed",
+            "name": "Состоялись"
+          },
+          "winner": {
+            "name": "Тестовый Тест Тестович",
+            "PriceOffer": 468000
+          },
+          "ProtocolConsiderNumber": "НТО-ЭА-2026/041-П1",
+          "ProtocolConsiderDate": "2026-07-28",
+          "participants": [],
+          "ProtocolConsider": {
+            "_id": "fixture-file-9",
+            "originalName": "fixture-document-9.pdf",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "InformationOnLots.AuctionResults[0].ProtocolConsider"
+          },
+          "SignedNTO": {
+            "_id": "fixture-file-10",
+            "originalName": "fixture-document-10.pdf",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "InformationOnLots.AuctionResults[0].SignedNTO"
+          },
+          "InvoiceForPayment": [
+            {
+              "_id": "fixture-file-11",
+              "originalName": "fixture-document-11.pdf",
+              "size": 100,
+              "isFile": true,
+              "allowExternal": false,
+              "entityFieldPath": "InformationOnLots.AuctionResults[0].InvoiceForPayment[0]"
+            }
+          ]
+        }
+      ]
+    },
+    "migrationSource": {}
+  },
+  "hashes": {
+    "legacy": "1173ae634e98d20f7cdca861427a152c88613eb03f500ba1150de4bb43e4cd0e",
+    "content": "a7f940ee4aa7955a89d2670cc362b2e1650586a269a22745cda9749dccd53d4c"
+  }
+}

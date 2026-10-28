@@ -1,0 +1,275 @@
+{
+  "reestrpermitsReestr": {
+    "guid": "37680535-616f-4f6e-b247-b64cba1e27d4",
+    "parentEntries": "reestrpermitsReestr",
+    "unit": {
+      "id": "organization",
+      "name": "Тестовая организация",
+      "shortName": "Тестовая организация",
+      "inn": "1111111111",
+      "ogrn": "1111111111111",
+      "kpp": "111111111"
+    },
+    "generalInformation": {
+      "Subject": "Ростовская область",
+      "Disctrict": "Городской округ город Таганрог"
+    },
+    "MeetingProtocol": {},
+    "resolution": {},
+    "positiveDecisionNotification": {},
+    "denialNotification": {},
+    "permission": {
+      "PermissionStatus": {
+        "code": "Working",
+        "name": "Действует"
+      },
+      "PermissionNumber": "Синтетическое значение 6",
+      "PermissionStartDate": "2025-01-01",
+      "permissionEffectiveStartDate": "2025-01-01",
+      "PermissionEndDate": "2025-01-01",
+      "permissionExtensionDate": "2025-01-01",
+      "reissuePermissionFile": {
+        "_id": "synthetic-market-file-1",
+        "originalName": "synthetic-market-1.pdf",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "permission.reissuePermissionFile"
+      }
+    },
+    "suspensionDocumentScourtDecision": {},
+    "violationCorrectionSuspensionDocuments": {},
+    "omsuPetitionSuspensionDocuments": {},
+    "migrationSource": {}
+  },
+  "reestrmarketReestr": {
+    "guid": "349af43d-4c15-4cd9-abb9-38ad679cfed9",
+    "parentEntries": "reestrmarketReestr",
+    "unit": {
+      "id": "organization",
+      "name": "Тестовая организация",
+      "shortName": "Тестовая организация",
+      "inn": "1111111111",
+      "ogrn": "1111111111111",
+      "kpp": "111111111"
+    },
+    "TotalInfo": {
+      "Subject": "Ростовская область",
+      "Disctrict": "Городской округ город Таганрог"
+    },
+    "InfoRetailMarket": {
+      "RetailName": "Синтетическое значение 5",
+      "PermissionStatus": {
+        "code": "Working",
+        "name": "Действует"
+      },
+      "PermissionNumber": "Синтетическое значение 7",
+      "PermissionStartDate": "2025-01-01",
+      "PermissionEndDate": "2025-01-01",
+      "blockMarketAddress": [
+        {
+          "marketAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Синтетическая улица, 1"
+          }
+        },
+        {
+          "marketAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Синтетическая улица, 1"
+          }
+        },
+        {
+          "marketAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Синтетическая улица, 1"
+          }
+        }
+      ],
+      "marketType": {
+        "code": "Specialized",
+        "name": "Специализированный",
+        "_id": "dict-Specialized"
+      },
+      "marketSpecialization": {
+        "code": "Agricultural",
+        "name": "Сельскохозяйственный",
+        "parentId": "dict-Specialized"
+      },
+      "marketOtherSpecialization": "Синтетическое значение 15",
+      "GeoCoordinates": "55.75, 037.61",
+      "blockCadNumber": [
+        {
+          "CadNumber": "77:01:123456:1"
+        },
+        {
+          "CadNumber": "77:01:123456:1"
+        },
+        {
+          "CadNumber": "77:01:123456:1"
+        }
+      ],
+      "cadsObjects": [
+        {
+          "CadNumber": "77:01:123456:1"
+        },
+        {
+          "CadNumber": "77:01:123456:1"
+        },
+        {
+          "CadNumber": "77:01:123456:1"
+        }
+      ],
+      "constituentFiles": {
+        "_id": "synthetic-market-file-2",
+        "originalName": "synthetic-market-2.pdf",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "InfoRetailMarket.constituentFiles"
+      },
+      "marketArea": 123.45,
+      "PlaceNumber": 11,
+      "operationPeriod": {
+        "code": "PermanentType",
+        "name": "Постоянный"
+      },
+      "marketOpeningTime": "09:00",
+      "marketClosingTime": "09:00",
+      "dayOnBlock": [
+        {
+          "dayOn": {
+            "code": "Monday",
+            "name": "Понедельник"
+          },
+          "marketOpeningTimeOther": "09:00",
+          "marketClosingTimeOther": "09:00"
+        },
+        {
+          "dayOn": {
+            "code": "Monday",
+            "name": "Понедельник"
+          },
+          "marketOpeningTimeOther": "09:00",
+          "marketClosingTimeOther": "09:00"
+        },
+        {
+          "dayOn": {
+            "code": "Monday",
+            "name": "Понедельник"
+          },
+          "marketOpeningTimeOther": "09:00",
+          "marketClosingTimeOther": "09:00"
+        }
+      ],
+      "BlockDayOff": [],
+      "sanitaryDayOfMonth": "Синтетическое значение 42",
+      "mainPhotoObject": {
+        "_id": "synthetic-market-file-3",
+        "originalName": "synthetic-market-3.jpg",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "InfoRetailMarket.mainPhotoObject"
+      },
+      "photosObject": [
+        {
+          "photoObject": {
+            "_id": "synthetic-market-file-4",
+            "originalName": "synthetic-market-4.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "InfoRetailMarket.photosObject[0].photoObject"
+          }
+        },
+        {
+          "photoObject": {
+            "_id": "synthetic-market-file-5",
+            "originalName": "synthetic-market-5.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "InfoRetailMarket.photosObject[1].photoObject"
+          }
+        },
+        {
+          "photoObject": {
+            "_id": "synthetic-market-file-6",
+            "originalName": "synthetic-market-6.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "InfoRetailMarket.photosObject[2].photoObject"
+          }
+        },
+        {
+          "photoObject": {
+            "_id": "synthetic-market-file-7",
+            "originalName": "synthetic-market-7.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "InfoRetailMarket.photosObject[3].photoObject"
+          }
+        }
+      ],
+      "dayOffDayOff": true
+    },
+    "InfoCompanyManagerMarket": {
+      "OperatorName": "Синтетическое значение 43",
+      "ShortNameUL": "Синтетическое значение 44",
+      "OrgStateForm": {
+        "code": "70402",
+        "name": "Негосударственные пенсионные фонды"
+      },
+      "AddressUL": {
+        "postalCode": "123456",
+        "fullAddress": "Синтетическая улица, 1"
+      },
+      "AddressActual": {
+        "postalCode": "123456",
+        "fullAddress": "Синтетическая улица, 1"
+      },
+      "OperatorINN": "1111111111",
+      "OperatorOGRN": "1111111111111",
+      "RykFIO": "Синтетическое значение 50",
+      "OperatorNumber": "+7 (900) 111-11-11",
+      "OperatorEmail": "synthetic@example.invalid"
+    },
+    "migrationSource": {}
+  },
+  "nsiLocalObjectMarket": {
+    "guid": "349af43d-4c15-4cd9-abb9-38ad679cfed9",
+    "code": "349af43d-4c15-4cd9-abb9-38ad679cfed9",
+    "autokey": "349af43d-4c15-4cd9-abb9-38ad679cfed9",
+    "ObjectID": "349af43d-4c15-4cd9-abb9-38ad679cfed9",
+    "parentEntries": "nsiLocalObjectMarket",
+    "LayerId": "2",
+    "Layer": "Розничные рынки",
+    "Subject": "Ростовская область",
+    "Disctrict": "Городской округ город Таганрог",
+    "FullAddress": "123456, Синтетическая улица, 1; 123456, Синтетическая улица, 1; 123456, Синтетическая улица, 1",
+    "GeoCoordinates": "55.75, 037.61",
+    "CadNumber": "77:01:123456:1; 77:01:123456:1; 77:01:123456:1",
+    "PermissionNumber": "Синтетическое значение 7",
+    "PermissionStartDate": "01.01.2025",
+    "PermissionEndDate": "01.01.2025",
+    "PermissionStatus": "Действует",
+    "TitleMarket": "Синтетическое значение 5",
+    "TypeMarket": "Специализированный",
+    "MarketSpecialization": "Сельскохозяйственный",
+    "OperatingPeriod": "Постоянный",
+    "StartTimeMarket": "09:00",
+    "EndTimeMarket": "09:00",
+    "PlaceNumber": "11",
+    "OperatorName": "Синтетическое значение 43",
+    "OperatorINN": "1111111111",
+    "OperatorOGRN": "1111111111111",
+    "OperatorNumber": "+7 (900) 111-11-11",
+    "OperatorEmail": "synthetic@example.invalid",
+    "dictionaryType": "local",
+    "dictionaryUnitId": "organization",
+    "migrationSource": {}
+  }
+}

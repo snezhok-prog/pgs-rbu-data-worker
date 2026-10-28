@@ -1,0 +1,939 @@
+{
+  "provenance": "Synthetic mapping-only fixture from published headers and field paths. Populates mutually exclusive branches deliberately; not a successful import fixture.",
+  "dataType": "Рынки",
+  "fileSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "parserVersion": "rbu-trade-4.0",
+  "file": {
+    "id": "synthetic-market-xlsx",
+    "originalName": "synthetic-market.xlsx",
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "title": {
+    "region": "Ростовская область",
+    "municipality": "Городской округ город Таганрог"
+  },
+  "referenceLists": {
+    "entries": [
+      {
+        "name": "Субъекты РФ",
+        "values": [
+          "Ростовская область"
+        ]
+      }
+    ]
+  },
+  "sheetNames": {
+    "sheet2": "2. Реестр разрешений",
+    "sheet3": "3. Реестр рынков"
+  },
+  "sheets": [
+    {
+      "code": "sheet2",
+      "columns": [
+        {
+          "column": "B",
+          "attribute": "1",
+          "fieldName": "Субъект РФ",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "C",
+          "attribute": "2",
+          "fieldName": "Муниципальный район/округ, городской округ или внутригородская территория",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "D",
+          "attribute": "3",
+          "fieldName": "ОГРН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "E",
+          "attribute": "4",
+          "fieldName": "ИНН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "F",
+          "attribute": "5",
+          "fieldName": "Статус разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на организацию розничного рынка",
+          "subBlock": "Сведения о разрешении на организацию розничного рынка"
+        },
+        {
+          "column": "G",
+          "attribute": "6",
+          "fieldName": "Номер разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на организацию розничного рынка",
+          "subBlock": "Сведения о разрешении на организацию розничного рынка"
+        },
+        {
+          "column": "H",
+          "attribute": "7",
+          "fieldName": "Дата выдачи разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на организацию розничного рынка",
+          "subBlock": "Сведения о разрешении на организацию розничного рынка"
+        },
+        {
+          "column": "I",
+          "attribute": "9",
+          "fieldName": "Дата начала действия разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на организацию розничного рынка",
+          "subBlock": "Сведения о разрешении на организацию розничного рынка"
+        },
+        {
+          "column": "J",
+          "attribute": "10",
+          "fieldName": "Дата завершения действия разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на организацию розничного рынка",
+          "subBlock": "Сведения о разрешении на организацию розничного рынка"
+        },
+        {
+          "column": "K",
+          "attribute": "11",
+          "fieldName": "Дата, до которой продлено действие разрешения",
+          "requiredMarker": "Нет",
+          "block": "Сведения о разрешении на организацию розничного рынка",
+          "subBlock": "Сведения о разрешении на организацию розничного рынка"
+        },
+        {
+          "column": "L",
+          "attribute": "12",
+          "fieldName": "Разрешение на организацию розничного рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о разрешении на организацию розничного рынка",
+          "subBlock": "Сведения о разрешении на организацию розничного рынка"
+        }
+      ],
+      "rows": [
+        {
+          "excelRow": 6,
+          "cells": [
+            {
+              "column": "B",
+              "value": "Ростовская область",
+              "kind": "string"
+            },
+            {
+              "column": "C",
+              "value": "Городской округ город Таганрог",
+              "kind": "string"
+            },
+            {
+              "column": "D",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "E",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "F",
+              "value": "Действует",
+              "kind": "string"
+            },
+            {
+              "column": "G",
+              "value": "Синтетическое значение 6",
+              "kind": "string"
+            },
+            {
+              "column": "H",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "I",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "J",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "K",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "L",
+              "value": "synthetic-market-1.pdf",
+              "kind": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sheet3",
+      "columns": [
+        {
+          "column": "B",
+          "attribute": "1",
+          "fieldName": "Субъект РФ",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "C",
+          "attribute": "2",
+          "fieldName": "Муниципальный район/округ, городской округ или внутригородская территория ",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "D",
+          "attribute": "3",
+          "fieldName": "ОГРН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "E",
+          "attribute": "4",
+          "fieldName": "ИНН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "F",
+          "attribute": "5",
+          "fieldName": "Наименование рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "G",
+          "attribute": "6",
+          "fieldName": "Статус разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "H",
+          "attribute": "7",
+          "fieldName": "Номер разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "I",
+          "attribute": "8",
+          "fieldName": "Дата выдачи разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "J",
+          "attribute": "9",
+          "fieldName": "Дата завершения действия разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "K",
+          "attribute": "10",
+          "fieldName": "1. Местоположение объекта или объектов недвижимости, где предполагается организовать рынок",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "L",
+          "attribute": "11",
+          "fieldName": "2. Местоположение объекта или объектов недвижимости, где предполагается организовать рынок",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "M",
+          "attribute": "12",
+          "fieldName": "3. Местоположение объекта или объектов недвижимости, где предполагается организовать рынок",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "N",
+          "attribute": "13",
+          "fieldName": "Тип рынка",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "O",
+          "attribute": "14",
+          "fieldName": "Специализация рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "P",
+          "attribute": "15",
+          "fieldName": "Иная специализация рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "Q",
+          "attribute": "16",
+          "fieldName": "Геокоординаты точки, на которой расположен рынок",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "R",
+          "attribute": "17",
+          "fieldName": "1. Кадастровый номер земельного участка",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "S",
+          "attribute": "18",
+          "fieldName": "2. Кадастровый номер земельного участка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "T",
+          "attribute": "19",
+          "fieldName": "3. Кадастровый номер земельного участка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "U",
+          "attribute": "20",
+          "fieldName": "1. Кадастровый номер объекта недвижимости",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "V",
+          "attribute": "21",
+          "fieldName": "2. Кадастровый номер объекта недвижимости",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "W",
+          "attribute": "22",
+          "fieldName": "3. Кадастровый номер объекта недвижимости",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "X",
+          "attribute": "23",
+          "fieldName": "Учредительные документы",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "Y",
+          "attribute": "24",
+          "fieldName": "Площадь рынка, кв. м.",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "Z",
+          "attribute": "25",
+          "fieldName": "Число торговых мест, шт.",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AA",
+          "attribute": "26",
+          "fieldName": "Период функционирования рынка",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AB",
+          "attribute": "27",
+          "fieldName": "Основное время начала работы рынка",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AC",
+          "attribute": "28",
+          "fieldName": "Основное время окончания работы рынка",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AD",
+          "attribute": "29",
+          "fieldName": "1. День недели, который отличается от основного",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AE",
+          "attribute": "30",
+          "fieldName": "1. Время начала работы рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AF",
+          "attribute": "31",
+          "fieldName": "1. Время окончания работы рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AG",
+          "attribute": "32",
+          "fieldName": "2. День недели, который отличается от основного",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AH",
+          "attribute": "33",
+          "fieldName": "2. Время начала работы рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AI",
+          "attribute": "34",
+          "fieldName": "2. Время окончания работы рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AJ",
+          "attribute": "35",
+          "fieldName": "3. День недели, который отличается от основного",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AK",
+          "attribute": "36",
+          "fieldName": "3. Время начала работы рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AL",
+          "attribute": "37",
+          "fieldName": "3. Время окончания работы рынка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AM",
+          "attribute": "38",
+          "fieldName": "Без выходных",
+          "requiredMarker": "Да",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AN",
+          "attribute": "39",
+          "fieldName": "1. Выходной день",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AO",
+          "attribute": "40",
+          "fieldName": "2. Выходной день",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AP",
+          "attribute": "41",
+          "fieldName": "3. Выходной день",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AQ",
+          "attribute": "42",
+          "fieldName": "Санитарный день месяца",
+          "requiredMarker": "Нет",
+          "block": "Сведения о розничном рынке",
+          "subBlock": "Сведения о розничном рынке"
+        },
+        {
+          "column": "AR",
+          "attribute": "43",
+          "fieldName": "Наименование оператора",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AS",
+          "attribute": "44",
+          "fieldName": "Краткое наименование ЮЛ",
+          "requiredMarker": "Нет",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AT",
+          "attribute": "45",
+          "fieldName": "Организационно-правовая форма",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AU",
+          "attribute": "46",
+          "fieldName": "Юридический адрес",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AV",
+          "attribute": "47",
+          "fieldName": "Фактический адрес",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AW",
+          "attribute": "48",
+          "fieldName": "ИНН оператора",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AX",
+          "attribute": "49",
+          "fieldName": "ОГРН оператора",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AY",
+          "attribute": "50",
+          "fieldName": "ФИО руководителя",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "AZ",
+          "attribute": "51",
+          "fieldName": "Контактный номер оператора",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "BA",
+          "attribute": "52",
+          "fieldName": "Адрес электронной почты оператора",
+          "requiredMarker": "Да",
+          "block": "Сведения об управляющей рынком компании",
+          "subBlock": "Сведения об управляющей рынком компании"
+        },
+        {
+          "column": "BB",
+          "attribute": "53",
+          "fieldName": "Фотография объекта (основная)",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BC",
+          "attribute": "54",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BD",
+          "attribute": "55",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BE",
+          "attribute": "56",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BF",
+          "attribute": "57",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        }
+      ],
+      "rows": [
+        {
+          "excelRow": 6,
+          "cells": [
+            {
+              "column": "B",
+              "value": "Ростовская область",
+              "kind": "string"
+            },
+            {
+              "column": "C",
+              "value": "Городской округ город Таганрог",
+              "kind": "string"
+            },
+            {
+              "column": "D",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "E",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "F",
+              "value": "Синтетическое значение 5",
+              "kind": "string"
+            },
+            {
+              "column": "G",
+              "value": "Действует",
+              "kind": "string"
+            },
+            {
+              "column": "H",
+              "value": "Синтетическое значение 7",
+              "kind": "string"
+            },
+            {
+              "column": "I",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "J",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "K",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "L",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "M",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "N",
+              "value": "Специализированный",
+              "kind": "string"
+            },
+            {
+              "column": "O",
+              "value": "Сельскохозяйственный",
+              "kind": "string"
+            },
+            {
+              "column": "P",
+              "value": "Синтетическое значение 15",
+              "kind": "string"
+            },
+            {
+              "column": "Q",
+              "value": "55.75, 037.61",
+              "kind": "string"
+            },
+            {
+              "column": "R",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "S",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "T",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "U",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "V",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "W",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "X",
+              "value": "synthetic-market-2.pdf",
+              "kind": "string"
+            },
+            {
+              "column": "Y",
+              "value": "123.45",
+              "kind": "string"
+            },
+            {
+              "column": "Z",
+              "value": "11",
+              "kind": "string"
+            },
+            {
+              "column": "AA",
+              "value": "Постоянный",
+              "kind": "string"
+            },
+            {
+              "column": "AB",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AC",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AD",
+              "value": "Понедельник",
+              "kind": "string"
+            },
+            {
+              "column": "AE",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AF",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AG",
+              "value": "Понедельник",
+              "kind": "string"
+            },
+            {
+              "column": "AH",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AI",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AJ",
+              "value": "Понедельник",
+              "kind": "string"
+            },
+            {
+              "column": "AK",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AL",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AM",
+              "value": "Да",
+              "kind": "string"
+            },
+            {
+              "column": "AN",
+              "value": "Понедельник",
+              "kind": "string"
+            },
+            {
+              "column": "AO",
+              "value": "Понедельник",
+              "kind": "string"
+            },
+            {
+              "column": "AP",
+              "value": "Понедельник",
+              "kind": "string"
+            },
+            {
+              "column": "AQ",
+              "value": "Синтетическое значение 42",
+              "kind": "string"
+            },
+            {
+              "column": "AR",
+              "value": "Синтетическое значение 43",
+              "kind": "string"
+            },
+            {
+              "column": "AS",
+              "value": "Синтетическое значение 44",
+              "kind": "string"
+            },
+            {
+              "column": "AT",
+              "value": "Негосударственные пенсионные фонды",
+              "kind": "string"
+            },
+            {
+              "column": "AU",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "AV",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "AW",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AX",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AY",
+              "value": "Синтетическое значение 50",
+              "kind": "string"
+            },
+            {
+              "column": "AZ",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "BA",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "BB",
+              "value": "synthetic-market-3.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BC",
+              "value": "synthetic-market-4.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BD",
+              "value": "synthetic-market-5.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BE",
+              "value": "synthetic-market-6.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BF",
+              "value": "synthetic-market-7.jpg",
+              "kind": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

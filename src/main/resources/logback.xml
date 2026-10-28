@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                <Pattern>
+                    %-38(%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread]) %-5level %logger{36} - %msg%n
+                </Pattern>
+            </pattern>
+        </layout>
+    </appender>
+
+    <appender name="FILE_FLUENT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>log/log.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>log/log.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>2</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                <Pattern>
+                    x-b3-traceid=%X{X-B3-TraceId:-} x-b3-spanid=%X{X-B3-SpanId:-} x-b3-parentspanid=%X{X-B3-ParentSpanId:-} x-b3-sampled=%X{X-B3-Sampled:-} x-b3-flags=%X{X-B3-Flags:-} caller_file_name=%file serverEventDatetime="%d" logLevel=%level threadName=%thread  message="%replace(%replace(%m){'\n','\u2028'}){'\"','\''}" exception="%replace(%replace(%ex){'\"','\u2028'}){'\n','\u2028'}%nopex" callerLine=%L callerMethod="%replace(%caller){'\n','\u2028'}" loggerName="%10.10logger" callerClass=%logger{40} levelStr="%level" levelInt="%level" mdc= \n
+                </Pattern>
+            </pattern>
+        </layout>
+    </appender>
+
+    <root level="info" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE_FLUENT"/>
+    </root>
+</configuration>

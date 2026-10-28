@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "synthetic-market-file-1",
+    "originalName": "synthetic-market-1.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-market-file-2",
+    "originalName": "synthetic-market-2.pdf",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-market-file-3",
+    "originalName": "synthetic-market-3.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-market-file-4",
+    "originalName": "synthetic-market-4.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-market-file-5",
+    "originalName": "synthetic-market-5.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-market-file-6",
+    "originalName": "synthetic-market-6.jpg",
+    "size": 100,
+    "isFile": true
+  },
+  {
+    "_id": "synthetic-market-file-7",
+    "originalName": "synthetic-market-7.jpg",
+    "size": 100,
+    "isFile": true
+  }
+]

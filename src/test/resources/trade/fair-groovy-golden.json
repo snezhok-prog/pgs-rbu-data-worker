@@ -1,0 +1,468 @@
+{
+  "FairMesto": {
+    "guid": "1e752c2e-12e3-4903-b346-64be1d20c300",
+    "parentEntries": "FairMesto",
+    "unit": {
+      "id": "organization",
+      "name": "Тестовая организация",
+      "shortName": "Тестовая организация",
+      "inn": "1111111111",
+      "ogrn": "1111111111111",
+      "kpp": "111111111"
+    },
+    "generalInformation": {
+      "subject": "Ростовская область",
+      "disctrict": "Городской округ город Таганрог"
+    },
+    "placeMarketInfo": {
+      "marketSchemeNumber": "Синтетическое значение 5",
+      "coordinates": "55.75, 037.61",
+      "blockCadNumber": [
+        {
+          "cadNumber": "77:01:123456:1",
+          "landAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Синтетическая улица, 1"
+          }
+        }
+      ],
+      "cadsObjects": [
+        {
+          "cadObjNum": "77:01:123456:1",
+          "objectAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Синтетическая улица, 1"
+          }
+        }
+      ],
+      "landArea": 123.45,
+      "marketType": {
+        "code": "specialized",
+        "name": "Специализированная"
+      },
+      "marketSpecialization": {
+        "code": "agricultural",
+        "name": "Сельскохозяйственная"
+      },
+      "marketSpecializationOther": "Синтетическое значение 14",
+      "statusFairPlace": {
+        "code": "approved",
+        "name": "Утверждено"
+      },
+      "statusFairPlaceSpecific": {
+        "code": "approvedFree",
+        "name": "Свободно",
+        "parentCode": "approved"
+      },
+      "statusPlaceFair": "Утверждено"
+    },
+    "marketInfo": [
+      {
+        "marketNumber": "Синтетическое значение 18",
+        "permissionNumber": "Синтетическое значение 19",
+        "marketName": "Синтетическое значение 20",
+        "blockMarketDates": {
+          "startDate": "2025-01-01",
+          "endDate": "2025-01-01"
+        },
+        "blockMarketOperatingTime": {
+          "marketOpeningTime": "09:00",
+          "marketClosingTime": "09:00"
+        },
+        "marketStatus": {
+          "code": "active",
+          "name": "Действует"
+        },
+        "marketFrequency": {
+          "code": "regular",
+          "name": "Регулярная"
+        },
+        "marketVariation": {
+          "code": "regularPermanent",
+          "name": "Постоянно действующая",
+          "parentCode": "regular"
+        },
+        "placeCount": 11,
+        "placeCountFree": 11,
+        "chooseAuthorityAsOrganizator": false,
+        "statusLegal": "Юридическое лицо",
+        "blockOrganizerULInfo": {
+          "fullName": "Синтетическое значение 32",
+          "shortName": "",
+          "orgStateForm": null,
+          "ogrn": "1111111111111",
+          "inn": "1111111111",
+          "kpp": "",
+          "fioUL": "",
+          "phoneNumber": "+7 (900) 111-11-11",
+          "email": "synthetic@example.invalid",
+          "addressUL": null,
+          "addressFact": null
+        }
+      },
+      {
+        "marketNumber": "Синтетическое значение 45",
+        "permissionNumber": "Синтетическое значение 46",
+        "marketName": "Синтетическое значение 47",
+        "blockMarketDates": {
+          "startDate": "2025-01-01",
+          "endDate": "2025-01-01"
+        },
+        "blockMarketOperatingTime": {
+          "marketOpeningTime": "09:00",
+          "marketClosingTime": "09:00"
+        },
+        "marketStatus": {
+          "code": "active",
+          "name": "Действует"
+        },
+        "marketFrequency": {
+          "code": "regular",
+          "name": "Регулярная"
+        },
+        "marketVariation": {
+          "code": "regularPermanent",
+          "name": "Постоянно действующая",
+          "parentCode": "regular"
+        },
+        "placeCount": 11,
+        "placeCountFree": 11,
+        "chooseAuthorityAsOrganizator": false,
+        "statusLegal": "Юридическое лицо",
+        "blockOrganizerULInfo": {
+          "fullName": "Синтетическое значение 59",
+          "shortName": "",
+          "orgStateForm": null,
+          "ogrn": "1111111111111",
+          "inn": "1111111111",
+          "kpp": "",
+          "fioUL": "",
+          "phoneNumber": "+7 (900) 111-11-11",
+          "email": "synthetic@example.invalid",
+          "addressUL": null,
+          "addressFact": null
+        }
+      }
+    ],
+    "migrationSource": {}
+  },
+  "nsiLocalObjectFair": [
+    {
+      "guid": "029d4697-a290-4b3f-8ccf-b946013348fc",
+      "code": "029d4697-a290-4b3f-8ccf-b946013348fc",
+      "autokey": "029d4697-a290-4b3f-8ccf-b946013348fc",
+      "ObjectID": "029d4697-a290-4b3f-8ccf-b946013348fc",
+      "parentEntries": "nsiLocalObjectFair",
+      "LayerId": "3",
+      "Layer": "Ярмарки",
+      "dictionaryType": "local",
+      "dictionaryUnitId": "organization",
+      "Subject": "Ростовская область",
+      "Disctrict": "Городской округ город Таганрог",
+      "FairType": "Специализированная",
+      "SpecializationFair": "Сельскохозяйственная",
+      "NumberFair": "Синтетическое значение 18",
+      "GeoCoordinates": "55.75, 037.61",
+      "CadNumber": "77:01:123456:1",
+      "PermissionNumber": "Синтетическое значение 19",
+      "PermissionStartDate": "-",
+      "PermissionEndDate": "-",
+      "TitleFair": "Синтетическое значение 20",
+      "NumberFairLocation": "Синтетическое значение 5",
+      "FullAddress": "123456, Синтетическая улица, 1",
+      "ProjectStatus": "Утверждено: Свободно",
+      "LandArea": "123.45",
+      "FairStatus": "Действует",
+      "FairStartDate": "01.01.2025",
+      "FairEndDate": "01.01.2025",
+      "StartTime": "09:00",
+      "EndTime": "09:00",
+      "OrganizerName": "Синтетическое значение 32",
+      "OrganizerINN": "1111111111",
+      "OrganizerOGRN": "1111111111111",
+      "OrganizerOGRNIP": "-",
+      "OrganizerNumber": "+7 (900) 111-11-11",
+      "OrganizerEmail": "synthetic@example.invalid",
+      "FrequencyFair": "Регулярная",
+      "FairKind": "Постоянно действующая",
+      "NumberPlace": "11",
+      "migrationSource": {}
+    },
+    {
+      "guid": "52355e25-e699-4b02-9dad-1748ee9780b0",
+      "code": "52355e25-e699-4b02-9dad-1748ee9780b0",
+      "autokey": "52355e25-e699-4b02-9dad-1748ee9780b0",
+      "ObjectID": "52355e25-e699-4b02-9dad-1748ee9780b0",
+      "parentEntries": "nsiLocalObjectFair",
+      "LayerId": "3",
+      "Layer": "Ярмарки",
+      "dictionaryType": "local",
+      "dictionaryUnitId": "organization",
+      "Subject": "Ростовская область",
+      "Disctrict": "Городской округ город Таганрог",
+      "FairType": "Специализированная",
+      "SpecializationFair": "Сельскохозяйственная",
+      "NumberFair": "Синтетическое значение 45",
+      "GeoCoordinates": "55.75, 037.61",
+      "CadNumber": "77:01:123456:1",
+      "PermissionNumber": "Синтетическое значение 46",
+      "PermissionStartDate": "-",
+      "PermissionEndDate": "-",
+      "TitleFair": "Синтетическое значение 47",
+      "NumberFairLocation": "Синтетическое значение 5",
+      "FullAddress": "123456, Синтетическая улица, 1",
+      "ProjectStatus": "Утверждено: Свободно",
+      "LandArea": "123.45",
+      "FairStatus": "Действует",
+      "FairStartDate": "01.01.2025",
+      "FairEndDate": "01.01.2025",
+      "StartTime": "09:00",
+      "EndTime": "09:00",
+      "OrganizerName": "Синтетическое значение 59",
+      "OrganizerINN": "1111111111",
+      "OrganizerOGRN": "1111111111111",
+      "OrganizerOGRNIP": "-",
+      "OrganizerNumber": "+7 (900) 111-11-11",
+      "OrganizerEmail": "synthetic@example.invalid",
+      "FrequencyFair": "Регулярная",
+      "FairKind": "Постоянно действующая",
+      "NumberPlace": "11",
+      "migrationSource": {}
+    }
+  ],
+  "FairPermits": {
+    "guid": "6fe54b9d-3892-4146-a3a0-e8d4b706f04c",
+    "parentEntries": "FairPermits",
+    "unit": {
+      "id": "organization",
+      "name": "Тестовая организация",
+      "shortName": "Тестовая организация",
+      "inn": "1111111111",
+      "ogrn": "1111111111111",
+      "kpp": "111111111"
+    },
+    "generalInformation": {
+      "subject": "Ростовская область",
+      "disctrict": "Городской округ город Таганрог"
+    },
+    "permission": {
+      "permissionNumber": "",
+      "permissionStatus": {
+        "code": "Working",
+        "name": "Действует"
+      },
+      "fairNumber": "Синтетическое значение 7",
+      "permissionDate": "2025-01-01",
+      "permissionStartDate": "2025-01-01",
+      "permissionEndDate": "2025-01-01",
+      "permissionFile": {
+        "_id": "synthetic-fair-file-1",
+        "originalName": "synthetic-fair-1.pdf",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "permission.permissionFile"
+      }
+    },
+    "migrationSource": {}
+  },
+  "Fair": {
+    "guid": "9146b01c-89b7-4600-9dde-f33c8da76879",
+    "parentEntries": "Fair",
+    "unit": {
+      "id": "organization",
+      "name": "Тестовая организация",
+      "shortName": "Тестовая организация",
+      "inn": "1111111111",
+      "ogrn": "1111111111111",
+      "kpp": "111111111"
+    },
+    "generalInformation": {
+      "subject": "Ростовская область",
+      "disctrict": ""
+    },
+    "marketInfo": {
+      "marketNumber": "Синтетическое значение 5",
+      "coordinates": "55.75, 037.61",
+      "permissionNumber": "Синтетическое значение 7",
+      "permissionDate": "2025-01-01",
+      "permissionEndDate": "2025-01-01",
+      "marketStatus": {
+        "code": "active",
+        "name": "Действует"
+      },
+      "marketName": "",
+      "marketType": {
+        "code": "specialized",
+        "name": "Специализированная"
+      },
+      "marketSpecialization": {
+        "code": "agricultural",
+        "name": "Сельскохозяйственная"
+      },
+      "marketSpecializationOther": "Синтетическое значение 14",
+      "marketPurpose": {
+        "code": "culturePromotion",
+        "name": "Продвижение ценностей национальной культуры среди отечественных и иностранных посетителей"
+      },
+      "marketPurposeOther": "Синтетическое значение 16",
+      "marketVariation": {
+        "code": "regular",
+        "name": "Регулярная"
+      },
+      "marketFrequency": {
+        "code": "regularPermanent",
+        "name": "Постоянно действующая",
+        "parentCode": "regular"
+      },
+      "marketArea": 123.45,
+      "blockMarketDates": {
+        "startDate": "2025-01-01",
+        "endDate": "2025-01-01"
+      },
+      "blockMarketOperatingTime": {
+        "marketOpeningTime": "09:00",
+        "marketClosingTime": "09:00"
+      },
+      "dayOnBlock": [
+        {
+          "dayOn": {
+            "code": "AllWeek",
+            "name": "Без выходных"
+          },
+          "marketOpeningTimeOther": "09:00",
+          "marketClosingTimeOther": "09:00"
+        },
+        {
+          "dayOn": {
+            "code": "AllWeek",
+            "name": "Без выходных"
+          },
+          "marketOpeningTimeOther": "09:00",
+          "marketClosingTimeOther": "09:00"
+        },
+        {
+          "dayOn": {
+            "code": "AllWeek",
+            "name": "Без выходных"
+          },
+          "marketOpeningTimeOther": "09:00",
+          "marketClosingTimeOther": "09:00"
+        }
+      ],
+      "BlockDayOff": [],
+      "sanitaryDayOfMonth": "Синтетическое значение 37",
+      "placeCount": 11,
+      "placeCountFree": 11,
+      "placeNumber": "Синтетическое значение 59",
+      "blockCadNumber": [
+        {
+          "cadObjNum": "77:01:123456:1",
+          "landAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Синтетическая улица, 1"
+          }
+        }
+      ],
+      "cadsObjects": [
+        {
+          "cadNumber": "77:01:123456:1",
+          "objectAddress": {
+            "postalCode": "123456",
+            "fullAddress": "Синтетическая улица, 1"
+          }
+        }
+      ],
+      "statusFairPlace": {
+        "code": "approved",
+        "name": "Утверждено"
+      },
+      "statusFairPlaceSpecific": {
+        "code": "approvedFree",
+        "name": "Свободно",
+        "parentCode": "approved"
+      },
+      "statusPlaceFair": "Утверждено",
+      "landArea": 123.45,
+      "mainPhotoObject": {
+        "_id": "synthetic-fair-file-2",
+        "originalName": "synthetic-fair-2.jpg",
+        "size": 100,
+        "isFile": true,
+        "allowExternal": false,
+        "entityFieldPath": "marketInfo.mainPhotoObject"
+      },
+      "photosObject": [
+        {
+          "photoObject": {
+            "_id": "synthetic-fair-file-3",
+            "originalName": "synthetic-fair-3.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "marketInfo.photosObject[0].photoObject"
+          }
+        },
+        {
+          "photoObject": {
+            "_id": "synthetic-fair-file-4",
+            "originalName": "synthetic-fair-4.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "marketInfo.photosObject[1].photoObject"
+          }
+        },
+        {
+          "photoObject": {
+            "_id": "synthetic-fair-file-5",
+            "originalName": "synthetic-fair-5.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "marketInfo.photosObject[2].photoObject"
+          }
+        },
+        {
+          "photoObject": {
+            "_id": "synthetic-fair-file-6",
+            "originalName": "synthetic-fair-6.jpg",
+            "size": 100,
+            "isFile": true,
+            "allowExternal": false,
+            "entityFieldPath": "marketInfo.photosObject[3].photoObject"
+          }
+        }
+      ],
+      "dayOffDayOff": {
+        "code": "AllWeek",
+        "name": "Без выходных"
+      }
+    },
+    "migrationSource": {},
+    "chooseAuthorityAsOrganizator": false,
+    "statusLegal": "Юридическое лицо",
+    "blockOrganizerULInfo": {
+      "fullName": "Синтетическое значение 42",
+      "shortName": "Синтетическое значение 43",
+      "orgStateForm": {
+        "code": "70402",
+        "name": "Негосударственные пенсионные фонды"
+      },
+      "ogrn": "1111111111111",
+      "inn": "1111111111",
+      "kpp": "111111111",
+      "fioUL": "Синтетическое значение 48",
+      "phoneNumber": "+7 (900) 111-11-11",
+      "email": "synthetic@example.invalid",
+      "addressUL": {
+        "postalCode": "123456",
+        "fullAddress": "Синтетическая улица, 1"
+      },
+      "addressFact": {
+        "postalCode": "123456",
+        "fullAddress": "Синтетическая улица, 1"
+      }
+    }
+  }
+}

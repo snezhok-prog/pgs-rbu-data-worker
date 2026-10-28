@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "domain": "TRADE",
+  "sourceMetaReglament": "rbuModules",
+  "sourceCapturedAt": "2026-10-28T16:11:19.363Z",
+  "sourceReadOnly": true,
+  "standards": [
+    {
+      "code": 46535,
+      "name": "Импорт реестровых данных",
+      "accessProfile": "ROIV",
+      "operation": "IMPORT",
+      "includedInWorkerV1": true,
+      "sourceUrl": "https://psi.pgs.gosuslugi.ru/metodolog/common-standards/edit/6a720a4223477f58ded1668c",
+      "sourceBpmnSha256": "7c3e0fad4dd820b1f8cd9be4a77883922fe8a683bb219ce88a4b8cbab90eecf4",
+      "matchesPreviousJavaBaseline": true,
+      "publishedBpmnComparison": "equal"
+    },
+    {
+      "code": 47062,
+      "name": "Удаление импортированных данных",
+      "accessProfile": "ROIV",
+      "operation": "ROLLBACK",
+      "includedInWorkerV1": true,
+      "sourceUrl": "https://psi.pgs.gosuslugi.ru/metodolog/common-standards/edit/6aa6989ada57b4a6f430d6c4",
+      "sourceBpmnSha256": "e5600d3147f122dad874d227da72c493a4a607f1cf42f6b3bd2d02c539e75578",
+      "matchesPreviousJavaBaseline": true,
+      "publishedBpmnComparison": "equal"
+    },
+    {
+      "code": 47118,
+      "name": "Работа с одной записью",
+      "accessProfile": "ROIV",
+      "operation": "SINGLE_RECORD",
+      "includedInWorkerV1": false,
+      "sourceUrl": "https://psi.pgs.gosuslugi.ru/metodolog/common-standards/edit/6aab2795da8355eb9b5d172a",
+      "sourceBpmnSha256": "335b6efb4dcedcc937bb0261c44f5cad2d42898b0012181c7636f549813295c5",
+      "matchesPreviousJavaBaseline": true,
+      "publishedBpmnComparison": "unavailable_contentXsd"
+    },
+    {
+      "code": 47342,
+      "name": "Импорт данных",
+      "accessProfile": "OMSU",
+      "operation": "IMPORT",
+      "includedInWorkerV1": true,
+      "sourceUrl": "https://psi.pgs.gosuslugi.ru/metodolog/common-standards/edit/6abee93b76090b696549ab28",
+      "sourceBpmnSha256": "d92e44f902faffa9a0b044cf425e038c877502f697f16a0f379fb36d92bb930c",
+      "matchesPreviousJavaBaseline": true,
+      "publishedBpmnComparison": "equal"
+    },
+    {
+      "code": 47343,
+      "name": "Удаление импортированных данных",
+      "accessProfile": "OMSU",
+      "operation": "ROLLBACK",
+      "includedInWorkerV1": true,
+      "sourceUrl": "https://psi.pgs.gosuslugi.ru/metodolog/common-standards/edit/6abeecc8802fbffab5351fc2",
+      "sourceBpmnSha256": "9ed0638acded30bad69a2c121b4cd26fcc9409cd22629d624e37bc6dd6c77eef",
+      "matchesPreviousJavaBaseline": true,
+      "publishedBpmnComparison": "equal"
+    },
+    {
+      "code": 47344,
+      "name": "Работа с одной записью",
+      "accessProfile": "OMSU",
+      "operation": "SINGLE_RECORD",
+      "includedInWorkerV1": false,
+      "sourceUrl": "https://psi.pgs.gosuslugi.ru/metodolog/common-standards/edit/6abeecdd802fbffab53520bf",
+      "sourceBpmnSha256": "035e7e290e465243cc30633c48e778a914e67bacc5548569fcccb89d34551b8c",
+      "matchesPreviousJavaBaseline": true,
+      "publishedBpmnComparison": "unavailable_contentXsd"
+    },
+    {
+      "code": 47345,
+      "name": "Валидация данных",
+      "accessProfile": "CONTEXTUAL",
+      "operation": "VALIDATE",
+      "includedInWorkerV1": true,
+      "sourceUrl": "https://psi.pgs.gosuslugi.ru/metodolog/common-standards/edit/6abeed0027fc2cd5c21ac7fb",
+      "sourceBpmnSha256": "5b69ab76dfdd80a2d7c7699e392432717416865b384c048e51d8bcaa2922afe1",
+      "matchesPreviousJavaBaseline": true,
+      "publishedBpmnComparison": "equal"
+    }
+  ],
+  "sourceGroovyTasksCompared": 27,
+  "sourceComparison": {
+    "allSevenBpmnMatchPreviousJavaBaseline": true,
+    "allGroovyMatchPreviousJavaBaseline": true,
+    "decodedResourcesMatch": true
+  },
+  "resources": [
+    {
+      "path": "src/main/resources/trade/decoded/8529550e6704b020c0b8723f5998f60deb474b9c26da4022eb3abadc7125eb10.json",
+      "role": "validation_profiles_and_rules",
+      "originalDecodedSha256": "d44823469ce95f33405a3936a5f775ca6017a1aadc7896d4f8fc51c2107667c8",
+      "packagedSha256": "ce31263d13657a7ad62caac7e0dc5ec0f3edb11b242b880fc21e2f1c7b2dc1ed",
+      "semanticEqualsSource": true,
+      "formatNote": "JSON formatting differs; file name identifies the original decoded source hash."
+    },
+    {
+      "path": "src/main/resources/trade/decoded/ba4d00f24e002d8539b849c146ea22b6b266c50794096194c48f4e52ee026389.json",
+      "role": "registry_field_schemas",
+      "originalDecodedSha256": "0d09c488cf0d00c3d3cae2fb5a52e54413ed6d35a562ede81bb1f2633919afd4",
+      "packagedSha256": "0eb8ecdcea1a1b17fcae42d43b2f0718c113d3b49faeeae97011497828480533",
+      "semanticEqualsSource": true,
+      "formatNote": "JSON formatting differs; file name identifies the original decoded source hash."
+    },
+    {
+      "path": "src/main/resources/trade/decoded/cc507e251a75e6ddc85d69d307a870f67ff11e51cf0fa2f47e665444aa5cf963.json",
+      "role": "dictionaries",
+      "originalDecodedSha256": "ebf5cf933be7d53b2bc2a3b7f43f4a434f2c4425dc86071f423ce6abfedc09de",
+      "packagedSha256": "3e2f1d2c43cb3ef92997d31aa7038d2246010a9010493f9684299cc24a0d7f56",
+      "semanticEqualsSource": true,
+      "formatNote": "JSON formatting differs; file name identifies the original decoded source hash."
+    }
+  ],
+  "profiles": {
+    "НТО": {
+      "fields": 155,
+      "rules": 537,
+      "requiredSheets": [
+        "sheet2",
+        "sheet3"
+      ],
+      "structure": {
+        "sheet2": {
+          "sheetNames": [
+            "2. Реестр мест"
+          ],
+          "columns": 93
+        },
+        "sheet3": {
+          "sheetNames": [
+            "3. Реестр торгов"
+          ],
+          "columns": 67
+        }
+      }
+    },
+    "Рынки": {
+      "fields": 63,
+      "rules": 191,
+      "requiredSheets": [
+        "sheet2",
+        "sheet3"
+      ],
+      "structure": {
+        "sheet2": {
+          "sheetNames": [
+            "2. Реестр разрешений"
+          ],
+          "columns": 11
+        },
+        "sheet3": {
+          "sheetNames": [
+            "3. Реестр рынков"
+          ],
+          "columns": 57
+        }
+      }
+    },
+    "Ярмарки": {
+      "fields": 149,
+      "rules": 449,
+      "requiredSheets": [
+        "sheet2",
+        "sheet3",
+        "sheet4"
+      ],
+      "structure": {
+        "sheet2": {
+          "sheetNames": [
+            "2. Реестр мест"
+          ],
+          "columns": 71
+        },
+        "sheet3": {
+          "sheetNames": [
+            "3. Реестр разрешений"
+          ],
+          "columns": 11
+        },
+        "sheet4": {
+          "sheetNames": [
+            "4. Реестр ярмарок"
+          ],
+          "columns": 72
+        }
+      }
+    }
+  },
+  "sheetCollectionMap": [
+    {
+      "dataType": "НТО",
+      "sheet": "sheet2",
+      "sheetName": "2. Реестр мест",
+      "collections": [
+        "NTOmesto",
+        "nsiLocalObjectNTO"
+      ]
+    },
+    {
+      "dataType": "НТО",
+      "sheet": "sheet3",
+      "sheetName": "3. Реестр торгов",
+      "collections": [
+        "reestrbiddingReestr"
+      ]
+    },
+    {
+      "dataType": "Рынки",
+      "sheet": "sheet2",
+      "sheetName": "2. Реестр разрешений",
+      "collections": [
+        "reestrpermitsReestr"
+      ]
+    },
+    {
+      "dataType": "Рынки",
+      "sheet": "sheet3",
+      "sheetName": "3. Реестр рынков",
+      "collections": [
+        "reestrmarketReestr",
+        "nsiLocalObjectMarket"
+      ]
+    },
+    {
+      "dataType": "Ярмарки",
+      "sheet": "sheet2",
+      "sheetName": "2. Реестр мест",
+      "collections": [
+        "FairMesto",
+        "nsiLocalObjectFair"
+      ],
+      "nsiRecordsPerRow": "1 or 2 according to populated fair blocks"
+    },
+    {
+      "dataType": "Ярмарки",
+      "sheet": "sheet3",
+      "sheetName": "3. Реестр разрешений",
+      "collections": [
+        "FairPermits"
+      ]
+    },
+    {
+      "dataType": "Ярмарки",
+      "sheet": "sheet4",
+      "sheetName": "4. Реестр ярмарок",
+      "collections": [
+        "Fair"
+      ]
+    }
+  ],
+  "writeCollections": [
+    "Fair",
+    "FairMesto",
+    "FairPermits",
+    "NTOmesto",
+    "nsiLocalObjectFair",
+    "nsiLocalObjectMarket",
+    "nsiLocalObjectNTO",
+    "reestrbiddingReestr",
+    "reestrmarketReestr",
+    "reestrpermitsReestr"
+  ],
+  "contextReadCollections": [
+    "organizations",
+    "rbuRegionPassports",
+    "rbuRegionMunicipalities",
+    "rbuRegionOrganizations"
+  ],
+  "caseCollection": "rbuModulesAppeals",
+  "dictionaryReadCollections": [
+    "nsiUnifiedStatusProjectPlace",
+    "nsiUnifiedspecialMarket"
+  ],
+  "contract": {
+    "worker": "pgs-trade-external-v1",
+    "parser": "rbu-trade-4.0",
+    "validation": "rbu-trade-validation-4.3",
+    "operations": [
+      "PARSE_VALIDATE",
+      "IMPORT_CANCEL",
+      "IMPORT_APPLY",
+      "IMPORT_FINALIZE",
+      "ROLLBACK_PREPARE",
+      "ROLLBACK_EXECUTE",
+      "ROLLBACK_FINALIZE"
+    ]
+  },
+  "limits": {
+    "xlsxBytes": 20971520,
+    "zipEntryBytes": 52428800,
+    "inflatedBytes": 104857600,
+    "zipEntries": 10000,
+    "dataRows": 5000,
+    "physicalTargetRecordsIncludingNsi": 2500,
+    "applyBatchRecords": 50
+  },
+  "verificationBoundaries": {
+    "sourceInventory": "verified",
+    "resourceSemanticParity": "verified",
+    "nativePgsUi": "not_verified_here",
+    "nativePgsFinalStatus": "not_verified_here",
+    "liveDevRuns": "separate_protocol",
+    "devRollback": "excluded_without_native_complete",
+    "manualCompleteAllowed": false,
+    "localRollback": "implemented_and_tested_separately",
+    "workerJournalMode": "local-single",
+    "distributedCasOrFencing": "not_proven",
+    "legacyGroovyRollback": "not_supported_by_worker_v1",
+    "singleRecordOperations": "excluded_from_worker_v1",
+    "petDomain": "separate_implementation"
+  },
+  "publicationPolicy": {
+    "rawPsiSnapshotsIncluded": false,
+    "liveCaseAndContextIdsIncluded": false,
+    "infrastructureEndpointsIncluded": false,
+    "standardSourceLinksIncluded": true
+  }
+}

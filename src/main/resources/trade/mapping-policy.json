@@ -1,0 +1,36 @@
+{
+  "NTOmesto": {
+    "ntoInformation.NtoType": "NTO_TYPE", "ntoInformation.Specialization": "SPECIALIZATION",
+    "ntoInformation.infoSMSP": "INFO_SMSP", "ntoInformation.PlacementSchedule": "PLACEMENT_SCHEDULE",
+    "ntoInformation.seasonPlacementSchedule.*": "SEASON", "ntoInformation.ntoInfoLandOwnershipType": "OWNERSHIP",
+    "ntoInformation.ntoInfoSpecialUseZones": "SPECIAL_USE_ZONES", "ntoInformation.ProjectStatus": "PROJECT_STATUS",
+    "ntoInformation.SpecProjectStatus.*": "SPEC_PROJECT_STATUS", "ntoInformation.ntoInfoRecordStatus": "RECORD_STATUS",
+    "operatorInformationUL.OrgStateForm": "ORG_STATE_FORM", "ntoInformation.ntoInfoProductType": "PRODUCT_TYPE",
+    "NTOContract.PaymentPeriod": "PAYMENT_PERIOD"
+  },
+  "reestrbiddingReestr": {
+    "GeneralInfoAuction.NotificationDocumentation.NoticeType": "NOTICE_TYPE", "GeneralInfoAuction.NotificationDocumentation.BiddingForm": "BIDDING_FORM",
+    "InformationOnLots.LotInfo.*.TypeNTO": "NTO_TYPE", "InformationOnLots.LotInfo.*.Specific": "SPECIALIZATION",
+    "InformationOnLots.LotInfo.*.PlacementScheduleType": "PLACEMENT_SCHEDULE", "InformationOnLots.AuctionResults.*.BiddingStatus": "BIDDING_STATUS"
+  },
+  "reestrpermitsReestr": { "permission.PermissionStatus": "MARKET_PERMISSION_STATUS" },
+  "reestrmarketReestr": {
+    "InfoRetailMarket.PermissionStatus": "MARKET_PERMISSION_STATUS", "InfoRetailMarket.marketType": "MARKET_TYPE",
+    "InfoRetailMarket.marketSpecialization": "MARKET_SPECIALIZATION", "InfoRetailMarket.operationPeriod": "MARKET_OPERATION_PERIOD",
+    "InfoRetailMarket.dayOnBlock.*.dayOn": "MARKET_DAY_OF_WEEK", "InfoRetailMarket.BlockDayOff.*.dayOff": "MARKET_DAY_OF_WEEK",
+    "InfoCompanyManagerMarket.OrgStateForm": "MARKET_ORG_STATE_FORM"
+  },
+  "FairMesto": {
+    "placeMarketInfo.marketType": "FAIR_PLACE_TYPE", "placeMarketInfo.marketSpecialization": "FAIR_PLACE_SPECIALIZATION",
+    "placeMarketInfo.statusFairPlace": "FAIR_PLACE_STATUS", "placeMarketInfo.statusFairPlaceSpecific": "FAIR_PLACE_STATUS_SPECIFIC",
+    "marketInfo.*.marketStatus": "FAIR_STATUS", "marketInfo.*.marketFrequency": "FAIR_VARIATION", "marketInfo.*.marketVariation": "FAIR_FREQUENCY"
+  },
+  "FairPermits": { "permission.permissionStatus": "FAIR_PERMISSION_STATUS" },
+  "Fair": {
+    "marketInfo.marketStatus": "FAIR_STATUS", "marketInfo.marketType": "FAIR_TYPE", "marketInfo.marketSpecialization": "FAIR_SPECIALIZATION",
+    "marketInfo.marketPurpose": "FAIR_PURPOSE", "marketInfo.marketVariation": "FAIR_VARIATION", "marketInfo.marketFrequency": "FAIR_FREQUENCY",
+    "marketInfo.dayOnBlock.*.dayOn": "FAIR_DAY_OF_WEEK", "marketInfo.BlockDayOff.*.dayOff": "FAIR_DAY_OF_WEEK",
+    "blockOrganizerULInfo.orgStateForm": "FAIR_ORG_STATE_FORM", "marketInfo.statusFairPlace": "FAIR_PLACE_STATUS",
+    "marketInfo.statusFairPlaceSpecific": "FAIR_PLACE_STATUS_SPECIFIC"
+  }
+}

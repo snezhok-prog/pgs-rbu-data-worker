@@ -1,0 +1,50 @@
+package ru.evolenta.pgs.worker;
+import java.util.*;import static ru.evolenta.pgs.worker.Util.*;
+public final class Operations {
+    public interface Lease {void check();}
+    public static final class UnsupportedOperation extends IllegalStateException{public UnsupportedOperation(String s){super(s);}}
+    private final CheckpointStore journal;private final Lease lease;private final boolean writes;private final String ui;
+    public Operations(CheckpointStore journal,Lease lease){this(journal,lease,false,"");}
+    public Operations(CheckpointStore journal,Lease lease,boolean writes,String ui){this.journal=journal;this.lease=lease;this.writes=writes;this.ui=ui;}
+    public Map<String,Object> execute(Context c)throws Exception{
+        if(c.command.domain==Command.Domain.TRADE)return new TradeOperations(journal,lease,writes,ui).execute(c);
+        switch(c.command.operation){
+            case PARSE_VALIDATE:return validate(c);
+            case IMPORT_CANCEL:return cancel(c);
+            case IMPORT_APPLY:return new ImportOperations(journal,lease,writes,ui).apply(c);
+            case IMPORT_FINALIZE:return new ImportOperations(journal,lease,writes,ui).finalizeImport(c);
+            case ROLLBACK_PREPARE:return new RollbackOperations(journal,lease,writes).prepare(c);
+            case ROLLBACK_EXECUTE:return new RollbackOperations(journal,lease,writes).execute(c);
+            case ROLLBACK_FINALIZE:return new RollbackOperations(journal,lease,writes).finish(c);
+            default:throw new UnsupportedOperation("Работа с отдельной записью оставлена в ПГС и не входит в текущую v1");
+        }
+    }
+    private Map<String,Object> file(Object value){for(int i=0;i<6;i++){if(value instanceof List){List<Object>a=list(value);value=a.isEmpty()?null:a.get(0);continue;}Map<String,Object>m=map(value);if(present(first(m.get("_id"),m.get("id"),m.get("fileId"))))return m;value=first(m.get("uploadedFiles"),m.get("files"),m.get("file"),m.get("value"),m.get("data"));}return obj();}
+    public Map<String,Object> validate(Context c)throws Exception{
+        AdvertisingGuard guard=new AdvertisingGuard(c,false);Map<String,Object> reload=map(first(c.xsd.get("rbuImportReload"),at(c.sub,"mainElement.xsdData.rbuImportReload")));
+        Map<String,Object> file=file(first(reload.get("importFile"),c.appeal.get("importFile"),c.xsd.get("importFile")));String fileId=clean(first(file.get("_id"),file.get("id"),file.get("fileId")));if(fileId.isEmpty())throw new IllegalArgumentException("Не выбран файл XLSX");if(!clean(first(file.get("originalName"),file.get("name"))).toLowerCase(Locale.ROOT).endsWith(".xlsx"))throw new IllegalArgumentException("Необходимо загрузить файл .xlsx");
+        lease.check();byte[] bytes=c.api.download(fileId,XlsxReader.MAX_FILE);String fileHash=sha(bytes),revision=hash(obj("file",fileHash,"context",guard.context()));String opKey=c.command.key(revision);Map<String,Object> state=journal.read(opKey);
+        // Cache only the same task delivery. A later loop through the same node revalidates registries.
+        if(Arrays.asList("RESULT_READY","COMPLETED").contains(clean(state.get("status")))&&c.command.taskId.equals(state.get("taskId"))){
+            c.reload();AdvertisingGuard freshGuard=new AdvertisingGuard(c,false);
+            Map<String,Object> freshReload=map(c.xsd.get("rbuImportReload"));Map<String,Object> freshFile=file(first(freshReload.get("importFile"),c.appeal.get("importFile"),c.xsd.get("importFile")));
+            if(!fileId.equals(clean(first(freshFile.get("_id"),freshFile.get("id"),freshFile.get("fileId"))))||!hash(freshGuard.context()).equals(hash(guard.context())))throw new IllegalStateException("Входные данные изменились после сохранённой проверки");
+            lease.check();if("RESULT_READY".equals(state.get("status"))){Map<String,Object>cachedDraft=compactDraft(map(state.get("draft"))),cachedResult=map(state.get("result"));c.saveAppeal(obj("importFile",file,"importDraft",cachedDraft,"migrationLog",cachedResult.get("migrationLog"),"validationErrors",cachedResult.get("errors"),"validationStatus",at(state,"variables.rbuValidationStatus"),"isValid",!bool(cachedDraft.get("validationBlocked")),"validationCompletedAt",cachedResult.get("processedAt"),"applicationStatus","VALIDATION_COMPLETED"));c.saveResult(cachedDraft,cachedResult);state.put("status","COMPLETED");journal.save(opKey,state);}return map(state.get("variables"));
+        }
+        if(!reload.isEmpty()&&fileId.equals(clean(at(c.appeal,"importDraft.file.id"))))throw new IllegalArgumentException("Загрузите новый исправленный файл XLSX");
+        journal.save(opKey,obj("status","PROCESSING","taskId",c.command.taskId,"operation","PARSE_VALIDATE","fileSha256",fileHash,"startedAt",now()));
+        Map<String,Object>draft;Map<String,Object>result;
+        try{draft=new XlsxReader().parse(bytes,file,guard.context());lease.check();result=new AdvertisingValidator().validate(draft,c.appeal,guard.context(),c);if(Json.write(result).getBytes(java.nio.charset.StandardCharsets.UTF_8).length>4*1024*1024)throw new IllegalArgumentException("Отчёт об ошибках превышает безопасный объём. Разделите данные на несколько файлов и повторите проверку.");}
+        catch(IllegalArgumentException e){draft=obj("status","PARSE_ERROR","file",obj("id",fileId,"sha256",fileHash,"originalName",file.get("originalName")),"context",guard.context(),"validationBlocked",true,"validationVersion",AdvertisingValidator.CONTRACT,"totalRows",0,"validRows",0,"invalidRows",0,"error",e.getMessage());Map<String,Object>error=obj("errorId",UUID.randomUUID().toString(),"sheetCode","structure","sheetName","Файл XLSX","rowNumber",null,"column","","fieldName","Файл XLSX","errorCode","FILE_PARSE_ERROR","errorType","format","errorTypeCode","format","message",e.getMessage());result=obj("processingStatus","Ошибка файла","processedAt",now(),"fileName",file.get("originalName"),"totalRows",0,"validRows",0,"invalidRows",0,"errors",Arrays.asList(error),"validationErrors",Arrays.asList(error),"totalErrors",1,"validationBlocked",true,"confirmApply",false,"errorSummary",obj("format",1,"required",0,"reference",0,"logical",0,"duplicate",0),"migrationLog",Collections.emptyList());}
+        // Do not overwrite a newer file/context while the worker was reading.
+        c.reload();AdvertisingGuard fresh=new AdvertisingGuard(c,false);if(!hash(fresh.context()).equals(hash(guard.context())))throw new IllegalStateException("Контекст дела изменился во время проверки");Map<String,Object>currentReload=map(c.xsd.get("rbuImportReload"));Map<String,Object>currentFile=file(first(currentReload.get("importFile"),c.appeal.get("importFile"),c.xsd.get("importFile")));if(!fileId.equals(clean(first(currentFile.get("_id"),currentFile.get("id"),currentFile.get("fileId")))))throw new IllegalStateException("Файл в деле изменился во время проверки");
+        boolean blocked=bool(draft.get("validationBlocked"));String status=blocked?"VALIDATED_WITH_ERRORS":"VALIDATED";draft.put("workerValidationKey",opKey);Map<String,Object>publicDraft=compactDraft(draft);
+        Map<String,Object> variables=obj("rbuValidationStatus",status,"rbuCanApply",!blocked&&integer(draft.get("validRows"))>0,"rbuValidRows",integer(draft.get("validRows")),"rbuInvalidRows",integer(draft.get("invalidRows")));
+        // Raw rows live once on the worker's durable volume, not in three copies of the PGS case.
+        Map<String,Object>readyState=obj("status","RESULT_READY","taskId",c.command.taskId,"processId",c.command.processId,"appealId",c.command.mainId,"inputHash",ImportOperations.inputHash(publicDraft),"draft",draft,"result",result,"variables",variables,"completedAt",now());journal.save(opKey,readyState);
+        lease.check();c.saveAppeal(obj("importFile",file,"importDraft",publicDraft,"migrationLog",result.get("migrationLog"),"validationErrors",result.get("errors"),"validationStatus",status,"isValid",!blocked,"validationCompletedAt",result.get("processedAt"),"applicationStatus","VALIDATION_COMPLETED"));lease.check();c.saveResult(publicDraft,result);
+        readyState.put("status","COMPLETED");journal.save(opKey,readyState);return variables;
+    }
+    private Map<String,Object> cancel(Context c)throws Exception{lease.check();Map<String,Object>d=copy(map(first(c.appeal.get("importDraft"),c.sub.get("rbuImportDraft"))));if(Arrays.asList("APPLIED","APPLYING").contains(clean(d.get("status"))))throw new IllegalArgumentException("Нельзя отменить уже начатый импорт этим действием");d.put("status","CANCELLED");d.put("cancelledAt",now());Map<String,Object>r=copy(map(c.sub.get("rbuImportResult")));r.put("processingStatus","Импорт отменён");r.put("applicationStatus","CANCELLED");c.saveAppeal(obj("importDraft",d,"applicationStatus","CANCELLED"));c.saveResult(d,r);return obj("rbuApplicationStatus","CANCELLED","rbuCanApply",false,"rbuApplyHasMoreBatches",false);}
+    public static Map<String,Object> compactDraft(Map<String,Object>draft){Map<String,Object>out=new LinkedHashMap<String,Object>(draft);List<Object>sheets=new ArrayList<Object>();for(Map<String,Object>s:maps(draft.get("sheets"))){Map<String,Object>meta=new LinkedHashMap<String,Object>(s);meta.put("rows",Collections.emptyList());sheets.add(meta);}out.put("sheets",sheets);out.put("workerDataExternal",true);return out;}
+}

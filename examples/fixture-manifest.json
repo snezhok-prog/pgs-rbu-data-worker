@@ -1,0 +1,73 @@
+{
+  "description": "Synthetic trade acceptance input files; no live case IDs or credentials.",
+  "files": [
+    {
+      "filename": "trade-nto-roiv-2810.xlsx",
+      "type": "НТО",
+      "profile": "ROIV",
+      "expectedRows": 2,
+      "key": "nto-roiv",
+      "size": 13261,
+      "sha256": "16874bedc91043c8dc15668d4071722d55ca720516036b9899d76a06cb2bac04"
+    },
+    {
+      "filename": "trade-nto-omsu-2810.xlsx",
+      "type": "НТО",
+      "profile": "OMSU",
+      "expectedRows": 2,
+      "key": "nto-omsu",
+      "size": 13264,
+      "sha256": "0024024b90108a44eebcaa0be6ba3ec7b6cf9254d9506ef286111ca20e4ea7ed"
+    },
+    {
+      "filename": "trade-market-roiv-2810.xlsx",
+      "type": "Рынки",
+      "profile": "ROIV",
+      "key": "market-roiv",
+      "size": 8565,
+      "sha256": "9c71277eff7f0d7143b9937688de2bc73ca43394d3be09f6597a483028c3a5c9"
+    },
+    {
+      "filename": "trade-market-omsu-2810.xlsx",
+      "type": "Рынки",
+      "profile": "OMSU",
+      "key": "market-omsu",
+      "size": 8569,
+      "sha256": "10fe81d0801b0eeeced0eef0c34058e944591835aad2fd2e23f7c72b5dc6bde7"
+    },
+    {
+      "filename": "trade-fair-roiv-2810.xlsx",
+      "type": "Ярмарки",
+      "profile": "ROIV",
+      "key": "fair-roiv",
+      "size": 12170,
+      "sha256": "e5e7a608e8b65be25ae8ac1ada65a85263a255b9b90a7ce8195d71f80d4fa3e0"
+    },
+    {
+      "filename": "trade-fair-omsu-2810.xlsx",
+      "type": "Ярмарки",
+      "profile": "OMSU",
+      "key": "fair-omsu",
+      "size": 12171,
+      "sha256": "fc6aa8b8dee955295bf572f7276344beb03cab88ea110804a9ed38c68474aa80"
+    },
+    {
+      "filename": "trade-batch-2810.xlsx",
+      "type": "Ярмарки",
+      "profile": "ROIV",
+      "expectedRows": 51,
+      "key": "batch",
+      "size": 23746,
+      "sha256": "2e7ba4c858f12d5e8cf14431362c6ec5a0a15b213d0a9992856edb37da00612c"
+    },
+    {
+      "filename": "trade-invalid-2810.xlsx",
+      "type": "НТО",
+      "profile": "ROIV",
+      "expectedRows": 2,
+      "key": "invalid",
+      "size": 13253,
+      "sha256": "8458cc52cc12ddc917b628da4e111a8d92425728419f7bcada727d661a49341b"
+    }
+  ]
+}

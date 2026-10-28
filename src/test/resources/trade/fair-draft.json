@@ -1,0 +1,2070 @@
+{
+  "provenance": "Synthetic mapping-only fixture from published headers and field paths. Populates mutually exclusive branches deliberately; not a successful import fixture.",
+  "dataType": "Ярмарки",
+  "fileSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "parserVersion": "rbu-trade-4.0",
+  "file": {
+    "id": "synthetic-fair-xlsx",
+    "originalName": "synthetic-fair.xlsx",
+    "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "title": {
+    "region": "Ростовская область",
+    "municipality": "Городской округ город Таганрог"
+  },
+  "referenceLists": {
+    "entries": [
+      {
+        "name": "Субъекты РФ",
+        "values": [
+          "Ростовская область"
+        ]
+      }
+    ]
+  },
+  "sheetNames": {
+    "sheet2": "2. Реестр мест",
+    "sheet3": "3. Реестр разрешений",
+    "sheet4": "4. Реестр ярмарок"
+  },
+  "sheets": [
+    {
+      "code": "sheet2",
+      "columns": [
+        {
+          "column": "B",
+          "attribute": "1",
+          "fieldName": "Субъект РФ",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "C",
+          "attribute": "2",
+          "fieldName": "Муниципальный район/округ, городской округ или внутригородская территория",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "D",
+          "attribute": "3",
+          "fieldName": "ОГРН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "E",
+          "attribute": "4",
+          "fieldName": "ИНН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "F",
+          "attribute": "5",
+          "fieldName": "Номер места для размещения ярмарок",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "G",
+          "attribute": "6",
+          "fieldName": "Геокоординаты точки размещения организуемой ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "H",
+          "attribute": "7",
+          "fieldName": "Кадастровый номер земельного участка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "I",
+          "attribute": "8",
+          "fieldName": "Адрес земельного участка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "J",
+          "attribute": "9",
+          "fieldName": "Кадастровый номер объекта недвижимости",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "K",
+          "attribute": "10",
+          "fieldName": "Адрес объекта недвижимости",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "L",
+          "attribute": "11",
+          "fieldName": "Площадь места для размещения ярмарки, кв. м",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "M",
+          "attribute": "12",
+          "fieldName": "Тип ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "N",
+          "attribute": "13",
+          "fieldName": "Специализация ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "O",
+          "attribute": "14",
+          "fieldName": "Иная специализация ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "P",
+          "attribute": "15",
+          "fieldName": "Статус проектного места",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "Q",
+          "attribute": "16",
+          "fieldName": "Спецификация статуса проектного места",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "R",
+          "attribute": "17",
+          "fieldName": "Статус в Реестре мест на размещения ярмарок",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарок",
+          "subBlock": "Сведения о месте для размещения ярмарок"
+        },
+        {
+          "column": "S",
+          "attribute": "18",
+          "fieldName": "1. Номер ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "T",
+          "attribute": "19",
+          "fieldName": "1. Номер разрешения",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "U",
+          "attribute": "20",
+          "fieldName": "1. Наименование ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "V",
+          "attribute": "21",
+          "fieldName": "1. Дата начала ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "W",
+          "attribute": "22",
+          "fieldName": "1. Дата окончания ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "X",
+          "attribute": "23",
+          "fieldName": "1. Время начала ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "Y",
+          "attribute": "24",
+          "fieldName": "1. Время окончания ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "Z",
+          "attribute": "25",
+          "fieldName": "1. Статус ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AA",
+          "attribute": "26",
+          "fieldName": "1. Периодичность проведения ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AB",
+          "attribute": "27",
+          "fieldName": "1. Вид ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AC",
+          "attribute": "28",
+          "fieldName": "1. Количество торговых мест",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AD",
+          "attribute": "29",
+          "fieldName": "1. Количество торговых мест на безвозмездной основе",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AE",
+          "attribute": "30",
+          "fieldName": "1. Выбрать орган власти в качестве организатора",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AF",
+          "attribute": "31",
+          "fieldName": "1. Правовой статус организатора",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AG",
+          "attribute": "32",
+          "fieldName": "1. Полное наименование",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "AH",
+          "attribute": "33",
+          "fieldName": "1. ОГРН",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "AI",
+          "attribute": "34",
+          "fieldName": "1. ИНН",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "AJ",
+          "attribute": "35",
+          "fieldName": "1. Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "AK",
+          "attribute": "36",
+          "fieldName": "1. Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "AL",
+          "attribute": "37",
+          "fieldName": "1. Наименование ИП",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "AM",
+          "attribute": "38",
+          "fieldName": "1. ОГРНИП",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "AN",
+          "attribute": "39",
+          "fieldName": "1. ИНН",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "AO",
+          "attribute": "40",
+          "fieldName": "1. Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "AP",
+          "attribute": "41",
+          "fieldName": "1. Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "AQ",
+          "attribute": "42",
+          "fieldName": "1. Организатор ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "AR",
+          "attribute": "43",
+          "fieldName": "1. Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "AS",
+          "attribute": "44",
+          "fieldName": "1. Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "AT",
+          "attribute": "45",
+          "fieldName": "2. Номер ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AU",
+          "attribute": "46",
+          "fieldName": "2. Номер разрешения",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AV",
+          "attribute": "47",
+          "fieldName": "2. Наименование ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AW",
+          "attribute": "48",
+          "fieldName": "2. Дата начала ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AX",
+          "attribute": "49",
+          "fieldName": "2. Дата окончания ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AY",
+          "attribute": "50",
+          "fieldName": "2. Время начала ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "AZ",
+          "attribute": "51",
+          "fieldName": "2. Время окончания ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BA",
+          "attribute": "52",
+          "fieldName": "2. Статус ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BB",
+          "attribute": "53",
+          "fieldName": "2. Периодичность проведения ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BC",
+          "attribute": "54",
+          "fieldName": "2. Вид ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BD",
+          "attribute": "55",
+          "fieldName": "2. Количество торговых мест",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BE",
+          "attribute": "56",
+          "fieldName": "2. Количество торговых мест на безвозмездной основе",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BF",
+          "attribute": "57",
+          "fieldName": "2. Выбрать орган власти в качестве организатора",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BG",
+          "attribute": "58",
+          "fieldName": "2. Правовой статус организатора",
+          "requiredMarker": "Нет",
+          "block": "Информация о ярмарке",
+          "subBlock": "Информация о ярмарке"
+        },
+        {
+          "column": "BH",
+          "attribute": "59",
+          "fieldName": "2. Полное наименование",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "BI",
+          "attribute": "60",
+          "fieldName": "2. ОГРН",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "BJ",
+          "attribute": "61",
+          "fieldName": "2. ИНН",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "BK",
+          "attribute": "62",
+          "fieldName": "2. Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "BL",
+          "attribute": "63",
+          "fieldName": "2. Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Юридическое лицо\"",
+          "subBlock": "Организатор ярмарки \"Юридическое лицо\""
+        },
+        {
+          "column": "BM",
+          "attribute": "64",
+          "fieldName": "2. Наименование ИП",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BN",
+          "attribute": "65",
+          "fieldName": "2. ОГРНИП",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "BO",
+          "attribute": "66",
+          "fieldName": "2. ИНН",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "BP",
+          "attribute": "67",
+          "fieldName": "2. Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "BQ",
+          "attribute": "68",
+          "fieldName": "2. Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Индивидуальный предприниматель\"",
+          "subBlock": "Организатор ярмарки \"Индивидуальный предприниматель\""
+        },
+        {
+          "column": "BR",
+          "attribute": "69",
+          "fieldName": "2. Организатор ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "BS",
+          "attribute": "70",
+          "fieldName": "2. Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "BT",
+          "attribute": "71",
+          "fieldName": "2. Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        }
+      ],
+      "rows": [
+        {
+          "excelRow": 6,
+          "cells": [
+            {
+              "column": "B",
+              "value": "Ростовская область",
+              "kind": "string"
+            },
+            {
+              "column": "C",
+              "value": "Городской округ город Таганрог",
+              "kind": "string"
+            },
+            {
+              "column": "D",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "E",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "F",
+              "value": "Синтетическое значение 5",
+              "kind": "string"
+            },
+            {
+              "column": "G",
+              "value": "55.75, 037.61",
+              "kind": "string"
+            },
+            {
+              "column": "H",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "I",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "J",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "K",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "L",
+              "value": "123.45",
+              "kind": "string"
+            },
+            {
+              "column": "M",
+              "value": "Специализированная",
+              "kind": "string"
+            },
+            {
+              "column": "N",
+              "value": "Сельскохозяйственная",
+              "kind": "string"
+            },
+            {
+              "column": "O",
+              "value": "Синтетическое значение 14",
+              "kind": "string"
+            },
+            {
+              "column": "P",
+              "value": "Утверждено",
+              "kind": "string"
+            },
+            {
+              "column": "Q",
+              "value": "Свободно",
+              "kind": "string"
+            },
+            {
+              "column": "R",
+              "value": "Утверждено",
+              "kind": "string"
+            },
+            {
+              "column": "S",
+              "value": "Синтетическое значение 18",
+              "kind": "string"
+            },
+            {
+              "column": "T",
+              "value": "Синтетическое значение 19",
+              "kind": "string"
+            },
+            {
+              "column": "U",
+              "value": "Синтетическое значение 20",
+              "kind": "string"
+            },
+            {
+              "column": "V",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "W",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "X",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "Y",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "Z",
+              "value": "Действует",
+              "kind": "string"
+            },
+            {
+              "column": "AA",
+              "value": "Регулярная",
+              "kind": "string"
+            },
+            {
+              "column": "AB",
+              "value": "Постоянно действующая",
+              "kind": "string"
+            },
+            {
+              "column": "AC",
+              "value": "11",
+              "kind": "string"
+            },
+            {
+              "column": "AD",
+              "value": "11",
+              "kind": "string"
+            },
+            {
+              "column": "AE",
+              "value": "Нет",
+              "kind": "string"
+            },
+            {
+              "column": "AF",
+              "value": "Юридическое лицо",
+              "kind": "string"
+            },
+            {
+              "column": "AG",
+              "value": "Синтетическое значение 32",
+              "kind": "string"
+            },
+            {
+              "column": "AH",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AI",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AJ",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "AK",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "AL",
+              "value": "Синтетическое значение 37",
+              "kind": "string"
+            },
+            {
+              "column": "AM",
+              "value": "111111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AN",
+              "value": "111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AO",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "AP",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "AQ",
+              "value": "Синтетическое значение 42",
+              "kind": "string"
+            },
+            {
+              "column": "AR",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "AS",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "AT",
+              "value": "Синтетическое значение 45",
+              "kind": "string"
+            },
+            {
+              "column": "AU",
+              "value": "Синтетическое значение 46",
+              "kind": "string"
+            },
+            {
+              "column": "AV",
+              "value": "Синтетическое значение 47",
+              "kind": "string"
+            },
+            {
+              "column": "AW",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "AX",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "AY",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AZ",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "BA",
+              "value": "Действует",
+              "kind": "string"
+            },
+            {
+              "column": "BB",
+              "value": "Регулярная",
+              "kind": "string"
+            },
+            {
+              "column": "BC",
+              "value": "Постоянно действующая",
+              "kind": "string"
+            },
+            {
+              "column": "BD",
+              "value": "11",
+              "kind": "string"
+            },
+            {
+              "column": "BE",
+              "value": "11",
+              "kind": "string"
+            },
+            {
+              "column": "BF",
+              "value": "Нет",
+              "kind": "string"
+            },
+            {
+              "column": "BG",
+              "value": "Юридическое лицо",
+              "kind": "string"
+            },
+            {
+              "column": "BH",
+              "value": "Синтетическое значение 59",
+              "kind": "string"
+            },
+            {
+              "column": "BI",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BJ",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BK",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "BL",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "BM",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "BN",
+              "value": "111111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BO",
+              "value": "111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BP",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "BQ",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "BR",
+              "value": "Синтетическое значение 69",
+              "kind": "string"
+            },
+            {
+              "column": "BS",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "BT",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sheet3",
+      "columns": [
+        {
+          "column": "B",
+          "attribute": "1",
+          "fieldName": "Субъект РФ",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "C",
+          "attribute": "2",
+          "fieldName": "Муниципальный район/округ, городской округ или внутригородская территория",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "D",
+          "attribute": "3",
+          "fieldName": "ОГРН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "E",
+          "attribute": "4",
+          "fieldName": "ИНН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "F",
+          "attribute": "5",
+          "fieldName": "Номер разрешения ",
+          "requiredMarker": "Да",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "G",
+          "attribute": "6",
+          "fieldName": "Статус разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на право организации ярмарки",
+          "subBlock": "Сведения о разрешении на право организации ярмарки"
+        },
+        {
+          "column": "H",
+          "attribute": "7",
+          "fieldName": "Номер ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на право организации ярмарки",
+          "subBlock": "Сведения о разрешении на право организации ярмарки"
+        },
+        {
+          "column": "I",
+          "attribute": "8",
+          "fieldName": "Дата выдачи разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на право организации ярмарки",
+          "subBlock": "Сведения о разрешении на право организации ярмарки"
+        },
+        {
+          "column": "J",
+          "attribute": "9",
+          "fieldName": "Дата начала действия разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на право организации ярмарки",
+          "subBlock": "Сведения о разрешении на право организации ярмарки"
+        },
+        {
+          "column": "K",
+          "attribute": "10",
+          "fieldName": "Дата завершения действия разрешения",
+          "requiredMarker": "Да",
+          "block": "Сведения о разрешении на право организации ярмарки",
+          "subBlock": "Сведения о разрешении на право организации ярмарки"
+        },
+        {
+          "column": "L",
+          "attribute": "11",
+          "fieldName": "Разрешение на право организации ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о разрешении на право организации ярмарки",
+          "subBlock": "Сведения о разрешении на право организации ярмарки"
+        }
+      ],
+      "rows": [
+        {
+          "excelRow": 6,
+          "cells": [
+            {
+              "column": "B",
+              "value": "Ростовская область",
+              "kind": "string"
+            },
+            {
+              "column": "C",
+              "value": "Городской округ город Таганрог",
+              "kind": "string"
+            },
+            {
+              "column": "D",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "E",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "F",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "G",
+              "value": "Действует",
+              "kind": "string"
+            },
+            {
+              "column": "H",
+              "value": "Синтетическое значение 7",
+              "kind": "string"
+            },
+            {
+              "column": "I",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "J",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "K",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "L",
+              "value": "synthetic-fair-1.pdf",
+              "kind": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sheet4",
+      "columns": [
+        {
+          "column": "B",
+          "attribute": "1",
+          "fieldName": "Субъект РФ",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "C",
+          "attribute": "2",
+          "fieldName": "Муниципальный район/округ, городской округ или внутригородская территория ",
+          "requiredMarker": "Да",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "D",
+          "attribute": "3",
+          "fieldName": "ОГРН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "E",
+          "attribute": "4",
+          "fieldName": "ИНН уполномоченного органа",
+          "requiredMarker": "Да",
+          "block": "Общая информация",
+          "subBlock": "Общая информация"
+        },
+        {
+          "column": "F",
+          "attribute": "5",
+          "fieldName": "Номер ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "G",
+          "attribute": "6",
+          "fieldName": "Геокоординаты точки размещения организуемой ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "H",
+          "attribute": "7",
+          "fieldName": "Номер разрешения",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "I",
+          "attribute": "8",
+          "fieldName": "Дата выдачи разрешения",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "J",
+          "attribute": "9",
+          "fieldName": "Дата завершения действия разрешения",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "K",
+          "attribute": "10",
+          "fieldName": "Статус ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "L",
+          "attribute": "11",
+          "fieldName": "Наименование ярмарки ",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "M",
+          "attribute": "12",
+          "fieldName": "Тип ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "N",
+          "attribute": "13",
+          "fieldName": "Специализация ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "O",
+          "attribute": "14",
+          "fieldName": "Иная специализация ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "P",
+          "attribute": "15",
+          "fieldName": "Цель ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "Q",
+          "attribute": "16",
+          "fieldName": "Иная цель ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "R",
+          "attribute": "17",
+          "fieldName": "Периодичность проведения ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "S",
+          "attribute": "18",
+          "fieldName": "Вид ярмарки",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "T",
+          "attribute": "19",
+          "fieldName": "Площадь ярмарки, кв. м",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "U",
+          "attribute": "20",
+          "fieldName": "Сроки проведения ярмарки: дата начала",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "V",
+          "attribute": "21",
+          "fieldName": "Сроки проведения ярмарки: дата окончания",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "W",
+          "attribute": "22",
+          "fieldName": "Режим работы ярмарки: время начала",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "X",
+          "attribute": "23",
+          "fieldName": "Режим работы ярмарки: время окончания",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "Y",
+          "attribute": "24",
+          "fieldName": "1. День недели, который отличается от основного",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "Z",
+          "attribute": "25",
+          "fieldName": "1. Время начала работы ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AA",
+          "attribute": "26",
+          "fieldName": "1. Время окончания работы ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AB",
+          "attribute": "27",
+          "fieldName": "2. День недели, который отличается от основного",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AC",
+          "attribute": "28",
+          "fieldName": "2. Время начала работы ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AD",
+          "attribute": "29",
+          "fieldName": "2. Время окончания работы ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AE",
+          "attribute": "30",
+          "fieldName": "3. День недели, который отличается от основного",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AF",
+          "attribute": "31",
+          "fieldName": "3. Время начала работы ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AG",
+          "attribute": "32",
+          "fieldName": "3. Время окончания работы ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AH",
+          "attribute": "33",
+          "fieldName": "Без выходных",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AI",
+          "attribute": "34",
+          "fieldName": "1. Выходной день",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AJ",
+          "attribute": "35",
+          "fieldName": "2. Выходной день",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AK",
+          "attribute": "36",
+          "fieldName": "3. Выходной день",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AL",
+          "attribute": "37",
+          "fieldName": "Санитарный день месяца",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AM",
+          "attribute": "38",
+          "fieldName": "Количество торговых мест",
+          "requiredMarker": "Да",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AN",
+          "attribute": "39",
+          "fieldName": "Количество торговых мест на безвозмездной основе",
+          "requiredMarker": "Нет",
+          "block": "Сведения о ярмарке",
+          "subBlock": "Сведения о ярмарке"
+        },
+        {
+          "column": "AO",
+          "attribute": "40",
+          "fieldName": " Выбрать орган власти в качестве организатора",
+          "requiredMarker": "Да",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "AP",
+          "attribute": "41",
+          "fieldName": "Правовой статус организатора",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "AQ",
+          "attribute": "42",
+          "fieldName": "Полное наименование",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AR",
+          "attribute": "43",
+          "fieldName": "Сокращённое наименование",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AS",
+          "attribute": "44",
+          "fieldName": "Организационно-правовая форма",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AT",
+          "attribute": "45",
+          "fieldName": "ОГРН",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AU",
+          "attribute": "46",
+          "fieldName": "ИНН",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AV",
+          "attribute": "47",
+          "fieldName": "КПП",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AW",
+          "attribute": "48",
+          "fieldName": "ФИО руководителя",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AX",
+          "attribute": "49",
+          "fieldName": "Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AY",
+          "attribute": "50",
+          "fieldName": "Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "AZ",
+          "attribute": "51",
+          "fieldName": "Юридический адрес",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "BA",
+          "attribute": "52",
+          "fieldName": "Фактический адрес",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (Юридическое лицо)",
+          "subBlock": "Сведения об организаторе (Юридическое лицо)"
+        },
+        {
+          "column": "BB",
+          "attribute": "53",
+          "fieldName": "Наименование ИП",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (ИП)",
+          "subBlock": "Сведения об организаторе (ИП)"
+        },
+        {
+          "column": "BC",
+          "attribute": "54",
+          "fieldName": "ИНН",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (ИП)",
+          "subBlock": "Сведения об организаторе (ИП)"
+        },
+        {
+          "column": "BD",
+          "attribute": "55",
+          "fieldName": "ОГРНИП",
+          "requiredMarker": "Нет",
+          "block": "Сведения об организаторе (ИП)",
+          "subBlock": "Сведения об организаторе (ИП)"
+        },
+        {
+          "column": "BE",
+          "attribute": "56",
+          "fieldName": "Организатор ярмарки",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "BF",
+          "attribute": "57",
+          "fieldName": "Номер телефона",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "BG",
+          "attribute": "58",
+          "fieldName": "Электронная почта",
+          "requiredMarker": "Нет",
+          "block": "Организатор ярмарки \"Муниципальный орган\"",
+          "subBlock": "Организатор ярмарки \"Муниципальный орган\""
+        },
+        {
+          "column": "BH",
+          "attribute": "59",
+          "fieldName": "Номер места для размещения ярмарок",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BI",
+          "attribute": "60",
+          "fieldName": "Кадастровый номер земельного участка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BJ",
+          "attribute": "61",
+          "fieldName": "Адрес земельного участка",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BK",
+          "attribute": "62",
+          "fieldName": "Кадастровый номер объекта недвижимости",
+          "requiredMarker": "Нет",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BL",
+          "attribute": "63",
+          "fieldName": "Адрес объекта недвижимости",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BM",
+          "attribute": "64",
+          "fieldName": "Статус проектного места",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BN",
+          "attribute": "65",
+          "fieldName": "Спецификация статуса проектного места",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BO",
+          "attribute": "66",
+          "fieldName": "Статус в Реестре мест на размещения ярмарок",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BP",
+          "attribute": "67",
+          "fieldName": "Площадь места для размещения ярмарки, кв. м",
+          "requiredMarker": "Да",
+          "block": "Сведения о месте для размещения ярмарки",
+          "subBlock": "Сведения о месте для размещения ярмарки"
+        },
+        {
+          "column": "BQ",
+          "attribute": "68",
+          "fieldName": "Фотография объекта (основная)",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BR",
+          "attribute": "69",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BS",
+          "attribute": "70",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BT",
+          "attribute": "71",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        },
+        {
+          "column": "BU",
+          "attribute": "72",
+          "fieldName": "Фотография объекта",
+          "requiredMarker": "Нет",
+          "block": "",
+          "subBlock": ""
+        }
+      ],
+      "rows": [
+        {
+          "excelRow": 6,
+          "cells": [
+            {
+              "column": "B",
+              "value": "Ростовская область",
+              "kind": "string"
+            },
+            {
+              "column": "C",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "D",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "E",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "F",
+              "value": "Синтетическое значение 5",
+              "kind": "string"
+            },
+            {
+              "column": "G",
+              "value": "55.75, 037.61",
+              "kind": "string"
+            },
+            {
+              "column": "H",
+              "value": "Синтетическое значение 7",
+              "kind": "string"
+            },
+            {
+              "column": "I",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "J",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "K",
+              "value": "Действует",
+              "kind": "string"
+            },
+            {
+              "column": "L",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "M",
+              "value": "Специализированная",
+              "kind": "string"
+            },
+            {
+              "column": "N",
+              "value": "Сельскохозяйственная",
+              "kind": "string"
+            },
+            {
+              "column": "O",
+              "value": "Синтетическое значение 14",
+              "kind": "string"
+            },
+            {
+              "column": "P",
+              "value": "Продвижение ценностей национальной культуры среди отечественных и иностранных посетителей",
+              "kind": "string"
+            },
+            {
+              "column": "Q",
+              "value": "Синтетическое значение 16",
+              "kind": "string"
+            },
+            {
+              "column": "R",
+              "value": "Регулярная",
+              "kind": "string"
+            },
+            {
+              "column": "S",
+              "value": "Постоянно действующая",
+              "kind": "string"
+            },
+            {
+              "column": "T",
+              "value": "123.45",
+              "kind": "string"
+            },
+            {
+              "column": "U",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "V",
+              "value": "01.01.2025",
+              "kind": "string"
+            },
+            {
+              "column": "W",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "X",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "Y",
+              "value": "Без выходных",
+              "kind": "string"
+            },
+            {
+              "column": "Z",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AA",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AB",
+              "value": "Без выходных",
+              "kind": "string"
+            },
+            {
+              "column": "AC",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AD",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AE",
+              "value": "Без выходных",
+              "kind": "string"
+            },
+            {
+              "column": "AF",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AG",
+              "value": "09:00",
+              "kind": "string"
+            },
+            {
+              "column": "AH",
+              "value": "Да",
+              "kind": "string"
+            },
+            {
+              "column": "AI",
+              "value": "Без выходных",
+              "kind": "string"
+            },
+            {
+              "column": "AJ",
+              "value": "Без выходных",
+              "kind": "string"
+            },
+            {
+              "column": "AK",
+              "value": "Без выходных",
+              "kind": "string"
+            },
+            {
+              "column": "AL",
+              "value": "Синтетическое значение 37",
+              "kind": "string"
+            },
+            {
+              "column": "AM",
+              "value": "11",
+              "kind": "string"
+            },
+            {
+              "column": "AN",
+              "value": "11",
+              "kind": "string"
+            },
+            {
+              "column": "AO",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AP",
+              "value": "",
+              "kind": "string"
+            },
+            {
+              "column": "AQ",
+              "value": "Синтетическое значение 42",
+              "kind": "string"
+            },
+            {
+              "column": "AR",
+              "value": "Синтетическое значение 43",
+              "kind": "string"
+            },
+            {
+              "column": "AS",
+              "value": "Негосударственные пенсионные фонды",
+              "kind": "string"
+            },
+            {
+              "column": "AT",
+              "value": "1111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AU",
+              "value": "1111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AV",
+              "value": "111111111",
+              "kind": "string"
+            },
+            {
+              "column": "AW",
+              "value": "Синтетическое значение 48",
+              "kind": "string"
+            },
+            {
+              "column": "AX",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "AY",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "AZ",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "BA",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "BB",
+              "value": "Синтетическое значение 53",
+              "kind": "string"
+            },
+            {
+              "column": "BC",
+              "value": "111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BD",
+              "value": "111111111111111",
+              "kind": "string"
+            },
+            {
+              "column": "BE",
+              "value": "Синтетическое значение 56",
+              "kind": "string"
+            },
+            {
+              "column": "BF",
+              "value": "+7 (900) 111-11-11",
+              "kind": "string"
+            },
+            {
+              "column": "BG",
+              "value": "synthetic@example.invalid",
+              "kind": "string"
+            },
+            {
+              "column": "BH",
+              "value": "Синтетическое значение 59",
+              "kind": "string"
+            },
+            {
+              "column": "BI",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "BJ",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "BK",
+              "value": "77:01:123456:1",
+              "kind": "string"
+            },
+            {
+              "column": "BL",
+              "value": "123456, Синтетическая улица, 1",
+              "kind": "string"
+            },
+            {
+              "column": "BM",
+              "value": "Утверждено",
+              "kind": "string"
+            },
+            {
+              "column": "BN",
+              "value": "Свободно",
+              "kind": "string"
+            },
+            {
+              "column": "BO",
+              "value": "Утверждено",
+              "kind": "string"
+            },
+            {
+              "column": "BP",
+              "value": "123.45",
+              "kind": "string"
+            },
+            {
+              "column": "BQ",
+              "value": "synthetic-fair-2.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BR",
+              "value": "synthetic-fair-3.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BS",
+              "value": "synthetic-fair-4.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BT",
+              "value": "synthetic-fair-5.jpg",
+              "kind": "string"
+            },
+            {
+              "column": "BU",
+              "value": "synthetic-fair-6.jpg",
+              "kind": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

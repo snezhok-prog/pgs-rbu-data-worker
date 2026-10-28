@@ -1,0 +1,38 @@
+{
+  "_provenance": "Synthetic minimum-positive rows from published trade validation/structure. Common columns B-E must be set from the authoritative test region/municipality/organization. All physical header columns are retained; optional attachments and unrelated fair organizer blocks are empty. Values are proposed for validation, not claimed as a live import.",
+  "Рынки": {
+    "sheet2": {
+      "columns": {
+        "F": "Действует",
+        "G": "MARKET-PERMIT-1",
+        "H": "01.10.2026",
+        "I": "01.10.2026",
+        "J": "01.10.2030"
+      }
+    }
+  },
+  "Ярмарки": {
+    "sheet2": {
+      "columns": {
+        "F": "PLACE-1",
+        "G": "55.10000, 37.20000",
+        "K": "123456, Тестовый адрес объекта",
+        "L": "150",
+        "M": "Универсальная",
+        "P": "Утверждено",
+        "Q": "Свободно",
+        "R": "Утверждено"
+      }
+    },
+    "sheet3": {
+      "columns": {
+        "F": "FAIR-PERMIT-1",
+        "G": "Действует",
+        "H": "FAIR-1",
+        "I": "01.10.2026",
+        "J": "01.12.2026",
+        "K": "02.12.2026"
+      }
+    }
+  }
+}

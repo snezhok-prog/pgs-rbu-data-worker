@@ -1,0 +1,25 @@
+{
+  "coreUrl": "http://127.0.0.1:8081/int/api/v1/",
+  "engineUrl": "http://127.0.0.1:8080/engine-rest/",
+  "uiBaseUrl": "https://pgs.example.invalid",
+  "uploadUrl": "https://pgs.example.invalid/api/v1/storage/upload",
+  "cloudConfigUrl": "http://127.0.0.1:8888/sier-filestorage/default",
+  "storageEndpoint": "http://127.0.0.1:9000",
+  "fileAdapterPort": 18085,
+  "allowHttp": true,
+  "apiIntegrationVerified": false,
+  "standardCode": "REPLACE_WITH_DEV_IMPORT_STANDARD_NUMBER",
+  "organization": {
+    "_id": "REPLACE_WITH_DEV_ORGANIZATION_ID",
+    "name": "REPLACE_WITH_DEV_ORGANIZATION_NAME"
+  },
+  "region": {
+    "_id": "REPLACE_WITH_DEV_REGION_PASSPORT_ID"
+  },
+  "municipality": {
+    "_id": "REPLACE_WITH_DEV_MUNICIPALITY_PASSPORT_ID"
+  },
+  "card": {
+    "_id": "REPLACE_WITH_DEV_ORGANIZATION_PASSPORT_ID"
+  }
+}
