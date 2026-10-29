@@ -15,6 +15,7 @@ import static ru.evolenta.pgs.worker.Util.*;
 /** Explicit CMD commands for one owned external-task acceptance run. */
 public final class DevCli {
     static final long MAX_FILE = 20L * 1024 * 1024;
+    static final String TOPIC = "pgs-data-processing-v1";
     interface Transport { Object send(String method, String url, byte[] body, String contentType, Credentials credentials) throws Exception; }
     static final class Credentials {
         private final String kind, value;
@@ -128,13 +129,13 @@ public final class DevCli {
         int port = integer(context.getOrDefault("fileAdapterPort", 18085)); if (port < 1024 || port > 65535) throw new IllegalArgumentException("fileAdapterPort: 1024-65535");
         if (domain.equals("TRADE")) dataType = canonicalType(dataType); else dataType = domain.equals("PET") ? "Мой питомец" : "Реклама";
         String runId = UUID.randomUUID().toString(), suffix = name.substring(0, 1).toUpperCase(Locale.ROOT) + name.substring(1) + runId.substring(0, 8);
-        String prefix = domain.equals("TRADE") ? "RbuTrade" : domain.equals("PET") ? "RbuPet" : "RbuAdvertising", topic = "rbu-" + domain.toLowerCase(Locale.ROOT) + "-" + name + "-" + runId.substring(0, 8);
+        String prefix = domain.equals("TRADE") ? "PgsTrade" : domain.equals("PET") ? "PgsPet" : "PgsAdvertising", topic = TOPIC + "-" + domain.toLowerCase(Locale.ROOT) + "-" + name + "-" + runId.substring(0, 8);
         Path template = repo.resolve("tools/dev-cli/templates/" + domain.toLowerCase(Locale.ROOT) + "-acceptance.bpmn");
         String xml = Files.readString(template, StandardCharsets.UTF_8);
-        String originalTopic = "rbu-" + domain.toLowerCase(Locale.ROOT) + "-acceptance-20261028";
-        if (!xml.contains(originalTopic) || !xml.contains(prefix + "ImportAcceptance20261028")) throw new IllegalArgumentException("Unsupported acceptance BPMN template");
-        xml = xml.replace(originalTopic, topic).replace(prefix, prefix + suffix);
-        settings = obj("domain", domain, "dataType", dataType, "topic", topic, "processKey", prefix + suffix + "ImportAcceptance20261028", "context", context);
+        if (!xml.contains(TOPIC) || !xml.contains(prefix + "ImportV1")) throw new IllegalArgumentException("Unsupported acceptance BPMN template");
+        xml = xml.replace(TOPIC, topic);
+        for (String kind : List.of("Import", "Validation", "Rollback")) xml = xml.replace(prefix + kind + "V1", prefix + kind + "V1_" + suffix);
+        settings = obj("domain", domain, "dataType", dataType, "topic", topic, "processKey", prefix + "ImportV1_" + suffix, "context", context);
         state = obj("runId", runId, "name", name); Files.createDirectories(run); Files.writeString(run.resolve("acceptance.bpmn"), xml, StandardCharsets.UTF_8);
         write(run.resolve("settings.json"), settings); write(run.resolve("files.json"), obj("runId", runId, "files", obj())); save();
         Properties p = new Properties(); try (Reader in = Files.newBufferedReader(repo.resolve("config/worker.dev.properties"), StandardCharsets.UTF_8)) { p.load(in); }

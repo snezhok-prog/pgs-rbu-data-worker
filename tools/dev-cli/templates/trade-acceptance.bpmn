@@ -1,155 +1,155 @@
 <?xml version='1.0' encoding='utf-8'?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="ru.evolenta.pgs.trade.acceptance">
-  <bpmn:process id="RbuTradeImportAcceptance20261028" name="Торговля — Импорт — DEV" isExecutable="true" camunda:historyTimeToLive="7">
-    <bpmn:startEvent id="RbuTradeImportAcceptance20261028_Start" name="Начало" />
-    <bpmn:userTask id="RbuTradeImportAcceptance20261028_Setup" name="Подготовить собственное дело и файл" />
-    <bpmn:serviceTask id="RbuTradeImportAcceptance20261028_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="rbu-trade-acceptance-20261028">
+  <bpmn:process id="PgsTradeImportV1" name="Торговля — Импорт — DEV" isExecutable="true" camunda:historyTimeToLive="7">
+    <bpmn:startEvent id="PgsTradeImportV1_Start" name="Начало" />
+    <bpmn:userTask id="PgsTradeImportV1_Setup" name="Подготовить собственное дело и файл" />
+    <bpmn:serviceTask id="PgsTradeImportV1_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:userTask id="RbuTradeImportAcceptance20261028_Confirm" name="Проверить результат и подтвердить отпечаток файла" />
-    <bpmn:serviceTask id="RbuTradeImportAcceptance20261028_Apply" name="IMPORT_APPLY" camunda:type="external" camunda:topic="rbu-trade-acceptance-20261028">
+    <bpmn:userTask id="PgsTradeImportV1_Confirm" name="Проверить результат и подтвердить отпечаток файла" />
+    <bpmn:serviceTask id="PgsTradeImportV1_Apply" name="IMPORT_APPLY" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_APPLY</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:userTask id="RbuTradeImportAcceptance20261028_Inspect" name="Сверить пакет записей в реестрах" />
-    <bpmn:exclusiveGateway id="RbuTradeImportAcceptance20261028_Decision" name="Есть следующий пакет или повтор?" default="RbuTradeImportAcceptance20261028_finish" />
-    <bpmn:serviceTask id="RbuTradeImportAcceptance20261028_Finalize" name="IMPORT_FINALIZE" camunda:type="external" camunda:topic="rbu-trade-acceptance-20261028">
+    <bpmn:userTask id="PgsTradeImportV1_Inspect" name="Сверить пакет записей в реестрах" />
+    <bpmn:exclusiveGateway id="PgsTradeImportV1_Decision" name="Есть следующий пакет или повтор?" default="PgsTradeImportV1_finish" />
+    <bpmn:serviceTask id="PgsTradeImportV1_Finalize" name="IMPORT_FINALIZE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_FINALIZE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="RbuTradeImportAcceptance20261028_End" name="Процесс проверки завершён" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_flow_Start" sourceRef="RbuTradeImportAcceptance20261028_Start" targetRef="RbuTradeImportAcceptance20261028_Setup" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_flow_Setup" sourceRef="RbuTradeImportAcceptance20261028_Setup" targetRef="RbuTradeImportAcceptance20261028_Parse" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_flow_Parse" sourceRef="RbuTradeImportAcceptance20261028_Parse" targetRef="RbuTradeImportAcceptance20261028_Confirm" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_flow_Confirm" sourceRef="RbuTradeImportAcceptance20261028_Confirm" targetRef="RbuTradeImportAcceptance20261028_Apply" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_flow_Apply" sourceRef="RbuTradeImportAcceptance20261028_Apply" targetRef="RbuTradeImportAcceptance20261028_Inspect" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_flow_Inspect" sourceRef="RbuTradeImportAcceptance20261028_Inspect" targetRef="RbuTradeImportAcceptance20261028_Decision" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_finish" sourceRef="RbuTradeImportAcceptance20261028_Decision" targetRef="RbuTradeImportAcceptance20261028_Finalize" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_flow_Finalize" sourceRef="RbuTradeImportAcceptance20261028_Finalize" targetRef="RbuTradeImportAcceptance20261028_End" />
-    <bpmn:sequenceFlow id="RbuTradeImportAcceptance20261028_repeat" sourceRef="RbuTradeImportAcceptance20261028_Decision" targetRef="RbuTradeImportAcceptance20261028_Apply">
+    <bpmn:endEvent id="PgsTradeImportV1_End" name="Процесс проверки завершён" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_flow_Start" sourceRef="PgsTradeImportV1_Start" targetRef="PgsTradeImportV1_Setup" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_flow_Setup" sourceRef="PgsTradeImportV1_Setup" targetRef="PgsTradeImportV1_Parse" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_flow_Parse" sourceRef="PgsTradeImportV1_Parse" targetRef="PgsTradeImportV1_Confirm" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_flow_Confirm" sourceRef="PgsTradeImportV1_Confirm" targetRef="PgsTradeImportV1_Apply" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_flow_Apply" sourceRef="PgsTradeImportV1_Apply" targetRef="PgsTradeImportV1_Inspect" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_flow_Inspect" sourceRef="PgsTradeImportV1_Inspect" targetRef="PgsTradeImportV1_Decision" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_finish" sourceRef="PgsTradeImportV1_Decision" targetRef="PgsTradeImportV1_Finalize" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_flow_Finalize" sourceRef="PgsTradeImportV1_Finalize" targetRef="PgsTradeImportV1_End" />
+    <bpmn:sequenceFlow id="PgsTradeImportV1_repeat" sourceRef="PgsTradeImportV1_Decision" targetRef="PgsTradeImportV1_Apply">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${rbuApplyHasMoreBatches || rbuRepeat}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
   </bpmn:process>
-  <bpmn:process id="RbuTradeValidationAcceptance20261028" name="Торговля — Валидация — DEV" isExecutable="true" camunda:historyTimeToLive="7">
-    <bpmn:startEvent id="RbuTradeValidationAcceptance20261028_Start" name="Начало" />
-    <bpmn:userTask id="RbuTradeValidationAcceptance20261028_Setup" name="Подготовить собственное дело и файл" />
-    <bpmn:serviceTask id="RbuTradeValidationAcceptance20261028_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="rbu-trade-acceptance-20261028">
+  <bpmn:process id="PgsTradeValidationV1" name="Торговля — Валидация — DEV" isExecutable="true" camunda:historyTimeToLive="7">
+    <bpmn:startEvent id="PgsTradeValidationV1_Start" name="Начало" />
+    <bpmn:userTask id="PgsTradeValidationV1_Setup" name="Подготовить собственное дело и файл" />
+    <bpmn:serviceTask id="PgsTradeValidationV1_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="RbuTradeValidationAcceptance20261028_End" name="Процесс проверки завершён" />
-    <bpmn:sequenceFlow id="RbuTradeValidationAcceptance20261028_flow_Start" sourceRef="RbuTradeValidationAcceptance20261028_Start" targetRef="RbuTradeValidationAcceptance20261028_Setup" />
-    <bpmn:sequenceFlow id="RbuTradeValidationAcceptance20261028_flow_Setup" sourceRef="RbuTradeValidationAcceptance20261028_Setup" targetRef="RbuTradeValidationAcceptance20261028_Parse" />
-    <bpmn:sequenceFlow id="RbuTradeValidationAcceptance20261028_flow_Parse" sourceRef="RbuTradeValidationAcceptance20261028_Parse" targetRef="RbuTradeValidationAcceptance20261028_End" />
+    <bpmn:endEvent id="PgsTradeValidationV1_End" name="Процесс проверки завершён" />
+    <bpmn:sequenceFlow id="PgsTradeValidationV1_flow_Start" sourceRef="PgsTradeValidationV1_Start" targetRef="PgsTradeValidationV1_Setup" />
+    <bpmn:sequenceFlow id="PgsTradeValidationV1_flow_Setup" sourceRef="PgsTradeValidationV1_Setup" targetRef="PgsTradeValidationV1_Parse" />
+    <bpmn:sequenceFlow id="PgsTradeValidationV1_flow_Parse" sourceRef="PgsTradeValidationV1_Parse" targetRef="PgsTradeValidationV1_End" />
   </bpmn:process>
-  <bpmn:process id="RbuTradeRollbackAcceptance20261028" name="Торговля — Откат — DEV" isExecutable="true" camunda:historyTimeToLive="7">
-    <bpmn:startEvent id="RbuTradeRollbackAcceptance20261028_Start" name="Начало" />
-    <bpmn:userTask id="RbuTradeRollbackAcceptance20261028_Setup" name="Подготовить собственное дело и файл" />
-    <bpmn:serviceTask id="RbuTradeRollbackAcceptance20261028_Prepare" name="ROLLBACK_PREPARE" camunda:type="external" camunda:topic="rbu-trade-acceptance-20261028">
+  <bpmn:process id="PgsTradeRollbackV1" name="Торговля — Откат — DEV" isExecutable="true" camunda:historyTimeToLive="7">
+    <bpmn:startEvent id="PgsTradeRollbackV1_Start" name="Начало" />
+    <bpmn:userTask id="PgsTradeRollbackV1_Setup" name="Подготовить собственное дело и файл" />
+    <bpmn:serviceTask id="PgsTradeRollbackV1_Prepare" name="ROLLBACK_PREPARE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_PREPARE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:userTask id="RbuTradeRollbackAcceptance20261028_Confirm" name="Подтвердить текущий план отката" />
-    <bpmn:serviceTask id="RbuTradeRollbackAcceptance20261028_Execute" name="ROLLBACK_EXECUTE" camunda:type="external" camunda:topic="rbu-trade-acceptance-20261028">
+    <bpmn:userTask id="PgsTradeRollbackV1_Confirm" name="Подтвердить текущий план отката" />
+    <bpmn:serviceTask id="PgsTradeRollbackV1_Execute" name="ROLLBACK_EXECUTE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_EXECUTE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="RbuTradeRollbackAcceptance20261028_Finalize" name="ROLLBACK_FINALIZE" camunda:type="external" camunda:topic="rbu-trade-acceptance-20261028">
+    <bpmn:serviceTask id="PgsTradeRollbackV1_Finalize" name="ROLLBACK_FINALIZE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_FINALIZE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="RbuTradeRollbackAcceptance20261028_End" name="Процесс проверки завершён" />
-    <bpmn:sequenceFlow id="RbuTradeRollbackAcceptance20261028_flow_Start" sourceRef="RbuTradeRollbackAcceptance20261028_Start" targetRef="RbuTradeRollbackAcceptance20261028_Setup" />
-    <bpmn:sequenceFlow id="RbuTradeRollbackAcceptance20261028_flow_Setup" sourceRef="RbuTradeRollbackAcceptance20261028_Setup" targetRef="RbuTradeRollbackAcceptance20261028_Prepare" />
-    <bpmn:sequenceFlow id="RbuTradeRollbackAcceptance20261028_flow_Prepare" sourceRef="RbuTradeRollbackAcceptance20261028_Prepare" targetRef="RbuTradeRollbackAcceptance20261028_Confirm" />
-    <bpmn:sequenceFlow id="RbuTradeRollbackAcceptance20261028_flow_Confirm" sourceRef="RbuTradeRollbackAcceptance20261028_Confirm" targetRef="RbuTradeRollbackAcceptance20261028_Execute" />
-    <bpmn:sequenceFlow id="RbuTradeRollbackAcceptance20261028_flow_Execute" sourceRef="RbuTradeRollbackAcceptance20261028_Execute" targetRef="RbuTradeRollbackAcceptance20261028_Finalize" />
-    <bpmn:sequenceFlow id="RbuTradeRollbackAcceptance20261028_flow_Finalize" sourceRef="RbuTradeRollbackAcceptance20261028_Finalize" targetRef="RbuTradeRollbackAcceptance20261028_End" />
+    <bpmn:endEvent id="PgsTradeRollbackV1_End" name="Процесс проверки завершён" />
+    <bpmn:sequenceFlow id="PgsTradeRollbackV1_flow_Start" sourceRef="PgsTradeRollbackV1_Start" targetRef="PgsTradeRollbackV1_Setup" />
+    <bpmn:sequenceFlow id="PgsTradeRollbackV1_flow_Setup" sourceRef="PgsTradeRollbackV1_Setup" targetRef="PgsTradeRollbackV1_Prepare" />
+    <bpmn:sequenceFlow id="PgsTradeRollbackV1_flow_Prepare" sourceRef="PgsTradeRollbackV1_Prepare" targetRef="PgsTradeRollbackV1_Confirm" />
+    <bpmn:sequenceFlow id="PgsTradeRollbackV1_flow_Confirm" sourceRef="PgsTradeRollbackV1_Confirm" targetRef="PgsTradeRollbackV1_Execute" />
+    <bpmn:sequenceFlow id="PgsTradeRollbackV1_flow_Execute" sourceRef="PgsTradeRollbackV1_Execute" targetRef="PgsTradeRollbackV1_Finalize" />
+    <bpmn:sequenceFlow id="PgsTradeRollbackV1_flow_Finalize" sourceRef="PgsTradeRollbackV1_Finalize" targetRef="PgsTradeRollbackV1_End" />
   </bpmn:process>
-  <bpmndi:BPMNDiagram id="RbuTradeImportAcceptance20261028_diagram">
-    <bpmndi:BPMNPlane id="RbuTradeImportAcceptance20261028_plane" bpmnElement="RbuTradeImportAcceptance20261028">
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Start_shape" bpmnElement="RbuTradeImportAcceptance20261028_Start">
+  <bpmndi:BPMNDiagram id="PgsTradeImportV1_diagram">
+    <bpmndi:BPMNPlane id="PgsTradeImportV1_plane" bpmnElement="PgsTradeImportV1">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Start_shape" bpmnElement="PgsTradeImportV1_Start">
         <dc:Bounds x="80" y="187.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Setup_shape" bpmnElement="RbuTradeImportAcceptance20261028_Setup">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Setup_shape" bpmnElement="PgsTradeImportV1_Setup">
         <dc:Bounds x="290" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Parse_shape" bpmnElement="RbuTradeImportAcceptance20261028_Parse">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Parse_shape" bpmnElement="PgsTradeImportV1_Parse">
         <dc:Bounds x="500" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Confirm_shape" bpmnElement="RbuTradeImportAcceptance20261028_Confirm">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Confirm_shape" bpmnElement="PgsTradeImportV1_Confirm">
         <dc:Bounds x="710" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Apply_shape" bpmnElement="RbuTradeImportAcceptance20261028_Apply">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Apply_shape" bpmnElement="PgsTradeImportV1_Apply">
         <dc:Bounds x="920" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Inspect_shape" bpmnElement="RbuTradeImportAcceptance20261028_Inspect">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Inspect_shape" bpmnElement="PgsTradeImportV1_Inspect">
         <dc:Bounds x="1130" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Decision_shape" bpmnElement="RbuTradeImportAcceptance20261028_Decision">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Decision_shape" bpmnElement="PgsTradeImportV1_Decision">
         <dc:Bounds x="1340" y="180.0" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_Finalize_shape" bpmnElement="RbuTradeImportAcceptance20261028_Finalize">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_Finalize_shape" bpmnElement="PgsTradeImportV1_Finalize">
         <dc:Bounds x="1550" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeImportAcceptance20261028_End_shape" bpmnElement="RbuTradeImportAcceptance20261028_End">
+      <bpmndi:BPMNShape id="PgsTradeImportV1_End_shape" bpmnElement="PgsTradeImportV1_End">
         <dc:Bounds x="1760" y="187.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_flow_Start_edge" bpmnElement="RbuTradeImportAcceptance20261028_flow_Start">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_flow_Start_edge" bpmnElement="PgsTradeImportV1_flow_Start">
         <di:waypoint x="116" y="205.0" />
         <di:waypoint x="290" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_flow_Setup_edge" bpmnElement="RbuTradeImportAcceptance20261028_flow_Setup">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_flow_Setup_edge" bpmnElement="PgsTradeImportV1_flow_Setup">
         <di:waypoint x="450" y="205.0" />
         <di:waypoint x="500" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_flow_Parse_edge" bpmnElement="RbuTradeImportAcceptance20261028_flow_Parse">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_flow_Parse_edge" bpmnElement="PgsTradeImportV1_flow_Parse">
         <di:waypoint x="660" y="205.0" />
         <di:waypoint x="710" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_flow_Confirm_edge" bpmnElement="RbuTradeImportAcceptance20261028_flow_Confirm">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_flow_Confirm_edge" bpmnElement="PgsTradeImportV1_flow_Confirm">
         <di:waypoint x="870" y="205.0" />
         <di:waypoint x="920" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_flow_Apply_edge" bpmnElement="RbuTradeImportAcceptance20261028_flow_Apply">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_flow_Apply_edge" bpmnElement="PgsTradeImportV1_flow_Apply">
         <di:waypoint x="1080" y="205.0" />
         <di:waypoint x="1130" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_flow_Inspect_edge" bpmnElement="RbuTradeImportAcceptance20261028_flow_Inspect">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_flow_Inspect_edge" bpmnElement="PgsTradeImportV1_flow_Inspect">
         <di:waypoint x="1290" y="205.0" />
         <di:waypoint x="1340" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_finish_edge" bpmnElement="RbuTradeImportAcceptance20261028_finish">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_finish_edge" bpmnElement="PgsTradeImportV1_finish">
         <di:waypoint x="1390" y="205.0" />
         <di:waypoint x="1550" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_flow_Finalize_edge" bpmnElement="RbuTradeImportAcceptance20261028_flow_Finalize">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_flow_Finalize_edge" bpmnElement="PgsTradeImportV1_flow_Finalize">
         <di:waypoint x="1710" y="205.0" />
         <di:waypoint x="1760" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeImportAcceptance20261028_repeat_edge" bpmnElement="RbuTradeImportAcceptance20261028_repeat">
+      <bpmndi:BPMNEdge id="PgsTradeImportV1_repeat_edge" bpmnElement="PgsTradeImportV1_repeat">
         <di:waypoint x="1365.0" y="230.0" />
         <di:waypoint x="1365.0" y="320" />
         <di:waypoint x="1000.0" y="320" />
@@ -157,78 +157,78 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmndi:BPMNDiagram id="RbuTradeValidationAcceptance20261028_diagram">
-    <bpmndi:BPMNPlane id="RbuTradeValidationAcceptance20261028_plane" bpmnElement="RbuTradeValidationAcceptance20261028">
-      <bpmndi:BPMNShape id="RbuTradeValidationAcceptance20261028_Start_shape" bpmnElement="RbuTradeValidationAcceptance20261028_Start">
+  <bpmndi:BPMNDiagram id="PgsTradeValidationV1_diagram">
+    <bpmndi:BPMNPlane id="PgsTradeValidationV1_plane" bpmnElement="PgsTradeValidationV1">
+      <bpmndi:BPMNShape id="PgsTradeValidationV1_Start_shape" bpmnElement="PgsTradeValidationV1_Start">
         <dc:Bounds x="80" y="187.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeValidationAcceptance20261028_Setup_shape" bpmnElement="RbuTradeValidationAcceptance20261028_Setup">
+      <bpmndi:BPMNShape id="PgsTradeValidationV1_Setup_shape" bpmnElement="PgsTradeValidationV1_Setup">
         <dc:Bounds x="290" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeValidationAcceptance20261028_Parse_shape" bpmnElement="RbuTradeValidationAcceptance20261028_Parse">
+      <bpmndi:BPMNShape id="PgsTradeValidationV1_Parse_shape" bpmnElement="PgsTradeValidationV1_Parse">
         <dc:Bounds x="500" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeValidationAcceptance20261028_End_shape" bpmnElement="RbuTradeValidationAcceptance20261028_End">
+      <bpmndi:BPMNShape id="PgsTradeValidationV1_End_shape" bpmnElement="PgsTradeValidationV1_End">
         <dc:Bounds x="710" y="187.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="RbuTradeValidationAcceptance20261028_flow_Start_edge" bpmnElement="RbuTradeValidationAcceptance20261028_flow_Start">
+      <bpmndi:BPMNEdge id="PgsTradeValidationV1_flow_Start_edge" bpmnElement="PgsTradeValidationV1_flow_Start">
         <di:waypoint x="116" y="205.0" />
         <di:waypoint x="290" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeValidationAcceptance20261028_flow_Setup_edge" bpmnElement="RbuTradeValidationAcceptance20261028_flow_Setup">
+      <bpmndi:BPMNEdge id="PgsTradeValidationV1_flow_Setup_edge" bpmnElement="PgsTradeValidationV1_flow_Setup">
         <di:waypoint x="450" y="205.0" />
         <di:waypoint x="500" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeValidationAcceptance20261028_flow_Parse_edge" bpmnElement="RbuTradeValidationAcceptance20261028_flow_Parse">
+      <bpmndi:BPMNEdge id="PgsTradeValidationV1_flow_Parse_edge" bpmnElement="PgsTradeValidationV1_flow_Parse">
         <di:waypoint x="660" y="205.0" />
         <di:waypoint x="710" y="205.0" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmndi:BPMNDiagram id="RbuTradeRollbackAcceptance20261028_diagram">
-    <bpmndi:BPMNPlane id="RbuTradeRollbackAcceptance20261028_plane" bpmnElement="RbuTradeRollbackAcceptance20261028">
-      <bpmndi:BPMNShape id="RbuTradeRollbackAcceptance20261028_Start_shape" bpmnElement="RbuTradeRollbackAcceptance20261028_Start">
+  <bpmndi:BPMNDiagram id="PgsTradeRollbackV1_diagram">
+    <bpmndi:BPMNPlane id="PgsTradeRollbackV1_plane" bpmnElement="PgsTradeRollbackV1">
+      <bpmndi:BPMNShape id="PgsTradeRollbackV1_Start_shape" bpmnElement="PgsTradeRollbackV1_Start">
         <dc:Bounds x="80" y="187.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeRollbackAcceptance20261028_Setup_shape" bpmnElement="RbuTradeRollbackAcceptance20261028_Setup">
+      <bpmndi:BPMNShape id="PgsTradeRollbackV1_Setup_shape" bpmnElement="PgsTradeRollbackV1_Setup">
         <dc:Bounds x="290" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeRollbackAcceptance20261028_Prepare_shape" bpmnElement="RbuTradeRollbackAcceptance20261028_Prepare">
+      <bpmndi:BPMNShape id="PgsTradeRollbackV1_Prepare_shape" bpmnElement="PgsTradeRollbackV1_Prepare">
         <dc:Bounds x="500" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeRollbackAcceptance20261028_Confirm_shape" bpmnElement="RbuTradeRollbackAcceptance20261028_Confirm">
+      <bpmndi:BPMNShape id="PgsTradeRollbackV1_Confirm_shape" bpmnElement="PgsTradeRollbackV1_Confirm">
         <dc:Bounds x="710" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeRollbackAcceptance20261028_Execute_shape" bpmnElement="RbuTradeRollbackAcceptance20261028_Execute">
+      <bpmndi:BPMNShape id="PgsTradeRollbackV1_Execute_shape" bpmnElement="PgsTradeRollbackV1_Execute">
         <dc:Bounds x="920" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeRollbackAcceptance20261028_Finalize_shape" bpmnElement="RbuTradeRollbackAcceptance20261028_Finalize">
+      <bpmndi:BPMNShape id="PgsTradeRollbackV1_Finalize_shape" bpmnElement="PgsTradeRollbackV1_Finalize">
         <dc:Bounds x="1130" y="160.0" width="160" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuTradeRollbackAcceptance20261028_End_shape" bpmnElement="RbuTradeRollbackAcceptance20261028_End">
+      <bpmndi:BPMNShape id="PgsTradeRollbackV1_End_shape" bpmnElement="PgsTradeRollbackV1_End">
         <dc:Bounds x="1340" y="187.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="RbuTradeRollbackAcceptance20261028_flow_Start_edge" bpmnElement="RbuTradeRollbackAcceptance20261028_flow_Start">
+      <bpmndi:BPMNEdge id="PgsTradeRollbackV1_flow_Start_edge" bpmnElement="PgsTradeRollbackV1_flow_Start">
         <di:waypoint x="116" y="205.0" />
         <di:waypoint x="290" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeRollbackAcceptance20261028_flow_Setup_edge" bpmnElement="RbuTradeRollbackAcceptance20261028_flow_Setup">
+      <bpmndi:BPMNEdge id="PgsTradeRollbackV1_flow_Setup_edge" bpmnElement="PgsTradeRollbackV1_flow_Setup">
         <di:waypoint x="450" y="205.0" />
         <di:waypoint x="500" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeRollbackAcceptance20261028_flow_Prepare_edge" bpmnElement="RbuTradeRollbackAcceptance20261028_flow_Prepare">
+      <bpmndi:BPMNEdge id="PgsTradeRollbackV1_flow_Prepare_edge" bpmnElement="PgsTradeRollbackV1_flow_Prepare">
         <di:waypoint x="660" y="205.0" />
         <di:waypoint x="710" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeRollbackAcceptance20261028_flow_Confirm_edge" bpmnElement="RbuTradeRollbackAcceptance20261028_flow_Confirm">
+      <bpmndi:BPMNEdge id="PgsTradeRollbackV1_flow_Confirm_edge" bpmnElement="PgsTradeRollbackV1_flow_Confirm">
         <di:waypoint x="870" y="205.0" />
         <di:waypoint x="920" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeRollbackAcceptance20261028_flow_Execute_edge" bpmnElement="RbuTradeRollbackAcceptance20261028_flow_Execute">
+      <bpmndi:BPMNEdge id="PgsTradeRollbackV1_flow_Execute_edge" bpmnElement="PgsTradeRollbackV1_flow_Execute">
         <di:waypoint x="1080" y="205.0" />
         <di:waypoint x="1130" y="205.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuTradeRollbackAcceptance20261028_flow_Finalize_edge" bpmnElement="RbuTradeRollbackAcceptance20261028_flow_Finalize">
+      <bpmndi:BPMNEdge id="PgsTradeRollbackV1_flow_Finalize_edge" bpmnElement="PgsTradeRollbackV1_flow_Finalize">
         <di:waypoint x="1290" y="205.0" />
         <di:waypoint x="1340" y="205.0" />
       </bpmndi:BPMNEdge>

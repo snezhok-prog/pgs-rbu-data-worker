@@ -4,7 +4,7 @@
     <bpmn:startEvent id="StartEvent_RbuImport" name="Задание зарегистрировано">
       <bpmn:outgoing>Flow_StartToValidate</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuValidateImport" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuValidateImport" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
@@ -33,7 +33,7 @@ if (execution.getVariable('rbuCanApply') != true &amp;&amp; !(status in ['APPLYI
 return null
 </bpmn:script>
     </bpmn:scriptTask>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuPersistPetJournal" name="Сверить реестры и подтвердить импорт" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuPersistPetJournal" name="Сверить реестры и подтвердить импорт" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_FINALIZE</camunda:inputParameter>
@@ -112,7 +112,7 @@ return null
       <bpmn:outgoing>Flow_0v1p81p</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_RbuReloadFile" messageRef="Message_RbuReloadFile" />
     </bpmn:intermediateCatchEvent>
-    <bpmn:serviceTask id="Activity_RbuCancelImport" name="Зафиксировать отмену" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask id="Activity_RbuCancelImport" name="Зафиксировать отмену" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_CANCEL</camunda:inputParameter>
@@ -364,7 +364,7 @@ execution.setVariable('rbuAppealNumberTag', unitId ?: '')</bpmn:script>
       <bpmn:startEvent id="Start_PetRow">
         <bpmn:outgoing>Flow_PetRow_Start</bpmn:outgoing>
       </bpmn:startEvent>
-      <bpmn:serviceTask camunda:asyncAfter="true" camunda:asyncBefore="true" id="Activity_PetProcessOneRow" name="Применить очередной пакет импорта" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+      <bpmn:serviceTask camunda:asyncAfter="true" camunda:asyncBefore="true" id="Activity_PetProcessOneRow" name="Применить очередной пакет импорта" camunda:type="external" camunda:topic="pgs-data-processing-v1">
         <bpmn:extensionElements>
           <camunda:inputOutput>
             <camunda:inputParameter name="rbuOperation">IMPORT_APPLY</camunda:inputParameter>

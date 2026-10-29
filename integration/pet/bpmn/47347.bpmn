@@ -6,7 +6,7 @@
     <bpmn:startEvent id="StartEvent_RbuPetRollback" name="Дело зарегистрировано">
       <bpmn:outgoing>Flow_StartToPrepare</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuPreparePetRollback" name="Подготовить безопасный план удаления" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuPreparePetRollback" name="Подготовить безопасный план удаления" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_PREPARE</camunda:inputParameter>
@@ -26,7 +26,7 @@
       <bpmn:outgoing>Flow_ConfirmToDeleteBatch</bpmn:outgoing>
       <bpmn:messageEventDefinition messageRef="Message_RbuConfirmPetRollback" />
     </bpmn:intermediateCatchEvent>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuDeletePetRollbackBatch" name="Удалить пачку записей на сервере" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuDeletePetRollbackBatch" name="Удалить пачку записей на сервере" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:failedJobRetryTimeCycle>R5/PT5M</camunda:failedJobRetryTimeCycle>
         <camunda:inputOutput>
@@ -43,7 +43,7 @@
       <bpmn:incoming>Flow_PetExternalRollbackMore</bpmn:incoming>
       <bpmn:outgoing>Flow_PetExternalRollbackExecuteToBatch</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuFinalizePetRollback" name="Зафиксировать результат удаления" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuFinalizePetRollback" name="Зафиксировать результат удаления" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_FINALIZE</camunda:inputParameter>

@@ -4,7 +4,7 @@
     <bpmn:startEvent id="StartEvent_RbuImport" name="Задание зарегистрировано">
       <bpmn:outgoing>Flow_StartToValidate</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:serviceTask camunda:asyncBefore="true" camunda:exclusive="false" id="Activity_RbuValidateImport" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" camunda:exclusive="false" id="Activity_RbuValidateImport" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>

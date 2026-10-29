@@ -5,6 +5,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
 import java.util.regex.Pattern;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Element;
 import ru.evolenta.pgs.worker.Json;
 import static ru.evolenta.pgs.worker.Util.*;
 
@@ -58,7 +60,34 @@ public final class DevCliTest {
             Path to = home.resolve(file); Files.createDirectories(to.getParent()); Files.copy(source.resolve(file), to);
         }
         Path context = home.resolve("context.local.json"); DevCli.write(context, context()); Fake fake = new Fake(); DevCli cli = new DevCli(home, name, fake); cli.init(domain, context, type); fake.processKey = clean(cli.settings.get("processKey"));
+        String prefix = "Pgs" + (domain.equals("TRADE") ? "Trade" : domain.equals("PET") ? "Pet" : "Advertising");
+        String topic = clean(cli.settings.get("topic")), suffix = name.substring(0, 1).toUpperCase(Locale.ROOT) + name.substring(1) + cli.value("runId").substring(0, 8);
+        check(topic.equals("pgs-data-processing-v1-" + domain.toLowerCase(Locale.ROOT) + "-" + name + "-" + cli.value("runId").substring(0, 8)), "Generated topic preserves canonical base and run isolation");
+        check(fake.processKey.equals(prefix + "ImportV1_" + suffix), "Generated process key preserves canonical base and run isolation");
+        Properties worker = new Properties(); try (var reader = Files.newBufferedReader(cli.run.resolve("worker.properties"))) { worker.load(reader); }
+        check(topic.equals(worker.getProperty("worker.topic")), "Worker subscribes only to its generated topic");
+        bpmn(cli.run.resolve("acceptance.bpmn"), topic, prefix, "_" + suffix);
         Path input = home.resolve("input.xlsx"); Files.writeString(input, "synthetic client transport bytes; parser not invoked"); return new Fixture(home, cli, fake, input);
+    }
+    static void bpmn(Path path, String topic, String prefix, String suffix) throws Exception {
+        var factory = DocumentBuilderFactory.newInstance(); factory.setNamespaceAware(true); factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+        var document = factory.newDocumentBuilder().parse(path.toFile());
+        var nodes = document.getElementsByTagName("*"); Set<String> ids = new HashSet<>(); boolean unique = true;
+        for (int index = 0; index < nodes.getLength(); index++) { var element = (Element) nodes.item(index); if (element.hasAttribute("id")) unique &= ids.add(element.getAttribute("id")); }
+        check(unique, "BPMN IDs remain unique: " + path.getFileName());
+        List<String> missing = new ArrayList<>();
+        for (int index = 0; index < nodes.getLength(); index++) { var element = (Element) nodes.item(index); for (String field : List.of("sourceRef", "targetRef", "bpmnElement", "default")) if (element.hasAttribute(field) && !ids.contains(element.getAttribute(field))) missing.add(field + "=" + element.getAttribute(field)); }
+        check(missing.isEmpty(), "All sequence/diagram/default references resolve: " + missing);
+        String bpmn = "http://www.omg.org/spec/BPMN/20100524/MODEL", camunda = "http://camunda.org/schema/1.0/bpmn";
+        var processes = document.getElementsByTagNameNS(bpmn, "process"); Set<String> keys = new HashSet<>();
+        Map<String,List<String>> operations = Map.of("Import", List.of("PARSE_VALIDATE", "IMPORT_APPLY", "IMPORT_FINALIZE"), "Validation", List.of("PARSE_VALIDATE"), "Rollback", List.of("ROLLBACK_PREPARE", "ROLLBACK_EXECUTE", "ROLLBACK_FINALIZE"));
+        for (int index = 0; index < processes.getLength(); index++) {
+            var process = (Element) processes.item(index); String processKey = process.getAttribute("id"); keys.add(processKey); var tasks = process.getElementsByTagNameNS(bpmn, "serviceTask"); List<String> actual = new ArrayList<>();
+            for (int taskIndex = 0; taskIndex < tasks.getLength(); taskIndex++) { var task = (Element) tasks.item(taskIndex); check(topic.equals(task.getAttributeNS(camunda, "topic")), "Every external task uses the expected topic"); var inputs = task.getElementsByTagNameNS(camunda, "inputParameter"); for (int inputIndex = 0; inputIndex < inputs.getLength(); inputIndex++) { var input = (Element) inputs.item(inputIndex); if (input.getAttribute("name").equals("rbuOperation")) actual.add(input.getTextContent().trim()); } }
+            String kind = operations.keySet().stream().filter(name -> processKey.equals(prefix + name + "V1" + suffix)).findFirst().orElse("");
+            check(!kind.isEmpty() && actual.equals(operations.get(kind)), "Canonical process key retains its operation sequence: " + processKey);
+        }
+        check(keys.equals(Set.of(prefix + "ImportV1" + suffix, prefix + "ValidationV1" + suffix, prefix + "RollbackV1" + suffix)), "All three canonical process definitions are present");
     }
     static Map<String,Object> context() {
         return obj("coreUrl", "https://localhost/core/", "engineUrl", "https://localhost/engine-rest/", "uploadUrl", "https://localhost/api/v1/storage/upload", "uiBaseUrl", "https://localhost", "cloudConfigUrl", "https://localhost/config/service/default", "storageEndpoint", "https://localhost/storage", "standardCode", "41059", "apiIntegrationVerified", true,
@@ -74,6 +103,11 @@ public final class DevCliTest {
     }
     public static void main(String[] args) throws Exception {
         Path source = Path.of(args[0]);
+        for (String domain : List.of("Advertising", "Trade", "Pet")) bpmn(source.resolve("tools/dev-cli/templates/" + domain.toLowerCase(Locale.ROOT) + "-acceptance.bpmn"), "pgs-data-processing-v1", "Pgs" + domain, "");
+        bpmn(source.resolve("bpmn/trade-acceptance.bpmn"), "pgs-data-processing-v1", "PgsTrade", "");
+        Fixture isolatedOne = fixture(source, "TRADE", "НТО", "isolated01"), isolatedTwo = fixture(source, "TRADE", "НТО", "isolated01");
+        check(!isolatedOne.cli.settings.get("topic").equals(isolatedTwo.cli.settings.get("topic")), "Separate runs never share an external-task topic");
+        check(!isolatedOne.cli.settings.get("processKey").equals(isolatedTwo.cli.settings.get("processKey")), "Separate runs never share a process definition key");
         for (String profile : List.of("ROIV", "OMSU")) {
             Fixture pet = fixture(source, "PET", "", "pet01");
             ready(pet, profile);

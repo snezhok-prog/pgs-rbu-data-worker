@@ -1,155 +1,155 @@
 <?xml version='1.0' encoding='utf-8'?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="ru.polylog.rbu.acceptance">
-  <bpmn:process id="RbuAdvertisingImportAcceptance20261028" name="Реклама — Import — проверка DEV" isExecutable="true" camunda:historyTimeToLive="7">
-    <bpmn:startEvent id="RbuAdvertisingImportAcceptance20261028_Start" name="Начало" />
-    <bpmn:userTask id="RbuAdvertisingImportAcceptance20261028_Setup" name="Подготовить тестовое дело" />
-    <bpmn:serviceTask id="RbuAdvertisingImportAcceptance20261028_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="rbu-advertising-acceptance-20261028">
+  <bpmn:process id="PgsAdvertisingImportV1" name="Реклама — Import — проверка DEV" isExecutable="true" camunda:historyTimeToLive="7">
+    <bpmn:startEvent id="PgsAdvertisingImportV1_Start" name="Начало" />
+    <bpmn:userTask id="PgsAdvertisingImportV1_Setup" name="Подготовить тестовое дело" />
+    <bpmn:serviceTask id="PgsAdvertisingImportV1_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:userTask id="RbuAdvertisingImportAcceptance20261028_Confirm" name="Проверить файл и подтвердить" />
-    <bpmn:serviceTask id="RbuAdvertisingImportAcceptance20261028_Apply" name="IMPORT_APPLY" camunda:type="external" camunda:topic="rbu-advertising-acceptance-20261028">
+    <bpmn:userTask id="PgsAdvertisingImportV1_Confirm" name="Проверить файл и подтвердить" />
+    <bpmn:serviceTask id="PgsAdvertisingImportV1_Apply" name="IMPORT_APPLY" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_APPLY</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:userTask id="RbuAdvertisingImportAcceptance20261028_Inspect" name="Проверить пакет записей" />
-    <bpmn:exclusiveGateway id="RbuAdvertisingImportAcceptance20261028_Decision" name="Продолжить?" default="RbuAdvertisingImportAcceptance20261028_finish" />
-    <bpmn:serviceTask id="RbuAdvertisingImportAcceptance20261028_Finalize" name="IMPORT_FINALIZE" camunda:type="external" camunda:topic="rbu-advertising-acceptance-20261028">
+    <bpmn:userTask id="PgsAdvertisingImportV1_Inspect" name="Проверить пакет записей" />
+    <bpmn:exclusiveGateway id="PgsAdvertisingImportV1_Decision" name="Продолжить?" default="PgsAdvertisingImportV1_finish" />
+    <bpmn:serviceTask id="PgsAdvertisingImportV1_Finalize" name="IMPORT_FINALIZE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_FINALIZE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="RbuAdvertisingImportAcceptance20261028_End" name="Завершён процесс проверки" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_flow_Start" sourceRef="RbuAdvertisingImportAcceptance20261028_Start" targetRef="RbuAdvertisingImportAcceptance20261028_Setup" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_flow_Setup" sourceRef="RbuAdvertisingImportAcceptance20261028_Setup" targetRef="RbuAdvertisingImportAcceptance20261028_Parse" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_flow_Parse" sourceRef="RbuAdvertisingImportAcceptance20261028_Parse" targetRef="RbuAdvertisingImportAcceptance20261028_Confirm" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_flow_Confirm" sourceRef="RbuAdvertisingImportAcceptance20261028_Confirm" targetRef="RbuAdvertisingImportAcceptance20261028_Apply" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_flow_Apply" sourceRef="RbuAdvertisingImportAcceptance20261028_Apply" targetRef="RbuAdvertisingImportAcceptance20261028_Inspect" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_flow_Inspect" sourceRef="RbuAdvertisingImportAcceptance20261028_Inspect" targetRef="RbuAdvertisingImportAcceptance20261028_Decision" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_finish" sourceRef="RbuAdvertisingImportAcceptance20261028_Decision" targetRef="RbuAdvertisingImportAcceptance20261028_Finalize" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_flow_Finalize" sourceRef="RbuAdvertisingImportAcceptance20261028_Finalize" targetRef="RbuAdvertisingImportAcceptance20261028_End" />
-    <bpmn:sequenceFlow id="RbuAdvertisingImportAcceptance20261028_repeat" sourceRef="RbuAdvertisingImportAcceptance20261028_Decision" targetRef="RbuAdvertisingImportAcceptance20261028_Apply">
+    <bpmn:endEvent id="PgsAdvertisingImportV1_End" name="Завершён процесс проверки" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_flow_Start" sourceRef="PgsAdvertisingImportV1_Start" targetRef="PgsAdvertisingImportV1_Setup" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_flow_Setup" sourceRef="PgsAdvertisingImportV1_Setup" targetRef="PgsAdvertisingImportV1_Parse" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_flow_Parse" sourceRef="PgsAdvertisingImportV1_Parse" targetRef="PgsAdvertisingImportV1_Confirm" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_flow_Confirm" sourceRef="PgsAdvertisingImportV1_Confirm" targetRef="PgsAdvertisingImportV1_Apply" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_flow_Apply" sourceRef="PgsAdvertisingImportV1_Apply" targetRef="PgsAdvertisingImportV1_Inspect" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_flow_Inspect" sourceRef="PgsAdvertisingImportV1_Inspect" targetRef="PgsAdvertisingImportV1_Decision" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_finish" sourceRef="PgsAdvertisingImportV1_Decision" targetRef="PgsAdvertisingImportV1_Finalize" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_flow_Finalize" sourceRef="PgsAdvertisingImportV1_Finalize" targetRef="PgsAdvertisingImportV1_End" />
+    <bpmn:sequenceFlow id="PgsAdvertisingImportV1_repeat" sourceRef="PgsAdvertisingImportV1_Decision" targetRef="PgsAdvertisingImportV1_Apply">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${rbuApplyHasMoreBatches || rbuRepeat}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
   </bpmn:process>
-  <bpmn:process id="RbuAdvertisingValidationAcceptance20261028" name="Реклама — Validation — проверка DEV" isExecutable="true" camunda:historyTimeToLive="7">
-    <bpmn:startEvent id="RbuAdvertisingValidationAcceptance20261028_Start" name="Начало" />
-    <bpmn:userTask id="RbuAdvertisingValidationAcceptance20261028_Setup" name="Подготовить тестовое дело" />
-    <bpmn:serviceTask id="RbuAdvertisingValidationAcceptance20261028_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="rbu-advertising-acceptance-20261028">
+  <bpmn:process id="PgsAdvertisingValidationV1" name="Реклама — Validation — проверка DEV" isExecutable="true" camunda:historyTimeToLive="7">
+    <bpmn:startEvent id="PgsAdvertisingValidationV1_Start" name="Начало" />
+    <bpmn:userTask id="PgsAdvertisingValidationV1_Setup" name="Подготовить тестовое дело" />
+    <bpmn:serviceTask id="PgsAdvertisingValidationV1_Parse" name="PARSE_VALIDATE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="RbuAdvertisingValidationAcceptance20261028_End" name="Завершён процесс проверки" />
-    <bpmn:sequenceFlow id="RbuAdvertisingValidationAcceptance20261028_flow_Start" sourceRef="RbuAdvertisingValidationAcceptance20261028_Start" targetRef="RbuAdvertisingValidationAcceptance20261028_Setup" />
-    <bpmn:sequenceFlow id="RbuAdvertisingValidationAcceptance20261028_flow_Setup" sourceRef="RbuAdvertisingValidationAcceptance20261028_Setup" targetRef="RbuAdvertisingValidationAcceptance20261028_Parse" />
-    <bpmn:sequenceFlow id="RbuAdvertisingValidationAcceptance20261028_flow_Parse" sourceRef="RbuAdvertisingValidationAcceptance20261028_Parse" targetRef="RbuAdvertisingValidationAcceptance20261028_End" />
+    <bpmn:endEvent id="PgsAdvertisingValidationV1_End" name="Завершён процесс проверки" />
+    <bpmn:sequenceFlow id="PgsAdvertisingValidationV1_flow_Start" sourceRef="PgsAdvertisingValidationV1_Start" targetRef="PgsAdvertisingValidationV1_Setup" />
+    <bpmn:sequenceFlow id="PgsAdvertisingValidationV1_flow_Setup" sourceRef="PgsAdvertisingValidationV1_Setup" targetRef="PgsAdvertisingValidationV1_Parse" />
+    <bpmn:sequenceFlow id="PgsAdvertisingValidationV1_flow_Parse" sourceRef="PgsAdvertisingValidationV1_Parse" targetRef="PgsAdvertisingValidationV1_End" />
   </bpmn:process>
-  <bpmn:process id="RbuAdvertisingRollbackAcceptance20261028" name="Реклама — Rollback — проверка DEV" isExecutable="true" camunda:historyTimeToLive="7">
-    <bpmn:startEvent id="RbuAdvertisingRollbackAcceptance20261028_Start" name="Начало" />
-    <bpmn:userTask id="RbuAdvertisingRollbackAcceptance20261028_Setup" name="Подготовить тестовое дело" />
-    <bpmn:serviceTask id="RbuAdvertisingRollbackAcceptance20261028_Prepare" name="ROLLBACK_PREPARE" camunda:type="external" camunda:topic="rbu-advertising-acceptance-20261028">
+  <bpmn:process id="PgsAdvertisingRollbackV1" name="Реклама — Rollback — проверка DEV" isExecutable="true" camunda:historyTimeToLive="7">
+    <bpmn:startEvent id="PgsAdvertisingRollbackV1_Start" name="Начало" />
+    <bpmn:userTask id="PgsAdvertisingRollbackV1_Setup" name="Подготовить тестовое дело" />
+    <bpmn:serviceTask id="PgsAdvertisingRollbackV1_Prepare" name="ROLLBACK_PREPARE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_PREPARE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:userTask id="RbuAdvertisingRollbackAcceptance20261028_Confirm" name="Подтвердить план удаления" />
-    <bpmn:serviceTask id="RbuAdvertisingRollbackAcceptance20261028_Execute" name="ROLLBACK_EXECUTE" camunda:type="external" camunda:topic="rbu-advertising-acceptance-20261028">
+    <bpmn:userTask id="PgsAdvertisingRollbackV1_Confirm" name="Подтвердить план удаления" />
+    <bpmn:serviceTask id="PgsAdvertisingRollbackV1_Execute" name="ROLLBACK_EXECUTE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_EXECUTE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="RbuAdvertisingRollbackAcceptance20261028_Finalize" name="ROLLBACK_FINALIZE" camunda:type="external" camunda:topic="rbu-advertising-acceptance-20261028">
+    <bpmn:serviceTask id="PgsAdvertisingRollbackV1_Finalize" name="ROLLBACK_FINALIZE" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">ROLLBACK_FINALIZE</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:endEvent id="RbuAdvertisingRollbackAcceptance20261028_End" name="Завершён процесс проверки" />
-    <bpmn:sequenceFlow id="RbuAdvertisingRollbackAcceptance20261028_flow_Start" sourceRef="RbuAdvertisingRollbackAcceptance20261028_Start" targetRef="RbuAdvertisingRollbackAcceptance20261028_Setup" />
-    <bpmn:sequenceFlow id="RbuAdvertisingRollbackAcceptance20261028_flow_Setup" sourceRef="RbuAdvertisingRollbackAcceptance20261028_Setup" targetRef="RbuAdvertisingRollbackAcceptance20261028_Prepare" />
-    <bpmn:sequenceFlow id="RbuAdvertisingRollbackAcceptance20261028_flow_Prepare" sourceRef="RbuAdvertisingRollbackAcceptance20261028_Prepare" targetRef="RbuAdvertisingRollbackAcceptance20261028_Confirm" />
-    <bpmn:sequenceFlow id="RbuAdvertisingRollbackAcceptance20261028_flow_Confirm" sourceRef="RbuAdvertisingRollbackAcceptance20261028_Confirm" targetRef="RbuAdvertisingRollbackAcceptance20261028_Execute" />
-    <bpmn:sequenceFlow id="RbuAdvertisingRollbackAcceptance20261028_flow_Execute" sourceRef="RbuAdvertisingRollbackAcceptance20261028_Execute" targetRef="RbuAdvertisingRollbackAcceptance20261028_Finalize" />
-    <bpmn:sequenceFlow id="RbuAdvertisingRollbackAcceptance20261028_flow_Finalize" sourceRef="RbuAdvertisingRollbackAcceptance20261028_Finalize" targetRef="RbuAdvertisingRollbackAcceptance20261028_End" />
+    <bpmn:endEvent id="PgsAdvertisingRollbackV1_End" name="Завершён процесс проверки" />
+    <bpmn:sequenceFlow id="PgsAdvertisingRollbackV1_flow_Start" sourceRef="PgsAdvertisingRollbackV1_Start" targetRef="PgsAdvertisingRollbackV1_Setup" />
+    <bpmn:sequenceFlow id="PgsAdvertisingRollbackV1_flow_Setup" sourceRef="PgsAdvertisingRollbackV1_Setup" targetRef="PgsAdvertisingRollbackV1_Prepare" />
+    <bpmn:sequenceFlow id="PgsAdvertisingRollbackV1_flow_Prepare" sourceRef="PgsAdvertisingRollbackV1_Prepare" targetRef="PgsAdvertisingRollbackV1_Confirm" />
+    <bpmn:sequenceFlow id="PgsAdvertisingRollbackV1_flow_Confirm" sourceRef="PgsAdvertisingRollbackV1_Confirm" targetRef="PgsAdvertisingRollbackV1_Execute" />
+    <bpmn:sequenceFlow id="PgsAdvertisingRollbackV1_flow_Execute" sourceRef="PgsAdvertisingRollbackV1_Execute" targetRef="PgsAdvertisingRollbackV1_Finalize" />
+    <bpmn:sequenceFlow id="PgsAdvertisingRollbackV1_flow_Finalize" sourceRef="PgsAdvertisingRollbackV1_Finalize" targetRef="PgsAdvertisingRollbackV1_End" />
   </bpmn:process>
-  <bpmndi:BPMNDiagram id="RbuAdvertisingImportAcceptance20261028_diagram">
-    <bpmndi:BPMNPlane id="RbuAdvertisingImportAcceptance20261028_plane" bpmnElement="RbuAdvertisingImportAcceptance20261028">
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Start_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Start">
+  <bpmndi:BPMNDiagram id="PgsAdvertisingImportV1_diagram">
+    <bpmndi:BPMNPlane id="PgsAdvertisingImportV1_plane" bpmnElement="PgsAdvertisingImportV1">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Start_shape" bpmnElement="PgsAdvertisingImportV1_Start">
         <dc:Bounds x="80" y="182.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Setup_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Setup">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Setup_shape" bpmnElement="PgsAdvertisingImportV1_Setup">
         <dc:Bounds x="275" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Parse_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Parse">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Parse_shape" bpmnElement="PgsAdvertisingImportV1_Parse">
         <dc:Bounds x="470" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Confirm_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Confirm">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Confirm_shape" bpmnElement="PgsAdvertisingImportV1_Confirm">
         <dc:Bounds x="665" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Apply_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Apply">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Apply_shape" bpmnElement="PgsAdvertisingImportV1_Apply">
         <dc:Bounds x="860" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Inspect_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Inspect">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Inspect_shape" bpmnElement="PgsAdvertisingImportV1_Inspect">
         <dc:Bounds x="1055" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Decision_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Decision">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Decision_shape" bpmnElement="PgsAdvertisingImportV1_Decision">
         <dc:Bounds x="1250" y="175.0" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_Finalize_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_Finalize">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_Finalize_shape" bpmnElement="PgsAdvertisingImportV1_Finalize">
         <dc:Bounds x="1445" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingImportAcceptance20261028_End_shape" bpmnElement="RbuAdvertisingImportAcceptance20261028_End">
+      <bpmndi:BPMNShape id="PgsAdvertisingImportV1_End_shape" bpmnElement="PgsAdvertisingImportV1_End">
         <dc:Bounds x="1640" y="182.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_flow_Start_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_flow_Start">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_flow_Start_edge" bpmnElement="PgsAdvertisingImportV1_flow_Start">
         <di:waypoint x="116" y="200.0" />
         <di:waypoint x="275" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_flow_Setup_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_flow_Setup">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_flow_Setup_edge" bpmnElement="PgsAdvertisingImportV1_flow_Setup">
         <di:waypoint x="420" y="200.0" />
         <di:waypoint x="470" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_flow_Parse_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_flow_Parse">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_flow_Parse_edge" bpmnElement="PgsAdvertisingImportV1_flow_Parse">
         <di:waypoint x="615" y="200.0" />
         <di:waypoint x="665" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_flow_Confirm_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_flow_Confirm">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_flow_Confirm_edge" bpmnElement="PgsAdvertisingImportV1_flow_Confirm">
         <di:waypoint x="810" y="200.0" />
         <di:waypoint x="860" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_flow_Apply_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_flow_Apply">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_flow_Apply_edge" bpmnElement="PgsAdvertisingImportV1_flow_Apply">
         <di:waypoint x="1005" y="200.0" />
         <di:waypoint x="1055" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_flow_Inspect_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_flow_Inspect">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_flow_Inspect_edge" bpmnElement="PgsAdvertisingImportV1_flow_Inspect">
         <di:waypoint x="1200" y="200.0" />
         <di:waypoint x="1250" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_finish_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_finish">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_finish_edge" bpmnElement="PgsAdvertisingImportV1_finish">
         <di:waypoint x="1300" y="200.0" />
         <di:waypoint x="1445" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_flow_Finalize_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_flow_Finalize">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_flow_Finalize_edge" bpmnElement="PgsAdvertisingImportV1_flow_Finalize">
         <di:waypoint x="1590" y="200.0" />
         <di:waypoint x="1640" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingImportAcceptance20261028_repeat_edge" bpmnElement="RbuAdvertisingImportAcceptance20261028_repeat">
+      <bpmndi:BPMNEdge id="PgsAdvertisingImportV1_repeat_edge" bpmnElement="PgsAdvertisingImportV1_repeat">
         <di:waypoint x="1275.0" y="225.0" />
         <di:waypoint x="1275.0" y="310" />
         <di:waypoint x="932.5" y="310" />
@@ -157,78 +157,78 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmndi:BPMNDiagram id="RbuAdvertisingValidationAcceptance20261028_diagram">
-    <bpmndi:BPMNPlane id="RbuAdvertisingValidationAcceptance20261028_plane" bpmnElement="RbuAdvertisingValidationAcceptance20261028">
-      <bpmndi:BPMNShape id="RbuAdvertisingValidationAcceptance20261028_Start_shape" bpmnElement="RbuAdvertisingValidationAcceptance20261028_Start">
+  <bpmndi:BPMNDiagram id="PgsAdvertisingValidationV1_diagram">
+    <bpmndi:BPMNPlane id="PgsAdvertisingValidationV1_plane" bpmnElement="PgsAdvertisingValidationV1">
+      <bpmndi:BPMNShape id="PgsAdvertisingValidationV1_Start_shape" bpmnElement="PgsAdvertisingValidationV1_Start">
         <dc:Bounds x="80" y="182.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingValidationAcceptance20261028_Setup_shape" bpmnElement="RbuAdvertisingValidationAcceptance20261028_Setup">
+      <bpmndi:BPMNShape id="PgsAdvertisingValidationV1_Setup_shape" bpmnElement="PgsAdvertisingValidationV1_Setup">
         <dc:Bounds x="275" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingValidationAcceptance20261028_Parse_shape" bpmnElement="RbuAdvertisingValidationAcceptance20261028_Parse">
+      <bpmndi:BPMNShape id="PgsAdvertisingValidationV1_Parse_shape" bpmnElement="PgsAdvertisingValidationV1_Parse">
         <dc:Bounds x="470" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingValidationAcceptance20261028_End_shape" bpmnElement="RbuAdvertisingValidationAcceptance20261028_End">
+      <bpmndi:BPMNShape id="PgsAdvertisingValidationV1_End_shape" bpmnElement="PgsAdvertisingValidationV1_End">
         <dc:Bounds x="665" y="182.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="RbuAdvertisingValidationAcceptance20261028_flow_Start_edge" bpmnElement="RbuAdvertisingValidationAcceptance20261028_flow_Start">
+      <bpmndi:BPMNEdge id="PgsAdvertisingValidationV1_flow_Start_edge" bpmnElement="PgsAdvertisingValidationV1_flow_Start">
         <di:waypoint x="116" y="200.0" />
         <di:waypoint x="275" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingValidationAcceptance20261028_flow_Setup_edge" bpmnElement="RbuAdvertisingValidationAcceptance20261028_flow_Setup">
+      <bpmndi:BPMNEdge id="PgsAdvertisingValidationV1_flow_Setup_edge" bpmnElement="PgsAdvertisingValidationV1_flow_Setup">
         <di:waypoint x="420" y="200.0" />
         <di:waypoint x="470" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingValidationAcceptance20261028_flow_Parse_edge" bpmnElement="RbuAdvertisingValidationAcceptance20261028_flow_Parse">
+      <bpmndi:BPMNEdge id="PgsAdvertisingValidationV1_flow_Parse_edge" bpmnElement="PgsAdvertisingValidationV1_flow_Parse">
         <di:waypoint x="615" y="200.0" />
         <di:waypoint x="665" y="200.0" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmndi:BPMNDiagram id="RbuAdvertisingRollbackAcceptance20261028_diagram">
-    <bpmndi:BPMNPlane id="RbuAdvertisingRollbackAcceptance20261028_plane" bpmnElement="RbuAdvertisingRollbackAcceptance20261028">
-      <bpmndi:BPMNShape id="RbuAdvertisingRollbackAcceptance20261028_Start_shape" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_Start">
+  <bpmndi:BPMNDiagram id="PgsAdvertisingRollbackV1_diagram">
+    <bpmndi:BPMNPlane id="PgsAdvertisingRollbackV1_plane" bpmnElement="PgsAdvertisingRollbackV1">
+      <bpmndi:BPMNShape id="PgsAdvertisingRollbackV1_Start_shape" bpmnElement="PgsAdvertisingRollbackV1_Start">
         <dc:Bounds x="80" y="182.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingRollbackAcceptance20261028_Setup_shape" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_Setup">
+      <bpmndi:BPMNShape id="PgsAdvertisingRollbackV1_Setup_shape" bpmnElement="PgsAdvertisingRollbackV1_Setup">
         <dc:Bounds x="275" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingRollbackAcceptance20261028_Prepare_shape" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_Prepare">
+      <bpmndi:BPMNShape id="PgsAdvertisingRollbackV1_Prepare_shape" bpmnElement="PgsAdvertisingRollbackV1_Prepare">
         <dc:Bounds x="470" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingRollbackAcceptance20261028_Confirm_shape" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_Confirm">
+      <bpmndi:BPMNShape id="PgsAdvertisingRollbackV1_Confirm_shape" bpmnElement="PgsAdvertisingRollbackV1_Confirm">
         <dc:Bounds x="665" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingRollbackAcceptance20261028_Execute_shape" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_Execute">
+      <bpmndi:BPMNShape id="PgsAdvertisingRollbackV1_Execute_shape" bpmnElement="PgsAdvertisingRollbackV1_Execute">
         <dc:Bounds x="860" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingRollbackAcceptance20261028_Finalize_shape" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_Finalize">
+      <bpmndi:BPMNShape id="PgsAdvertisingRollbackV1_Finalize_shape" bpmnElement="PgsAdvertisingRollbackV1_Finalize">
         <dc:Bounds x="1055" y="160.0" width="145" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="RbuAdvertisingRollbackAcceptance20261028_End_shape" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_End">
+      <bpmndi:BPMNShape id="PgsAdvertisingRollbackV1_End_shape" bpmnElement="PgsAdvertisingRollbackV1_End">
         <dc:Bounds x="1250" y="182.0" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="RbuAdvertisingRollbackAcceptance20261028_flow_Start_edge" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_flow_Start">
+      <bpmndi:BPMNEdge id="PgsAdvertisingRollbackV1_flow_Start_edge" bpmnElement="PgsAdvertisingRollbackV1_flow_Start">
         <di:waypoint x="116" y="200.0" />
         <di:waypoint x="275" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingRollbackAcceptance20261028_flow_Setup_edge" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_flow_Setup">
+      <bpmndi:BPMNEdge id="PgsAdvertisingRollbackV1_flow_Setup_edge" bpmnElement="PgsAdvertisingRollbackV1_flow_Setup">
         <di:waypoint x="420" y="200.0" />
         <di:waypoint x="470" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingRollbackAcceptance20261028_flow_Prepare_edge" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_flow_Prepare">
+      <bpmndi:BPMNEdge id="PgsAdvertisingRollbackV1_flow_Prepare_edge" bpmnElement="PgsAdvertisingRollbackV1_flow_Prepare">
         <di:waypoint x="615" y="200.0" />
         <di:waypoint x="665" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingRollbackAcceptance20261028_flow_Confirm_edge" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_flow_Confirm">
+      <bpmndi:BPMNEdge id="PgsAdvertisingRollbackV1_flow_Confirm_edge" bpmnElement="PgsAdvertisingRollbackV1_flow_Confirm">
         <di:waypoint x="810" y="200.0" />
         <di:waypoint x="860" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingRollbackAcceptance20261028_flow_Execute_edge" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_flow_Execute">
+      <bpmndi:BPMNEdge id="PgsAdvertisingRollbackV1_flow_Execute_edge" bpmnElement="PgsAdvertisingRollbackV1_flow_Execute">
         <di:waypoint x="1005" y="200.0" />
         <di:waypoint x="1055" y="200.0" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="RbuAdvertisingRollbackAcceptance20261028_flow_Finalize_edge" bpmnElement="RbuAdvertisingRollbackAcceptance20261028_flow_Finalize">
+      <bpmndi:BPMNEdge id="PgsAdvertisingRollbackV1_flow_Finalize_edge" bpmnElement="PgsAdvertisingRollbackV1_flow_Finalize">
         <di:waypoint x="1200" y="200.0" />
         <di:waypoint x="1250" y="200.0" />
       </bpmndi:BPMNEdge>

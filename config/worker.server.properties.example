@@ -1,7 +1,7 @@
 # External worker settings. Fill target addresses, standards and approved journal before enabling.
 worker.integrationVerified=false
 worker.writesEnabled=false
-worker.topic=pgs-rbu-data-processing-v1
+worker.topic=pgs-data-processing-v1
 worker.instanceId=business-rbu-data-worker
 worker.standardCodes=
 worker.uiBaseUrl=

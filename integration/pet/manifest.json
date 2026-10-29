@@ -2,8 +2,8 @@
   "schemaVersion": "pet-native-integration-v1",
   "sourceDate": "2026-10-29",
   "sourceHost": "psi.pgs.gosuslugi.ru",
-  "topic": "pgs-rbu-data-processing-v1",
-  "topicStatus": "Chosen integration value; worker.topic must match. No production topic was inferred.",
+  "topic": "pgs-data-processing-v1",
+  "topicStatus": "Delivery topic; identical in worker configuration and integration BPMN. Deployment is verified separately.",
   "liveWrites": false,
   "nativeRuntimeVerified": false,
   "excludedComparativeStandards": [],
@@ -17,7 +17,7 @@
       "publishedBpmnSha256Before": "9939f8d9d32394dec042aab9ed97ec84bde6e302f679857f12b971a78a1a0d33",
       "sourceBpmnSha256Before": "45486dca6ed07c4267c7906a1210cd0d86a4be4c7c3a65f5c74975dadef47c62",
       "patchedBpmn": "bpmn/47012.bpmn",
-      "patchedBpmnSha256": "8b93b54b946b2ea6e97d711f7fcc29e81bc5b6eac76ff578d355fb11541feb4f",
+      "patchedBpmnSha256": "01e6befcc4b2081468abd621e27eb5f97a5d0b1634cb3b1369a1bb40c29c3943",
       "replacedTasks": [
         {
           "id": "Activity_RbuValidateImport",
@@ -87,7 +87,7 @@
       "publishedBpmnSha256Before": "ecf498701c885eb9c31fa41fa6a468d0022295c5de6fac1d16858f6bd66c5d46",
       "sourceBpmnSha256Before": "50f0ab70390534276b8b3b8f6364c3e218418381f9166a0e301feee431790615",
       "patchedBpmn": "bpmn/47346.bpmn",
-      "patchedBpmnSha256": "85860b8b723ada62eb22ed60af16fe0457aa9aa40a75004bb63a5001e1fbc56a",
+      "patchedBpmnSha256": "2a1f3c9440f32bcc4e13fb017dd6728d02adf38c01a2036f70534546c727d140",
       "replacedTasks": [
         {
           "id": "Activity_RbuValidateImport",
@@ -147,7 +147,7 @@
       "publishedBpmnSha256Before": "206d35f0b5e4b2e7feca7fbb44a488dae0e2c6a6641382656463c6a81e80652a",
       "sourceBpmnSha256Before": "f0545fc52ebdf04a6bbbaae15b4cb35a5193adde49e3975b3ace2e654832ec7e",
       "patchedBpmn": "bpmn/47349.bpmn",
-      "patchedBpmnSha256": "6dbbccb6aec47b1c5183f13929d2a4cd91d4197cd43333cb560ec19dd04eddd8",
+      "patchedBpmnSha256": "1eb1cae0fb40380c7baadcef5cbd1c4427f98a2250aa013e732433c68b31cad4",
       "replacedTasks": [
         {
           "id": "Activity_RbuValidateImport",
@@ -181,7 +181,7 @@
       "publishedBpmnSha256Before": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
       "sourceBpmnSha256Before": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
       "patchedBpmn": "bpmn/47160.bpmn",
-      "patchedBpmnSha256": "0ba4055fe6d564053d1ba5b62c7668b9a41807ebcd422d6cc323a1f91031bd5f",
+      "patchedBpmnSha256": "2cfa6e3e15f8805e6130208ead38dc93e358efc9d3585ebfabf4454aea049908",
       "replacedTasks": [
         {
           "id": "Activity_RbuPreparePetRollback",
@@ -229,7 +229,7 @@
       "publishedBpmnSha256Before": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
       "sourceBpmnSha256Before": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
       "patchedBpmn": "bpmn/47347.bpmn",
-      "patchedBpmnSha256": "09b3d3c402c41cf527c17f238871e27b45de071916a63e42563d82fdaf4e8eaa",
+      "patchedBpmnSha256": "66014b378a2980659bcd50dafc6484e46ac469e628f105754293b0874e9562cf",
       "replacedTasks": [
         {
           "id": "Activity_RbuPreparePetRollback",
@@ -277,7 +277,7 @@
       "publishedBpmnSha256Before": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
       "sourceBpmnSha256Before": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
       "patchedBpmn": "bpmn/47610.bpmn",
-      "patchedBpmnSha256": "0ba4055fe6d564053d1ba5b62c7668b9a41807ebcd422d6cc323a1f91031bd5f",
+      "patchedBpmnSha256": "2cfa6e3e15f8805e6130208ead38dc93e358efc9d3585ebfabf4454aea049908",
       "replacedTasks": [
         {
           "id": "Activity_RbuPreparePetRollback",
@@ -325,7 +325,7 @@
       "publishedBpmnSha256Before": "1c240a1d3944b05886182b9b385692b790ae618ff7e09fb9659a8b0a1b927c82",
       "sourceBpmnSha256Before": "e9549b967728aff3048087a59339ba46cb2d347a30a8be257158bf5620716dad",
       "patchedBpmn": "bpmn/47615.bpmn",
-      "patchedBpmnSha256": "daf37c0de98b9687c1ab040f1af4c6f7b0c0ad0bd54df16e6ba1495b733439d8",
+      "patchedBpmnSha256": "b331ca17445d74a6a6128b1e59f00362bf262748e32355a5b02755879a2f661f",
       "replacedTasks": [
         {
           "id": "Activity_RbuValidateImport",

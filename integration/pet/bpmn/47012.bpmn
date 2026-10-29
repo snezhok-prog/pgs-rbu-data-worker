@@ -4,7 +4,7 @@
     <bpmn:startEvent id="StartEvent_RbuImport" name="Задание зарегистрировано">
       <bpmn:outgoing>Flow_StartToValidate</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuValidateImport" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuValidateImport" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
@@ -21,7 +21,7 @@
       <bpmn:incoming>Flow_Event_RbuReloadInvalidToTask</bpmn:incoming>
       <bpmn:outgoing>Flow_ValidateToDecision</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuApplyImport" name="Применить решение по импорту" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuApplyImport" name="Применить решение по импорту" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_APPLY</camunda:inputParameter>
@@ -38,7 +38,7 @@
       <bpmn:incoming>Flow_ApplyBatchLoop</bpmn:incoming>
       <bpmn:outgoing>Flow_ApplyToCompleteStatus</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuPersistPetJournal" name="Сохранить ID созданных записей" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuPersistPetJournal" name="Сохранить ID созданных записей" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_FINALIZE</camunda:inputParameter>
@@ -121,7 +121,7 @@
       <bpmn:messageEventDefinition id="MessageEventDefinition_RbuReloadFile" messageRef="Message_RbuReloadFile" />
     </bpmn:intermediateCatchEvent>
     <bpmn:sequenceFlow id="Flow_ReloadToValidate" sourceRef="Event_RbuReloadFile" targetRef="Activity_RbuValidateImport" />
-    <bpmn:serviceTask id="Activity_RbuCancelImport" name="Зафиксировать отмену" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask id="Activity_RbuCancelImport" name="Зафиксировать отмену" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_CANCEL</camunda:inputParameter>
@@ -337,7 +337,7 @@ execution.setVariable('rbuAppealNumberTag', unitId ?: '')</bpmn:script>
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT30S</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:intermediateCatchEvent>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_1domcby" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_1domcby" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
@@ -380,7 +380,7 @@ execution.setVariable('rbuAppealNumberTag', unitId ?: '')</bpmn:script>
       <bpmn:outgoing>Flow_1xojzja</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1xojzja" sourceRef="Gateway_0at61j8" targetRef="Gateway_RbuMigrationNotifyDecision" />
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_0qyk4n3" name="Применить решение по импорту" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_0qyk4n3" name="Применить решение по импорту" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_APPLY</camunda:inputParameter>
@@ -393,7 +393,7 @@ execution.setVariable('rbuAppealNumberTag', unitId ?: '')</bpmn:script>
         </camunda:inputOutput>
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_1ybe6gd" name="Сохранить ID созданных записей" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_1ybe6gd" name="Сохранить ID созданных записей" camunda:type="external" camunda:topic="pgs-data-processing-v1">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="rbuOperation">IMPORT_FINALIZE</camunda:inputParameter>
