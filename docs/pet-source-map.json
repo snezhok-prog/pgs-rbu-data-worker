@@ -1,0 +1,236 @@
+{
+  "captured": "2026-10-29",
+  "standards": [
+    {
+      "code": 47012,
+      "standardId": "6aa05efb93e53367eb123b7d",
+      "name": "Импорт исторических данных ТОР «Мой питомец»",
+      "status": "approve",
+      "processId": "Process_RbuPetImport",
+      "runtimeId": "6ad2166f4ef2147cee2fe35c",
+      "runtimeStandardCode": "47012",
+      "runtimeStandardId": "6aa05efb93e53367eb123b7d",
+      "hasOwnPublishedRuntime": true,
+      "sourceSha256": "45486dca6ed07c4267c7906a1210cd0d86a4be4c7c3a65f5c74975dadef47c62",
+      "publishedSha256": "9939f8d9d32394dec042aab9ed97ec84bde6e302f679857f12b971a78a1a0d33",
+      "sourceSameAsPriorInventory": true,
+      "publishedSameAsPriorInventory": true,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac1249e215c643dc20e6de8",
+        "6aa05c9f93e53367eb121e36",
+        "6ac1249e981b7a4e8bb79627",
+        "6aa05ca093e53367eb121e42"
+      ]
+    },
+    {
+      "code": 47346,
+      "standardId": "6abefc9003b3481d13d1e1ee",
+      "name": "Импорт исторических данных",
+      "status": "approve",
+      "processId": "Process_RbuPetOmsuImport",
+      "runtimeId": "6ace5132753c5bd358eaed27",
+      "runtimeStandardCode": "47346",
+      "runtimeStandardId": "6abefc9003b3481d13d1e1ee",
+      "hasOwnPublishedRuntime": true,
+      "sourceSha256": "50f0ab70390534276b8b3b8f6364c3e218418381f9166a0e301feee431790615",
+      "publishedSha256": "ecf498701c885eb9c31fa41fa6a468d0022295c5de6fac1d16858f6bd66c5d46",
+      "sourceSameAsPriorInventory": true,
+      "publishedSameAsPriorInventory": true,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac124f16afe9bc191af5f45",
+        "6abefc904d900ed3508dc09d",
+        "6ac124f16afe9bc191af5f47",
+        "6abefc9053b994e14cc1e25d"
+      ]
+    },
+    {
+      "code": 47349,
+      "standardId": "6abefcf44d900ed3508dc658",
+      "name": "Валидация данных",
+      "status": "approve",
+      "processId": "Process_RbuPetOmsuValidation",
+      "runtimeId": "6adb610fca4dedaee1703655",
+      "runtimeStandardCode": "47349",
+      "runtimeStandardId": "6abefcf44d900ed3508dc658",
+      "hasOwnPublishedRuntime": true,
+      "sourceSha256": "f0545fc52ebdf04a6bbbaae15b4cb35a5193adde49e3975b3ace2e654832ec7e",
+      "publishedSha256": "206d35f0b5e4b2e7feca7fbb44a488dae0e2c6a6641382656463c6a81e80652a",
+      "sourceSameAsPriorInventory": true,
+      "publishedSameAsPriorInventory": true,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac124f96afe9bc191af5f51",
+        "6abefff44d900ed3508e0f0a"
+      ]
+    },
+    {
+      "code": 47160,
+      "standardId": "6ab074d4b51b204b6b4b25d7",
+      "name": "Удаление импортированных данных",
+      "status": "approve",
+      "processId": "Process_RbuPetRollback",
+      "runtimeId": "6acf9dc769088e6bef2952b5",
+      "runtimeStandardCode": "47160",
+      "runtimeStandardId": "6ab074d4b51b204b6b4b25d7",
+      "hasOwnPublishedRuntime": true,
+      "sourceSha256": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
+      "publishedSha256": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
+      "sourceSameAsPriorInventory": true,
+      "publishedSameAsPriorInventory": true,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac230d7f56270556bbabe50",
+        "6aa69899bfb5bbb9e40687cb",
+        "6aa6989ada57b4a6f430d6c0"
+      ]
+    },
+    {
+      "code": 47347,
+      "standardId": "6abefcaf53b994e14cc1e3f8",
+      "name": "Удаление импортированных данных",
+      "status": "approve",
+      "processId": "Process_RbuPetRollback",
+      "runtimeId": "6acf965069088e6bef28b433",
+      "runtimeStandardCode": "47347",
+      "runtimeStandardId": "6abefcaf53b994e14cc1e3f8",
+      "hasOwnPublishedRuntime": true,
+      "sourceSha256": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
+      "publishedSha256": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
+      "sourceSameAsPriorInventory": true,
+      "publishedSameAsPriorInventory": true,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac2312e495475299c96765d",
+        "6abefcaf4d900ed3508dc226",
+        "6abefcaf619dd431f2770872"
+      ]
+    },
+    {
+      "code": 47610,
+      "standardId": "6ad600f5cb8ace0132dbd6a5",
+      "name": "Копия Удаление импортированных данных",
+      "status": "approve",
+      "processId": "Process_RbuPetRollback",
+      "runtimeId": "6ad778316b0121b06cff9247",
+      "runtimeStandardCode": "47610",
+      "runtimeStandardId": "6ad600f5cb8ace0132dbd6a5",
+      "hasOwnPublishedRuntime": true,
+      "sourceSha256": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
+      "publishedSha256": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
+      "sourceSameAsPriorInventory": null,
+      "publishedSameAsPriorInventory": null,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ad600f56b0121b06cc66f99",
+        "6ad600f5066b24586a0eb6e8",
+        "6ad600f5cb8ace0132dbd6b3",
+        "6ad61ad9cb8ace0132df9392",
+        "6ad61adc6b0121b06cca2a2f",
+        "6ad61bb2cb8ace0132df9709"
+      ]
+    },
+    {
+      "code": 47615,
+      "standardId": "6ad63004cb8ace0132e1b1aa",
+      "name": "Копия Импорт исторических данных ТОР «Мой питомец»",
+      "status": "approve",
+      "processId": "Process_RbuPetImportCopy",
+      "runtimeId": "6adeef279dabc068fce88c47",
+      "runtimeStandardCode": "47615",
+      "runtimeStandardId": "6ad63004cb8ace0132e1b1aa",
+      "hasOwnPublishedRuntime": true,
+      "sourceSha256": "e9549b967728aff3048087a59339ba46cb2d347a30a8be257158bf5620716dad",
+      "publishedSha256": "1c240a1d3944b05886182b9b385692b790ae618ff7e09fb9659a8b0a1b927c82",
+      "sourceSameAsPriorInventory": true,
+      "publishedSameAsPriorInventory": true,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ad63004bdfdd20b9d463479",
+        "6ad63004066b24586a148b01",
+        "6ad63004bdfdd20b9d46346e",
+        "6ad63004cb8ace0132e1b1bc"
+      ]
+    },
+    {
+      "code": 47753,
+      "standardId": "6ae05a019232ead0ea9323d5",
+      "name": "Копия(2) Импорт исторических данных ТОР «Мой питомец»",
+      "status": "approve",
+      "processId": "Process_RbuPetImport",
+      "runtimeId": "6ad2166f4ef2147cee2fe35c",
+      "runtimeStandardCode": "47012",
+      "runtimeStandardId": "6aa05efb93e53367eb123b7d",
+      "hasOwnPublishedRuntime": false,
+      "sourceSha256": "45486dca6ed07c4267c7906a1210cd0d86a4be4c7c3a65f5c74975dadef47c62",
+      "publishedSha256": "9939f8d9d32394dec042aab9ed97ec84bde6e302f679857f12b971a78a1a0d33",
+      "sourceSameAsPriorInventory": null,
+      "publishedSameAsPriorInventory": null,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac1249e215c643dc20e6de8",
+        "6aa05c9f93e53367eb121e36",
+        "6ac1249e981b7a4e8bb79627",
+        "6aa05ca093e53367eb121e42"
+      ]
+    },
+    {
+      "code": 47756,
+      "standardId": "6ae06df68c5edbea5e5458a4",
+      "name": "Копия Удаление импортированных данных",
+      "status": "approve",
+      "processId": "Process_RbuPetRollback",
+      "runtimeId": "6acf9dc769088e6bef2952b5",
+      "runtimeStandardCode": "47160",
+      "runtimeStandardId": "6ab074d4b51b204b6b4b25d7",
+      "hasOwnPublishedRuntime": false,
+      "sourceSha256": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
+      "publishedSha256": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
+      "sourceSameAsPriorInventory": null,
+      "publishedSameAsPriorInventory": null,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac230d7f56270556bbabe50",
+        "6aa69899bfb5bbb9e40687cb",
+        "6aa6989ada57b4a6f430d6c0"
+      ]
+    },
+    {
+      "code": 47769,
+      "standardId": "6ae1bc336ba412dc25436b50",
+      "name": "Копия Валидация данных",
+      "status": "approve",
+      "processId": "Process_RbuPetOmsuValidation",
+      "runtimeId": "6adb610fca4dedaee1703655",
+      "runtimeStandardCode": "47349",
+      "runtimeStandardId": "6abefcf44d900ed3508dc658",
+      "hasOwnPublishedRuntime": false,
+      "sourceSha256": "f0545fc52ebdf04a6bbbaae15b4cb35a5193adde49e3975b3ace2e654832ec7e",
+      "publishedSha256": "206d35f0b5e4b2e7feca7fbb44a488dae0e2c6a6641382656463c6a81e80652a",
+      "sourceSameAsPriorInventory": null,
+      "publishedSameAsPriorInventory": null,
+      "sourceSameAsPublished": false,
+      "formIds": [
+        "6ac124f96afe9bc191af5f51",
+        "6abefff44d900ed3508e0f0a"
+      ]
+    }
+  ],
+  "collections": [
+    "animalCatchOrderRegistryCollection",
+    "animalsRecordsCollectionTwo",
+    "animalCatchActRegistryCollection",
+    "myPetAnimalCardReestr",
+    "animalReleaseActRegistryEntry",
+    "animalTransferActRegistryCollection"
+  ],
+  "nativeManifest": "integration/pet/manifest.json",
+  "sourceParity": "Current published BPMN and31runtimehandlers match previous audited inventory;47615 separately patched preserving181IDs",
+  "ba": [
+    "Shelterheadertrim",
+    "AuthoritativeorganizationName+OGRN",
+    "Tailrequired",
+    "Serverrollbackreasons/counters/checkpoints/refresh"
+  ]
+}

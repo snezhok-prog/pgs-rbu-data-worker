@@ -1,0 +1,21 @@
+# External worker settings. Fill target addresses, standards and approved journal before enabling.
+worker.integrationVerified=false
+worker.writesEnabled=false
+worker.topic=pgs-rbu-data-processing-v1
+worker.instanceId=business-rbu-data-worker
+worker.standardCodes=
+worker.uiBaseUrl=
+worker.journalMode=
+worker.journalDirectory=
+worker.pollMillis=3000
+worker.lockMillis=300000
+worker.timeoutMillis=10000
+worker.maxLocalAttempts=3
+worker.allowHttp=false
+pgs.baseUrl=
+pgs.find=find/{collection}?mainId={id}
+pgs.search=search/{collection}
+pgs.create=create/{collection}
+pgs.update=update/{collection}?mainId={id}&guid={guid}
+pgs.updateSub=update/{collection}/subservices?mainId={id}&guid={guid}&parentEntries={parentEntries}
+pgs.delete=delete/{collection}?mainId={id}&guid={guid}

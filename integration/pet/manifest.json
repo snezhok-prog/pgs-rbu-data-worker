@@ -1,0 +1,420 @@
+{
+  "schemaVersion": "pet-native-integration-v1",
+  "sourceDate": "2026-10-29",
+  "sourceHost": "psi.pgs.gosuslugi.ru",
+  "topic": "pgs-rbu-data-processing-v1",
+  "topicStatus": "Chosen integration value; worker.topic must match. No production topic was inferred.",
+  "liveWrites": false,
+  "nativeRuntimeVerified": false,
+  "excludedComparativeStandards": [],
+  "standards": [
+    {
+      "standardCode": 47012,
+      "standardId": "6aa05efb93e53367eb123b7d",
+      "runtimeId": "6ad2166f4ef2147cee2fe35c",
+      "profile": "ROIV",
+      "processId": "Process_RbuPetImport",
+      "publishedBpmnSha256Before": "9939f8d9d32394dec042aab9ed97ec84bde6e302f679857f12b971a78a1a0d33",
+      "sourceBpmnSha256Before": "45486dca6ed07c4267c7906a1210cd0d86a4be4c7c3a65f5c74975dadef47c62",
+      "patchedBpmn": "bpmn/47012.bpmn",
+      "patchedBpmnSha256": "8b93b54b946b2ea6e97d711f7fcc29e81bc5b6eac76ff578d355fb11541feb4f",
+      "replacedTasks": [
+        {
+          "id": "Activity_RbuValidateImport",
+          "operation": "PARSE_VALIDATE",
+          "scriptSha256Before": "1c10c7f45b09b1a1290a0d2bf7308d1721dab1bf7f62dd89d728a7fa4f8d5467"
+        },
+        {
+          "id": "Activity_RbuApplyImport",
+          "operation": "IMPORT_APPLY",
+          "scriptSha256Before": "7e450217e9c9d9f0ec7e2a8e673627a06da061158ca0c1eedfb4247c0aa8e9e5"
+        },
+        {
+          "id": "Activity_RbuPersistPetJournal",
+          "operation": "IMPORT_FINALIZE",
+          "scriptSha256Before": "064e31ee7eea0c65b606867b546a09c69475bf6eabf9cdbe2fb1242dac519810"
+        },
+        {
+          "id": "Activity_RbuCancelImport",
+          "operation": "IMPORT_CANCEL",
+          "scriptSha256Before": "40f1045b4c6953809dd4dd9f852c5c5f10dcc853a7e09345ef032c63777a1bc0"
+        },
+        {
+          "id": "Activity_1domcby",
+          "operation": "PARSE_VALIDATE",
+          "scriptSha256Before": "1c10c7f45b09b1a1290a0d2bf7308d1721dab1bf7f62dd89d728a7fa4f8d5467"
+        },
+        {
+          "id": "Activity_0qyk4n3",
+          "operation": "IMPORT_APPLY",
+          "scriptSha256Before": "7e450217e9c9d9f0ec7e2a8e673627a06da061158ca0c1eedfb4247c0aa8e9e5"
+        },
+        {
+          "id": "Activity_1ybe6gd",
+          "operation": "IMPORT_FINALIZE",
+          "scriptSha256Before": "064e31ee7eea0c65b606867b546a09c69475bf6eabf9cdbe2fb1242dac519810"
+        }
+      ],
+      "changedConditions": [
+        {
+          "id": "Flow_ApplyBatchLoop",
+          "field": "conditionExpression",
+          "value": "${rbuApplyHasMoreBatches == true}"
+        }
+      ],
+      "addedModelIds": [],
+      "lightweightGuards": [],
+      "removedMultiInstance": null,
+      "diagramDownstreamShiftPixels": 0,
+      "verification": {
+        "originalIdsPreserved": 169,
+        "originalIdsRemoved": 0,
+        "sequenceFlowReferencesValid": true,
+        "heavyScriptsRemaining": 0
+      },
+      "handlerPatches": [
+        "patches/47012-standard.json",
+        "patches/47012-runtime.json"
+      ],
+      "sourceImportStandardCode": null
+    },
+    {
+      "standardCode": 47346,
+      "standardId": "6abefc9003b3481d13d1e1ee",
+      "runtimeId": "6ace5132753c5bd358eaed27",
+      "profile": "OMSU",
+      "processId": "Process_RbuPetOmsuImport",
+      "publishedBpmnSha256Before": "ecf498701c885eb9c31fa41fa6a468d0022295c5de6fac1d16858f6bd66c5d46",
+      "sourceBpmnSha256Before": "50f0ab70390534276b8b3b8f6364c3e218418381f9166a0e301feee431790615",
+      "patchedBpmn": "bpmn/47346.bpmn",
+      "patchedBpmnSha256": "85860b8b723ada62eb22ed60af16fe0457aa9aa40a75004bb63a5001e1fbc56a",
+      "replacedTasks": [
+        {
+          "id": "Activity_RbuValidateImport",
+          "operation": "PARSE_VALIDATE",
+          "scriptSha256Before": "1c10c7f45b09b1a1290a0d2bf7308d1721dab1bf7f62dd89d728a7fa4f8d5467"
+        },
+        {
+          "id": "Activity_RbuApplyImport",
+          "operation": "IMPORT_APPLY",
+          "scriptSha256Before": "7e450217e9c9d9f0ec7e2a8e673627a06da061158ca0c1eedfb4247c0aa8e9e5"
+        },
+        {
+          "id": "Activity_RbuPersistPetJournal",
+          "operation": "IMPORT_FINALIZE",
+          "scriptSha256Before": "24be4473340e84c6476064da06011ef665417020c071d10b225b740957077c6a"
+        },
+        {
+          "id": "Activity_RbuCancelImport",
+          "operation": "IMPORT_CANCEL",
+          "scriptSha256Before": "40f1045b4c6953809dd4dd9f852c5c5f10dcc853a7e09345ef032c63777a1bc0"
+        },
+        {
+          "id": "Activity_1domcby",
+          "operation": "PARSE_VALIDATE",
+          "scriptSha256Before": "1c10c7f45b09b1a1290a0d2bf7308d1721dab1bf7f62dd89d728a7fa4f8d5467"
+        }
+      ],
+      "changedConditions": [
+        {
+          "id": "Flow_ApplyBatchLoop",
+          "field": "conditionExpression",
+          "value": "${rbuApplyHasMoreBatches == true}"
+        }
+      ],
+      "addedModelIds": [],
+      "lightweightGuards": [],
+      "removedMultiInstance": null,
+      "diagramDownstreamShiftPixels": 0,
+      "verification": {
+        "originalIdsPreserved": 163,
+        "originalIdsRemoved": 0,
+        "sequenceFlowReferencesValid": true,
+        "heavyScriptsRemaining": 0
+      },
+      "handlerPatches": [
+        "patches/47346-standard.json",
+        "patches/47346-runtime.json"
+      ],
+      "sourceImportStandardCode": null
+    },
+    {
+      "standardCode": 47349,
+      "standardId": "6abefcf44d900ed3508dc658",
+      "runtimeId": "6adb610fca4dedaee1703655",
+      "profile": "OMSU",
+      "processId": "Process_RbuPetOmsuValidation",
+      "publishedBpmnSha256Before": "206d35f0b5e4b2e7feca7fbb44a488dae0e2c6a6641382656463c6a81e80652a",
+      "sourceBpmnSha256Before": "f0545fc52ebdf04a6bbbaae15b4cb35a5193adde49e3975b3ace2e654832ec7e",
+      "patchedBpmn": "bpmn/47349.bpmn",
+      "patchedBpmnSha256": "6dbbccb6aec47b1c5183f13929d2a4cd91d4197cd43333cb560ec19dd04eddd8",
+      "replacedTasks": [
+        {
+          "id": "Activity_RbuValidateImport",
+          "operation": "PARSE_VALIDATE",
+          "scriptSha256Before": "1c10c7f45b09b1a1290a0d2bf7308d1721dab1bf7f62dd89d728a7fa4f8d5467"
+        }
+      ],
+      "changedConditions": [],
+      "addedModelIds": [],
+      "lightweightGuards": [],
+      "removedMultiInstance": null,
+      "diagramDownstreamShiftPixels": 0,
+      "verification": {
+        "originalIdsPreserved": 45,
+        "originalIdsRemoved": 0,
+        "sequenceFlowReferencesValid": true,
+        "heavyScriptsRemaining": 0
+      },
+      "handlerPatches": [
+        "patches/47349-standard.json",
+        "patches/47349-runtime.json"
+      ],
+      "sourceImportStandardCode": null
+    },
+    {
+      "standardCode": 47160,
+      "standardId": "6ab074d4b51b204b6b4b25d7",
+      "runtimeId": "6acf9dc769088e6bef2952b5",
+      "profile": "ROIV",
+      "processId": "Process_RbuPetRollback",
+      "publishedBpmnSha256Before": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
+      "sourceBpmnSha256Before": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
+      "patchedBpmn": "bpmn/47160.bpmn",
+      "patchedBpmnSha256": "0ba4055fe6d564053d1ba5b62c7668b9a41807ebcd422d6cc323a1f91031bd5f",
+      "replacedTasks": [
+        {
+          "id": "Activity_RbuPreparePetRollback",
+          "operation": "ROLLBACK_PREPARE",
+          "scriptSha256Before": "474f1e3555805a090a375ffee31e3f00fc74fee6356a6250af01f4808dd13e7e"
+        },
+        {
+          "id": "Activity_RbuDeletePetRollbackBatch",
+          "operation": "ROLLBACK_EXECUTE",
+          "scriptSha256Before": "6d6f4f0df71062847472cb62000aa56294c7d4e1641797dab2b957e2b8fa8bab"
+        },
+        {
+          "id": "Activity_RbuFinalizePetRollback",
+          "operation": "ROLLBACK_FINALIZE",
+          "scriptSha256Before": "5237c005c9cbe4c568abcd3bb6cc2d792eeef4450970afa9f63a2f265ffb6a9f"
+        }
+      ],
+      "changedConditions": [],
+      "addedModelIds": [
+        "Gateway_PetExternalRollbackBatch",
+        "Flow_PetExternalRollbackExecuteToBatch",
+        "Flow_PetExternalRollbackMore"
+      ],
+      "lightweightGuards": [],
+      "removedMultiInstance": null,
+      "diagramDownstreamShiftPixels": 120,
+      "verification": {
+        "originalIdsPreserved": 71,
+        "originalIdsRemoved": 0,
+        "sequenceFlowReferencesValid": true,
+        "heavyScriptsRemaining": 0
+      },
+      "handlerPatches": [
+        "patches/47160-standard.json",
+        "patches/47160-runtime.json"
+      ],
+      "sourceImportStandardCode": "47012"
+    },
+    {
+      "standardCode": 47347,
+      "standardId": "6abefcaf53b994e14cc1e3f8",
+      "runtimeId": "6acf965069088e6bef28b433",
+      "profile": "OMSU",
+      "processId": "Process_RbuPetRollback",
+      "publishedBpmnSha256Before": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
+      "sourceBpmnSha256Before": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
+      "patchedBpmn": "bpmn/47347.bpmn",
+      "patchedBpmnSha256": "09b3d3c402c41cf527c17f238871e27b45de071916a63e42563d82fdaf4e8eaa",
+      "replacedTasks": [
+        {
+          "id": "Activity_RbuPreparePetRollback",
+          "operation": "ROLLBACK_PREPARE",
+          "scriptSha256Before": "474f1e3555805a090a375ffee31e3f00fc74fee6356a6250af01f4808dd13e7e"
+        },
+        {
+          "id": "Activity_RbuDeletePetRollbackBatch",
+          "operation": "ROLLBACK_EXECUTE",
+          "scriptSha256Before": "6d6f4f0df71062847472cb62000aa56294c7d4e1641797dab2b957e2b8fa8bab"
+        },
+        {
+          "id": "Activity_RbuFinalizePetRollback",
+          "operation": "ROLLBACK_FINALIZE",
+          "scriptSha256Before": "5237c005c9cbe4c568abcd3bb6cc2d792eeef4450970afa9f63a2f265ffb6a9f"
+        }
+      ],
+      "changedConditions": [],
+      "addedModelIds": [
+        "Gateway_PetExternalRollbackBatch",
+        "Flow_PetExternalRollbackExecuteToBatch",
+        "Flow_PetExternalRollbackMore"
+      ],
+      "lightweightGuards": [],
+      "removedMultiInstance": null,
+      "diagramDownstreamShiftPixels": 120,
+      "verification": {
+        "originalIdsPreserved": 71,
+        "originalIdsRemoved": 0,
+        "sequenceFlowReferencesValid": true,
+        "heavyScriptsRemaining": 0
+      },
+      "handlerPatches": [
+        "patches/47347-standard.json",
+        "patches/47347-runtime.json"
+      ],
+      "sourceImportStandardCode": "47346"
+    },
+    {
+      "standardCode": 47610,
+      "standardId": "6ad600f5cb8ace0132dbd6a5",
+      "runtimeId": "6ad778316b0121b06cff9247",
+      "profile": "ROIV",
+      "processId": "Process_RbuPetRollback",
+      "publishedBpmnSha256Before": "bee2dd37a3ec173693dda76f95955ffaeb77536221705408d9d14ddfcb292bcc",
+      "sourceBpmnSha256Before": "e698988a5d7b46781e1eabe8321df51ad4d7a533bcf3fbf956380b179ebe980d",
+      "patchedBpmn": "bpmn/47610.bpmn",
+      "patchedBpmnSha256": "0ba4055fe6d564053d1ba5b62c7668b9a41807ebcd422d6cc323a1f91031bd5f",
+      "replacedTasks": [
+        {
+          "id": "Activity_RbuPreparePetRollback",
+          "operation": "ROLLBACK_PREPARE",
+          "scriptSha256Before": "474f1e3555805a090a375ffee31e3f00fc74fee6356a6250af01f4808dd13e7e"
+        },
+        {
+          "id": "Activity_RbuDeletePetRollbackBatch",
+          "operation": "ROLLBACK_EXECUTE",
+          "scriptSha256Before": "6d6f4f0df71062847472cb62000aa56294c7d4e1641797dab2b957e2b8fa8bab"
+        },
+        {
+          "id": "Activity_RbuFinalizePetRollback",
+          "operation": "ROLLBACK_FINALIZE",
+          "scriptSha256Before": "5237c005c9cbe4c568abcd3bb6cc2d792eeef4450970afa9f63a2f265ffb6a9f"
+        }
+      ],
+      "changedConditions": [],
+      "addedModelIds": [
+        "Gateway_PetExternalRollbackBatch",
+        "Flow_PetExternalRollbackExecuteToBatch",
+        "Flow_PetExternalRollbackMore"
+      ],
+      "lightweightGuards": [],
+      "removedMultiInstance": null,
+      "diagramDownstreamShiftPixels": 120,
+      "verification": {
+        "originalIdsPreserved": 71,
+        "originalIdsRemoved": 0,
+        "sequenceFlowReferencesValid": true,
+        "heavyScriptsRemaining": 0
+      },
+      "handlerPatches": [
+        "patches/47610-standard.json",
+        "patches/47610-runtime.json"
+      ],
+      "sourceImportStandardCode": "47615"
+    },
+    {
+      "standardCode": 47615,
+      "standardId": "6ad63004cb8ace0132e1b1aa",
+      "runtimeId": "6adeef279dabc068fce88c47",
+      "profile": "ROIV",
+      "processId": "Process_RbuPetImportCopy",
+      "publishedBpmnSha256Before": "1c240a1d3944b05886182b9b385692b790ae618ff7e09fb9659a8b0a1b927c82",
+      "sourceBpmnSha256Before": "e9549b967728aff3048087a59339ba46cb2d347a30a8be257158bf5620716dad",
+      "patchedBpmn": "bpmn/47615.bpmn",
+      "patchedBpmnSha256": "daf37c0de98b9687c1ab040f1af4c6f7b0c0ad0bd54df16e6ba1495b733439d8",
+      "replacedTasks": [
+        {
+          "id": "Activity_RbuValidateImport",
+          "operation": "PARSE_VALIDATE",
+          "scriptSha256Before": "1c10c7f45b09b1a1290a0d2bf7308d1721dab1bf7f62dd89d728a7fa4f8d5467"
+        },
+        {
+          "id": "Activity_RbuPersistPetJournal",
+          "operation": "IMPORT_FINALIZE",
+          "scriptSha256Before": "1858681fb8045c06f7dc2e2fbf046cec2c812f0da396ce0f7e0d2e27835b5750"
+        },
+        {
+          "id": "Activity_RbuCancelImport",
+          "operation": "IMPORT_CANCEL",
+          "scriptSha256Before": "40f1045b4c6953809dd4dd9f852c5c5f10dcc853a7e09345ef032c63777a1bc0"
+        },
+        {
+          "id": "Activity_PetProcessOneRow",
+          "operation": "IMPORT_APPLY",
+          "scriptSha256Before": "146555cba5abffc637fdca5babbc952098f2501760841027ec8054aebba2dfb5"
+        }
+      ],
+      "changedConditions": [
+        {
+          "id": "Flow_ApplyBatchLoop",
+          "field": "conditionExpression",
+          "value": "${rbuApplyHasMoreBatches == true}"
+        }
+      ],
+      "addedModelIds": [],
+      "lightweightGuards": [
+        {
+          "id": "Activity_RbuApplyImport",
+          "scriptSha256Before": "d1d741f4b542b63ec73e6d3b30d5feee01b01ba89dae2127ea654c877681538a",
+          "scriptSha256After": "1a716f135aae7f5ac80467512c626fc5d6e2448ee5403982cc8bfc8b984b6e0a",
+          "scriptBytesAfter": 322
+        },
+        {
+          "id": "Activity_PetFinishBatch",
+          "scriptSha256Before": "88298aec774d4f27af5da22c08b0cdb5584d0f5eb684358c3fd4805f0ff1a8c6",
+          "scriptSha256After": "5232eda286db5aff33d63b33d0f7ab7a03e3965947d46956f972a7f681d7d0e0",
+          "scriptBytesAfter": 370
+        }
+      ],
+      "removedMultiInstance": {
+        "subProcessId": "SubProcess_PetRows50",
+        "collection": "${execution.getVariable('rbuPetBatchIndices')}",
+        "elementVariable": "rbuPetRowSlot",
+        "isSequential": "true"
+      },
+      "diagramDownstreamShiftPixels": 0,
+      "verification": {
+        "originalIdsPreserved": 181,
+        "originalIdsRemoved": 0,
+        "sequenceFlowReferencesValid": true,
+        "heavyScriptsRemaining": 0
+      },
+      "handlerPatches": [
+        "patches/47615-standard.json",
+        "patches/47615-runtime.json"
+      ],
+      "sourceImportStandardCode": null
+    }
+  ],
+  "forms": [
+    {
+      "id": "6aa69899bfb5bbb9e40687cb",
+      "standardCode": 47160,
+      "patch": "forms/6aa69899bfb5bbb9e40687cb.json"
+    },
+    {
+      "id": "6abefcaf4d900ed3508dc226",
+      "standardCode": 47347,
+      "patch": "forms/6abefcaf4d900ed3508dc226.json"
+    },
+    {
+      "id": "6ad600f5066b24586a0eb6e8",
+      "standardCode": 47610,
+      "patch": "forms/6ad600f5066b24586a0eb6e8.json"
+    },
+    {
+      "id": "6ad63004066b24586a148b01",
+      "standardCode": 47615,
+      "patch": "forms/6ad63004066b24586a148b01.json"
+    },
+    {
+      "id": "6ad63004cb8ace0132e1b1bc",
+      "standardCode": 47615,
+      "patch": "forms/6ad63004cb8ace0132e1b1bc.json"
+    }
+  ]
+}

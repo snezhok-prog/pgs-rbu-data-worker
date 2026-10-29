@@ -1,0 +1,62 @@
+{
+  "format": "sha256-guarded-json-content-patch-v1",
+  "collection": "standards",
+  "id": "6ab074d4b51b204b6b4b25d7",
+  "standardCode": 47160,
+  "changes": [
+    {
+      "op": "replace",
+      "path": "/process/catchEvents/0/handler/0/content",
+      "expectedSha256": "52ef35ad23f4459dfe77ccd8152c3ee1e0bb06fbe2e2c1fe3834602a56a03521",
+      "handlerName": "rbuGuardPetRollbackFinalConfirmationV1",
+      "handlerGuid": "34a29246-db82-46b9-a456-a96563e6c64d",
+      "valueFile": "handlers/rollback-confirmation.js",
+      "value": "return (async () => {\n  const fresh = await window.restService.find('rbuModulesAppeals', appeal._id, false);\n  if (!fresh || fresh._id !== appeal._id) throw new Error('Не удалось прочитать актуальное дело отката.');\n  const candidates = (fresh.subservices || []).filter(s => s.rbuPetRollbackPlan);\n  const current = candidates.find(s => (subservice?.guid && s.guid === subservice.guid) || (subservice?.id && s.id === subservice.id))\n    || (candidates.length === 1 ? candidates[0] : null);\n  const plan = current?.rbuPetRollbackPlan;\n  const saved = current?.xsdData?.rbuPetRollbackConfirmation || {};\n  if (!plan || !['PREPARED', 'EXECUTING', 'EXECUTED'].includes(plan.status)) throw new Error('Серверный план отката ещё не готов.');\n  if (model?.confirmFinalRollback !== true || saved.confirmFinalRollback !== true\n      || model.targetAppealId !== plan.targetAppealId || saved.targetAppealId !== plan.targetAppealId\n      || model.journalFingerprint !== plan.journalFingerprint || saved.journalFingerprint !== plan.journalFingerprint) {\n    throw new Error('Повторно подтвердите выбранную миграцию и текущий отпечаток журнала.');\n  }\n  // PGS persists the form; the following external task performs bounded backend deletion.\n  return true;\n})();\n"
+    },
+    {
+      "op": "replace",
+      "path": "/process/catchEvents/1/handler/0/content",
+      "expectedSha256": "757796bda07a05a581811cf539562ffbf6a0a4098f962725f947e8c3fe5665e8",
+      "handlerName": "rbuGuardPetRollbackResultReviewV1",
+      "handlerGuid": "53c1a0b1-6de9-461b-9ba9-1e82b70e09ba",
+      "valueFile": "handlers/rollback-review.js",
+      "value": "return (async () => {\n  const fresh = await window.restService.find('rbuModulesAppeals', appeal._id, false);\n  if (!fresh || fresh._id !== appeal._id) throw new Error('Не удалось прочитать актуальное дело отката.');\n  const candidates = (fresh.subservices || []).filter(s => s.rbuPetRollbackReport);\n  const current = candidates.find(s => (subservice?.guid && s.guid === subservice.guid) || (subservice?.id && s.id === subservice.id))\n    || (candidates.length === 1 ? candidates[0] : null);\n  if (!['ROLLED_BACK', 'PARTIAL'].includes(current?.rbuPetRollbackReport?.status)) throw new Error('Серверный откат ещё не завершён.');\n  return true;\n})();\n"
+    },
+    {
+      "op": "replace",
+      "path": "/appealData/statuses/0/actions/0/handler/0/content",
+      "expectedSha256": "7c9ab85722c2cc4e1ed39a6e9988637779382f7ee97c238f3b0d53f146a792f4",
+      "handlerName": "rbuGuardPetRollbackRegistrationV1",
+      "handlerGuid": "949960c2-cc57-49b5-8643-33460bc41f40",
+      "valueFile": "handlers/rollback-registration.js",
+      "value": "return (async () => {\n  const raw = model?.migrationCase || appeal?.migrationCase || subservice?.xsdData?.migrationCase;\n  const value = Array.isArray(raw) ? raw[0] : raw;\n  const id = String(value?._id || value?.id || value || '').trim();\n  if (!id || id === appeal._id) throw new Error('Выберите исходное дело миграции.');\n  const confirmed = model?.confirmIrreversible ?? appeal?.confirmIrreversible ?? subservice?.xsdData?.confirmIrreversible;\n  if (confirmed !== true) throw new Error('Подтвердите необратимость удаления.');\n  const target = await window.restService.find('rbuModulesAppeals', id, false);\n  if (!target || target._id !== id || target.status?.code !== 'complete') throw new Error('Исходная миграция должна быть успешно завершена.');\n  if (!appeal.unit?.id || target.unit?.id !== appeal.unit.id) throw new Error('Исходная миграция принадлежит другому кабинету.');\n  if (target.petMigrationRollback?.completedAt) throw new Error('Эта миграция уже полностью откачена.');\n  // The backend verifies the owned worker journal by mainId, including cloned native process keys.\n  return true;\n})();\n"
+    },
+    {
+      "op": "replace",
+      "path": "/appealXsdHandlers/1/content",
+      "expectedSha256": "117f437f11123486864b5d7db4895e33dce19e71d441e525829aa00e0240d04a",
+      "handlerName": "rbuResolveRollbackSourcePetImportV1",
+      "handlerGuid": "05e1d944-7148-454e-87b8-3ba11ee70ab3",
+      "valueFile": "handlers/source-standard-47012.js",
+      "value": "model.migrationSourceStandardCode = '47012';\nmodel.migrationSourceResolutionError = '';\nreturn model;\n"
+    },
+    {
+      "op": "replace",
+      "path": "/additionalDataTabs/0/xsdHandlers/0/content",
+      "expectedSha256": "210493c69041627d2c3799acb99ad7491f363ab4f65674d287df58879183cae1",
+      "handlerName": "rbuInitPetRollbackConfirmationV1",
+      "handlerGuid": "ae1dabc0-3cc3-4945-8d81-776f16bb42f7",
+      "valueFile": "handlers/rollback-progress.js",
+      "value": "return (async () => {\n  const fresh = await window.restService.find('rbuModulesAppeals', appeal._id, false);\n  if (!fresh || fresh._id !== appeal._id) throw new Error('Не удалось прочитать актуальное дело отката.');\n  const candidates = (fresh.subservices || []).filter(s => s.rbuPetRollbackPlan);\n  const current = candidates.find(s => (subservice?.guid && s.guid === subservice.guid) || (subservice?.id && s.id === subservice.id))\n    || (candidates.length === 1 ? candidates[0] : null);\n  const plan = current?.rbuPetRollbackPlan;\n  if (!plan || plan.version !== 'rbu-pet-rollback-external-1.0') throw new Error('Серверный план отката ещё не подготовлен.');\n  const states = new Set(['PENDING', 'DELETED', 'ALREADY_DELETED', 'BLOCKED', 'ERROR']);\n  if (!Array.isArray(plan.rollbackItems) || plan.rollbackItems.some(item => !states.has(item.state))) throw new Error('Сервер вернул неподдерживаемое состояние записи.');\n  const checkpoint = new Date(plan.checkpointAt);\n  if (Number.isNaN(checkpoint.getTime())) throw new Error('Контрольная точка backend не содержит корректную дату.');\n  if (!plan.checkpointTimeDisplay) throw new Error('Не сохранено отображение контрольной точки по московскому времени.');\n  const fields = ['totalRecords', 'deletableRecords', 'blockedRecords', 'processedRecords', 'deletedRecords', 'notDeletedRecords',\n    'pendingRecords', 'alreadyDeletedRecords', 'technicalErrors', 'currentBatch', 'totalBatches'];\n  for (const name of fields) model[name] = Number(plan[name] || 0);\n  Object.assign(model, {\n    header: 'Удалить импортированные данные «Мой питомец»',\n    migrationNumber: plan.targetAppealNumber || plan.targetAppealId,\n    sourceFileName: plan.sourceFileName || '—',\n    failedRecords: Number(plan.technicalErrors || 0),\n    lastSavedAt: plan.checkpointTimeDisplay,\n    checkpointAtUtc: checkpoint.toISOString(),\n    rollbackItems: plan.rollbackItems.map(item => ({...item})),\n    targetAppealId: plan.targetAppealId,\n    journalFingerprint: plan.journalFingerprint,\n    confirmFinalRollback: false,\n    warningText: `Обработано ${plan.processedRecords} из ${plan.totalRecords}. Ожидают: ${plan.pendingRecords}. Уже отсутствовали: ${plan.alreadyDeletedRecords}. Заблокированы: ${plan.blockedRecords}. Ошибок: ${plan.technicalErrors}. Выполнение и продолжение сохраняются серверным обработчиком.`,\n  });\n  return model;\n})();\n"
+    },
+    {
+      "op": "replace",
+      "path": "/additionalDataTabs/1/xsdHandlers/0/content",
+      "expectedSha256": "5ec3538cea281ac8ac28ff3fe86f139e5392be41d50718f2e961a6fb12e70ac2",
+      "handlerName": "rbuInitPetRollbackResultV1",
+      "handlerGuid": "badde575-e6f2-410e-ad40-ea026b9ef5b8",
+      "valueFile": "handlers/rollback-result.js",
+      "value": "return (async () => {\n  const fresh = await window.restService.find('rbuModulesAppeals', appeal._id, false);\n  if (!fresh || fresh._id !== appeal._id) throw new Error('Не удалось прочитать актуальное дело отката.');\n  const candidates = (fresh.subservices || []).filter(s => s.rbuPetRollbackReport);\n  const current = candidates.find(s => (subservice?.guid && s.guid === subservice.guid) || (subservice?.id && s.id === subservice.id))\n    || (candidates.length === 1 ? candidates[0] : null);\n  const report = current?.rbuPetRollbackReport;\n  if (!report || !['ROLLED_BACK', 'PARTIAL'].includes(report.status)) throw new Error('Итоговый серверный отчёт ещё не готов.');\n  const format = (raw) => {\n    const date = new Date(raw);\n    if (!raw || Number.isNaN(date.getTime())) throw new Error('Некорректная дата серверного отчёта отката.');\n    return date.toISOString().replace('T', ' ').replace('Z', ' UTC') + ' / '\n      + date.toLocaleString('ru-RU', {timeZone: 'Europe/Moscow', hour12: false}) + ' МСК';\n  };\n  Object.assign(model, {\n    migrationNumber: report.targetAppealNumber || report.targetAppealId,\n    sourceFileName: report.sourceFileName || '—',\n    startedAt: format(report.startedAt), completedAt: format(report.completedAt),\n    resultHeader: report.status === 'ROLLED_BACK' ? 'Удаление данных выполнено полностью' : 'Удаление данных выполнено частично',\n    completedBatches: Number(report.lastCompletedBatch || 0), resumeCount: Number(report.resumeCount || 0),\n    rollbackMetrics: [\n      ['totalRecords', 'Всего записей'], ['deletedRecords', 'Удалено обработчиком'],\n      ['alreadyDeletedRecords', 'Отсутствовали до удаления'], ['blockedRecords', 'Заблокировано'],\n      ['pendingRecords', 'Ожидают выполнения'], ['technicalErrors', 'Технические ошибки'],\n    ].map(([field, label]) => ({metricName: label, recordCount: Number(report[field] || 0)})),\n    notDeletedItems: (report.notDeletedItems || []).map(item => ({...item,\n      activeAppeals: (item.activeCases || []).map(value => value.number || value.appealId).join(', ')})),\n  });\n  return model;\n})();\n"
+    }
+  ]
+}

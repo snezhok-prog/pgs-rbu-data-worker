@@ -1,0 +1,26 @@
+{
+  "format": "sha256-guarded-json-content-patch-v1",
+  "collection": "subservices",
+  "id": "6adb610fca4dedaee1703655",
+  "standardCode": 47349,
+  "changes": [
+    {
+      "op": "replace",
+      "path": "/xsdTabs/0/xsdHandlers/0/content",
+      "expectedSha256": "69077bfadbc069b2b817fe72eb710702f0e1645e0f8298c0f465ba39a8b6c53b",
+      "handlerName": "rbuInitPetImportResultFormV1",
+      "handlerGuid": "3345f128-80ec-441f-9f8a-3f2b92e951da",
+      "valueFile": "handlers/import-result.js",
+      "value": "return (async () => {\n  const fresh = await window.restService.find('rbuModulesAppeals', appeal._id, false);\n  if (!fresh || fresh._id !== appeal._id) throw new Error('Не удалось прочитать актуальное дело.');\n  const candidates = (fresh.subservices || []).filter(s => s.camundaProcessInfo?.status === 'ACTIVE');\n  const current = candidates.find(s => (subservice?.guid && s.guid === subservice.guid) || (subservice?.id && s.id === subservice.id))\n    || (candidates.length === 1 ? candidates[0] : null);\n  if (!current) throw new Error('Рабочая подуслуга не определена однозначно.');\n  const result = current.rbuImportResult || current.xsdData?.rbuImportResult;\n  if (!result) throw new Error('Серверный результат проверки ещё не сохранён. Обновите форму после выполнения операции.');\n  const draft = fresh.importDraft || current.rbuImportDraft || current.xsdData?.rbuImportDraft || {};\n  const fingerprint = draft.confirmationFingerprint || result.rbuImportConfirmation?.confirmationFingerprint || '';\n  Object.assign(model, result, {\n    sourceFileName: result.sourceFileName || result.fileName || draft.file?.originalName || '',\n    validationErrors: result.validationErrors || result.errors || [],\n    confirmApply: false,\n    confirmationFingerprint: fingerprint,\n    rbuImportConfirmation: {confirmApply: false, confirmationFingerprint: fingerprint},\n    createdRecords: Number(result.createdRecords || 0),\n    patchedRecords: Number(result.patchedRecords || 0),\n  });\n  const applicationStatus = result.applicationStatus || fresh.applicationStatus;\n  model.migrationProgressDisplay = applicationStatus === 'APPLIED' ? 'Миграция завершена.'\n    : applicationStatus === 'APPLYING' ? 'Миграция выполняется в фоне. Сохранённый прогресс доступен после обновления формы.'\n    : applicationStatus === 'CANCELLED' ? 'Импорт отменён.' : 'Миграция ещё не начата.';\n  if (result.processedAt) {\n    const date = new Date(result.processedAt);\n    if (Number.isNaN(date.getTime())) throw new Error('Некорректная дата серверной проверки.');\n    model.processedAtDisplay = date.toISOString().replace('T', ' ').replace('Z', ' UTC')\n      + ' / ' + date.toLocaleString('ru-RU', {timeZone: 'Europe/Moscow', hour12: false}) + ' МСК';\n  }\n  const total = Number(result.totalRows || 0), valid = Number(result.validRows || 0), invalid = Number(result.invalidRows || 0);\n  model.validationMetrics = [\n    {metricCode: 'total', metricName: 'Общее количество строк в файле', rowCount: total, percentDisplay: total ? '100%' : '0%'},\n    {metricCode: 'valid', metricName: 'Правильные (валидные) строки', rowCount: valid, percentDisplay: (total ? 100 * valid / total : 0).toFixed(2) + '%'},\n    {metricCode: 'invalid', metricName: 'Неправильные (ошибочные) строки', rowCount: invalid, percentDisplay: (total ? 100 * invalid / total : 0).toFixed(2) + '%'},\n  ];\n  model.plannedRegistryRecords = draft.plannedRegistryRecords ?? draft.recordEstimate?.totalRecords ?? null;\n  model.registryRecordLimit = 2500;\n  model.registryVolumeDisplay = model.plannedRegistryRecords == null ? 'Объём рассчитан серверным обработчиком.'\n    : `Рассчитанный объём: ${model.plannedRegistryRecords} из 2500 реестровых записей.`;\n  return model;\n})();\n"
+    },
+    {
+      "op": "replace",
+      "path": "/statusModel/status/0/actions/0/handlers/0/content",
+      "expectedSha256": "39d69bdf29647649ffa8ac4cddd6ad4de0a33da4e0f4cba10586d98fb6383b5c",
+      "handlerName": "rbuReadPetXlsxToAppealV1",
+      "handlerGuid": "181e3885-15f7-4415-b0f0-094b362f985d",
+      "valueFile": "handlers/file-metadata.js",
+      "value": "const firstFile = (value) => {\n  for (let depth = 0; depth < 6; depth++) {\n    if (Array.isArray(value)) {\n      if (value.length !== 1) throw new Error('Выберите один файл XLSX.');\n      value = value[0];\n    } else if (value && typeof value === 'object') {\n      if (value._id || value.id || value.fileId) return value;\n      value = value.uploadedFiles || value.files || value.file || value.value || value.data;\n    } else break;\n  }\n  throw new Error('Выберите загруженный в хранилище файл XLSX.');\n};\nconst file = firstFile(model?.importFile || appeal?.importFile || subservice?.xsdData?.importFile);\nif (!/\\.xlsx$/i.test(String(file.originalName || file.name || ''))) throw new Error('Необходимо загрузить файл .xlsx.');\nif (file.size != null && (!Number.isFinite(Number(file.size)) || Number(file.size) <= 0 || Number(file.size) > 20 * 1024 * 1024)) {\n  throw new Error('Допустим непустой XLSX размером не более 20 МБ.');\n}\n// Native form persistence saves metadata; PARSE_VALIDATE reads the bytes on the backend.\nreturn true;\n"
+    }
+  ]
+}

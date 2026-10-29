@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="Camunda Modeler" exporterVersion="5.39.0" id="Definitions_RbuPetImport" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="Process_RbuPetOmsuValidation" isExecutable="true" name="Мой питомец — Валидация данных">
+    <bpmn:startEvent id="StartEvent_RbuImport" name="Задание зарегистрировано">
+      <bpmn:outgoing>Flow_StartToValidate</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask camunda:asyncBefore="true" camunda:exclusive="false" id="Activity_RbuValidateImport" name="Проверить файл и дубли" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="rbuOperation">PARSE_VALIDATE</camunda:inputParameter>
+          <camunda:inputParameter name="rbuDomain">PET</camunda:inputParameter>
+          <camunda:inputParameter name="rbuProfile">OMSU</camunda:inputParameter>
+          <camunda:inputParameter name="rbuContractVersion">1</camunda:inputParameter>
+          <camunda:inputParameter name="collectionName">rbuModulesAppeals.subservices</camunda:inputParameter>
+          <camunda:inputParameter name="mainId">${mainId}</camunda:inputParameter>
+          <camunda:inputParameter name="camundaBusinessInfoId">${camundaBusinessInfoId}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1q5v3kw</bpmn:incoming>
+      <bpmn:outgoing>Flow_ValidateToDecision</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask camunda:topic="business-external-tasks-executor-status" camunda:type="external" id="Activity_RbuCompleteStatus" name="Завершить задание импорта">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="type">executeAction</camunda:inputParameter>
+          <camunda:inputParameter name="nextStatusCode">complete</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_ReviewToDecision</bpmn:incoming>
+      <bpmn:outgoing>Flow_CompleteStatusToEnd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_RbuImport" name="Задание завершено">
+      <bpmn:incoming>Flow_CompleteStatusToEnd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_StartToValidate" sourceRef="StartEvent_RbuImport" targetRef="Event_074gtcz" />
+    <bpmn:sequenceFlow id="Flow_ValidateToDecision" sourceRef="Activity_RbuValidateImport" targetRef="Gateway_RbuValidationNotifyFork" />
+    <bpmn:sequenceFlow id="Flow_ValidationNotifyReview" sourceRef="Gateway_RbuValidationNotifyFork" targetRef="Event_RbuReviewValidation" />
+    <bpmn:sequenceFlow id="Flow_ValidationNotifyTask" sourceRef="Gateway_RbuValidationNotifyFork" targetRef="Activity_RbuNotifyPetValidation" />
+    <bpmn:sequenceFlow id="Flow_ValidationNotifyEnd" sourceRef="Activity_RbuNotifyPetValidation" targetRef="EndEvent_RbuPetValidationNotify" />
+    <bpmn:sequenceFlow id="Flow_CompleteStatusToEnd" sourceRef="Activity_RbuCompleteStatus" targetRef="EndEvent_RbuImport" />
+    <bpmn:sequenceFlow id="Flow_1q5v3kw" sourceRef="Event_074gtcz" targetRef="Activity_RbuValidateImport" />
+    <bpmn:intermediateCatchEvent id="Event_074gtcz" name="Выполнить валидацию">
+      <bpmn:incoming>Flow_StartToValidate</bpmn:incoming>
+      <bpmn:outgoing>Flow_1q5v3kw</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1d8ez8g" messageRef="Message_12e60kb" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:parallelGateway id="Gateway_RbuValidationNotifyFork" name="Результат проверки и уведомление">
+      <bpmn:incoming>Flow_ValidateToDecision</bpmn:incoming>
+      <bpmn:outgoing>Flow_ValidationNotifyReview</bpmn:outgoing>
+      <bpmn:outgoing>Flow_ValidationNotifyTask</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:serviceTask camunda:asyncBefore="true" camunda:class="io.aimc.bpmn.camunda.UniversalServiceConnector" camunda:exclusive="false" id="Activity_RbuNotifyPetValidation" name="Уведомить о завершении проверки файла">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="target_url">http://camunda-integration:8080/exchange/event</camunda:inputParameter>
+          <camunda:inputParameter name="async">false</camunda:inputParameter>
+          <camunda:inputParameter name="invocation_properties">
+            <camunda:map>
+              <camunda:entry key="method">POST</camunda:entry>
+              <camunda:entry key="type">generateMessage</camunda:entry>
+              <camunda:entry key="receiverType">allUsersInUnit</camunda:entry>
+              <camunda:entry key="notificationCode">rbuPetImportValidationCompleted</camunda:entry>
+              <camunda:entry key="routing">/myPet/common-appeals-workingData/edit</camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_ValidationNotifyTask</bpmn:incoming>
+      <bpmn:outgoing>Flow_ValidationNotifyEnd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_RbuPetValidationNotify" name="Уведомление о проверке обработано">
+      <bpmn:incoming>Flow_ValidationNotifyEnd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:intermediateCatchEvent id="Event_RbuReviewValidation" name="Ознакомиться с результатами валидации">
+      <bpmn:incoming>Flow_ValidationNotifyReview</bpmn:incoming>
+      <bpmn:outgoing>Flow_ReviewToDecision</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_RbuReviewValidation" messageRef="Message_RbuReviewValidation" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_ReviewToDecision" sourceRef="Event_RbuReviewValidation" targetRef="Activity_RbuCompleteStatus" />
+  </bpmn:process>
+  <bpmn:message id="Message_12e60kb" name="Выполнить валидацию" />
+  <bpmn:message id="Message_2gvm2ab" name="Мигрировать данные" />
+  <bpmn:message id="Message_12g3rfu" name="Завершить без миграции" />
+  <bpmn:message id="Message_RbuReloadFile" name="Загрузить другой файл" />
+  <bpmn:message id="Message_RbuReviewValidation" name="Ознакомиться с результатами валидации" />
+  <bpmndi:BPMNDiagram id="Diagram_47349">
+    <bpmndi:BPMNPlane bpmnElement="Process_RbuPetOmsuValidation" id="Plane_47349">
+      <bpmndi:BPMNShape bpmnElement="StartEvent_RbuImport" id="StartEvent_RbuImport_di">
+        <dc:Bounds height="36" width="36" x="157" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="100" y="158" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuValidateImport" id="Activity_RbuValidateImport_di">
+        <dc:Bounds height="90" width="180" x="640" y="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuCompleteStatus" id="Activity_RbuCompleteStatus_di">
+        <dc:Bounds height="90" width="180" x="1510" y="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="EndEvent_RbuImport" id="EndEvent_RbuImport_di">
+        <dc:Bounds height="36" width="36" x="1867" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="1810" y="158" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_074gtcz" id="Event_074gtcz_di">
+        <dc:Bounds height="36" width="36" x="427" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="370" y="158" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_RbuValidationNotifyFork" id="Gateway_RbuValidationNotifyFork_di">
+        <dc:Bounds height="50" width="50" x="990" y="110" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="940" y="165" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuNotifyPetValidation" id="Activity_RbuNotifyPetValidation_di">
+        <dc:Bounds height="90" width="180" x="1210" y="293" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="EndEvent_RbuPetValidationNotify" id="EndEvent_RbuPetValidationNotify_di">
+        <dc:Bounds height="36" width="36" x="1567" y="320" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="1510" y="361" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_RbuReviewValidation" id="Event_RbuReviewValidation_di">
+        <dc:Bounds height="36" width="36" x="1282" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="1225" y="158" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="Flow_StartToValidate" id="Flow_StartToValidate_di">
+        <di:waypoint x="193" y="135" />
+        <di:waypoint x="427" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_ValidateToDecision" id="Flow_ValidateToDecision_di">
+        <di:waypoint x="820" y="135" />
+        <di:waypoint x="990" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_ValidationNotifyReview" id="Flow_ValidationNotifyReview_di">
+        <di:waypoint x="1040" y="135" />
+        <di:waypoint x="1282" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_ValidationNotifyTask" id="Flow_ValidationNotifyTask_di">
+        <di:waypoint x="1040" y="135" />
+        <di:waypoint x="1125" y="135" />
+        <di:waypoint x="1125" y="338" />
+        <di:waypoint x="1210" y="338" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_ValidationNotifyEnd" id="Flow_ValidationNotifyEnd_di">
+        <di:waypoint x="1390" y="338" />
+        <di:waypoint x="1567" y="338" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_CompleteStatusToEnd" id="Flow_CompleteStatusToEnd_di">
+        <di:waypoint x="1690" y="135" />
+        <di:waypoint x="1867" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_1q5v3kw" id="Flow_1q5v3kw_di">
+        <di:waypoint x="463" y="135" />
+        <di:waypoint x="640" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_ReviewToDecision" id="Flow_ReviewToDecision_di">
+        <di:waypoint x="1318" y="135" />
+        <di:waypoint x="1510" y="135" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

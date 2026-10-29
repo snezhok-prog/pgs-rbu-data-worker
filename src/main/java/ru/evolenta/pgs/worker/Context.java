@@ -4,6 +4,7 @@ public final class Context {
     public final Command command;public final PgsApi api;public Map<String,Object> appeal,sub,xsd;
     private Operations.Lease lease=()->{};
     public void setLease(Operations.Lease lease){this.lease=lease;}
+    public byte[] download(String fileId,long maxBytes)throws Exception{lease.check();byte[] bytes=api.download(command.collection,command.mainId,fileId,maxBytes);lease.check();return bytes;}
     public Context(Command command,PgsApi api)throws Exception{this.command=command;this.api=api;reload();}
     public void reload()throws Exception{appeal=api.find(command.collection,command.mainId);if(!command.mainId.equals(id(appeal)))throw new IllegalStateException("Дело не найдено");List<Map<String,Object>> found=new ArrayList<Map<String,Object>>();for(Map<String,Object>s:maps(appeal.get("subservices"))){Map<String,Object> info=map(s.get("camundaProcessInfo"));if(command.processId.equals(clean(first(info.get("id"),info.get("instanceId"))))&&command.businessInfoId.equals(clean(info.get("camundaBusinessInfoId"))))found.add(s);}if(found.size()!=1)throw new IllegalStateException("Не найдена однозначная подуслуга текущего процесса");sub=found.get(0);xsd=copy(map(sub.get("xsdData")));if(!present(sub.get("guid")))throw new IllegalStateException("Нет guid подуслуги");}
     public void saveAppeal(Map<String,Object> patch)throws Exception{lease.check();api.update(command.collection,command.mainId,clean(appeal.get("guid")),patch);appeal.putAll(patch);}

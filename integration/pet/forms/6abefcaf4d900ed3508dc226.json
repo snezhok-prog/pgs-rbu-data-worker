@@ -1,0 +1,46 @@
+{
+  "format": "sha256-guarded-json-patch-v1",
+  "collection": "xsd",
+  "id": "6abefcaf4d900ed3508dc226",
+  "expectedXsdContentSha256": "74f2c5f4329303324f3266d300faa0d998e1770f8e494339fd4ddf49d31616ad",
+  "standardCode": 47347,
+  "changes": [
+    {
+      "op": "add",
+      "path": "/xsdContent/-",
+      "value": {
+        "cols": [
+          {
+            "size": 12,
+            "content": [
+              {
+                "icon": "icon-typography",
+                "type": "input",
+                "options": {
+                  "name": "pendingRecords",
+                  "type": "number",
+                  "handler": [],
+                  "readOnly": true,
+                  "required": false,
+                  "displayName": "Ожидают выполнения",
+                  "placeholder": "",
+                  "useFormStateMainModelWhenCheckingDisplayCondition": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/xsdContent/7/cols/0/content/0/options/tableSettings/headers/3/headerName",
+      "value": "Состояние записи"
+    },
+    {
+      "op": "replace",
+      "path": "/xsdContent/6/cols/0/content/6/options/displayName",
+      "value": "Последняя сохранённая контрольная точка (МСК)"
+    }
+  ]
+}

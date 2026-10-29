@@ -1,0 +1,96 @@
+{
+  "TYPE": {
+    "кошка": "cat",
+    "кот": "cat",
+    "собака": "dog",
+    "пес": "dog",
+    "щенок": "puppy",
+    "котенок": "kitten"
+  },
+  "SIZE": {
+    "маленький": "little",
+    "маленькая": "little",
+    "малый": "little",
+    "средний": "medium",
+    "средняя": "medium",
+    "среднее": "medium",
+    "большой": "big",
+    "большая": "big",
+    "крупный": "big"
+  },
+  "STATUS_STRAY": {
+    "не отловлено": "notCaptured",
+    "на отлове": "onTheCapture",
+    "в приюте": "atShelter",
+    "в пункте временного содержания": "inThePointOfTemporaryContent",
+    "передано": "passed",
+    "выпущено": "released",
+    "падеж": "died",
+    "отловлено": "captured",
+    "ожидает оформления заявки на отлов": "onTheCapture"
+  },
+  "STATUS_ORDER": {
+    "в отлове": "inCatchProcess",
+    "не отловлено": "notCaught",
+    "отловлено": "caught"
+  },
+  "STATUS_CARD": {
+    "находится в приюте": "atShelter",
+    "в приюте": "atShelter",
+    "находится в пункте временного содержания": "inThePointOfTemporaryContent",
+    "в пункте временного содержания": "inThePointOfTemporaryContent",
+    "выпущен в места обитания": "releasedToHabitat",
+    "выпущено в прежнюю среду обитания": "releasedToHabitat",
+    "передан владельцу": "transferredToOwner",
+    "передано владельцу": "transferredToOwner",
+    "пал (падеж)": "dead",
+    "падеж": "dead",
+    "проведено мероприятие по эвтаназии": "dead"
+  },
+  "SEX": {
+    "мужской": "male",
+    "муж": "male",
+    "женский": "female",
+    "жен": "female"
+  },
+  "FUR": {
+    "короткошерстное": "shortHaired",
+    "короткошерстный": "shortHaired",
+    "средней длины": "mediumLength",
+    "средняя длина": "mediumLength",
+    "длинношерстное": "longHaired",
+    "длинношерстный": "longHaired"
+  },
+  "EARS": {
+    "маленькие": "little",
+    "большие": "big",
+    "средние": "middle",
+    "висячие": "lopEared",
+    "вислоухие": "lopEared",
+    "стоячие": "erect",
+    "полустоячие": "semiErect",
+    "купированные": "cropped",
+    "с клипсой": "clipped",
+    "остроконечные": "pointed",
+    "без ушей": "noEars",
+    "одно ухо": "oneEar",
+    "с фигурным вырезом (выщипом)": "plucked"
+  },
+  "TAIL": {
+    "большой": "big",
+    "маленький": "little",
+    "средний": "middle",
+    "прямой": "straight",
+    "короткий": "short",
+    "кольцом": "ringShaped",
+    "двойным кольцом": "doubleRingShaped",
+    "пером": "featherShaped",
+    "пушистый": "fluffy",
+    "без хвоста": "noTail",
+    "купированный": "cropped",
+    "саблевидный": "saberShaped",
+    "серповидный": "sickleShaped",
+    "прутом": "rodShaped",
+    "поленообразный": "logShaped"
+  }
+}

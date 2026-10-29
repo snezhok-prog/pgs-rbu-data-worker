@@ -115,7 +115,7 @@ public final class DevCli {
         throw new IllegalArgumentException("Trade data type: НТО, Рынки or Ярмарки");
     }
     void init(String domain, Path contextFile, String dataType) throws Exception {
-        if (!Set.of("ADVERTISING", "TRADE").contains(domain)) throw new IllegalArgumentException("Domain: ADVERTISING or TRADE");
+        if (!Set.of("ADVERTISING", "TRADE", "PET").contains(domain)) throw new IllegalArgumentException("Domain: ADVERTISING, TRADE or PET");
         if (Files.exists(run)) throw new IllegalStateException("Run already exists. Reuse its state and journal.");
         Map<String,Object> context = read(contextFile); noSecrets(context);
         boolean http = bool(context.get("allowHttp"));
@@ -126,12 +126,12 @@ public final class DevCli {
         for (String field : List.of("organization", "region", "municipality", "card")) if (!objectId(at(context, field + "._id"))) throw new IllegalArgumentException("Context requires " + field + "._id from DEV");
         if (!clean(context.get("standardCode")).matches("[1-9][0-9]{3,9}")) throw new IllegalArgumentException("Context requires DEV import standardCode");
         int port = integer(context.getOrDefault("fileAdapterPort", 18085)); if (port < 1024 || port > 65535) throw new IllegalArgumentException("fileAdapterPort: 1024-65535");
-        if (domain.equals("TRADE")) dataType = canonicalType(dataType); else dataType = "Реклама";
+        if (domain.equals("TRADE")) dataType = canonicalType(dataType); else dataType = domain.equals("PET") ? "Мой питомец" : "Реклама";
         String runId = UUID.randomUUID().toString(), suffix = name.substring(0, 1).toUpperCase(Locale.ROOT) + name.substring(1) + runId.substring(0, 8);
-        String prefix = domain.equals("TRADE") ? "RbuTrade" : "RbuAdvertising", topic = "rbu-" + domain.toLowerCase(Locale.ROOT) + "-" + name + "-" + runId.substring(0, 8);
+        String prefix = domain.equals("TRADE") ? "RbuTrade" : domain.equals("PET") ? "RbuPet" : "RbuAdvertising", topic = "rbu-" + domain.toLowerCase(Locale.ROOT) + "-" + name + "-" + runId.substring(0, 8);
         Path template = repo.resolve("tools/dev-cli/templates/" + domain.toLowerCase(Locale.ROOT) + "-acceptance.bpmn");
         String xml = Files.readString(template, StandardCharsets.UTF_8);
-        String originalTopic = domain.equals("TRADE") ? "rbu-trade-acceptance-20261028" : "rbu-advertising-acceptance-20261028";
+        String originalTopic = "rbu-" + domain.toLowerCase(Locale.ROOT) + "-acceptance-20261028";
         if (!xml.contains(originalTopic) || !xml.contains(prefix + "ImportAcceptance20261028")) throw new IllegalArgumentException("Unsupported acceptance BPMN template");
         xml = xml.replace(originalTopic, topic).replace(prefix, prefix + suffix);
         settings = obj("domain", domain, "dataType", dataType, "topic", topic, "processKey", prefix + suffix + "ImportAcceptance20261028", "context", context);
@@ -270,7 +270,7 @@ public final class DevCli {
         List<Map<String,Object>> matches = maps(a.get("subservices")).stream().filter(s -> value("processId").equals(clean(at(s, "camundaProcessInfo.id"))) && value("subGuid").equals(clean(s.get("guid")))).toList();
         if (matches.size() != 1) throw new IllegalStateException("Owned process subservice is not unique");
         Map<String,Object> sub = matches.getFirst(), xsd = copy(map(sub.get("xsdData"))), confirmation = obj("confirmApply", true);
-        if (domain().equals("TRADE")) {
+        if (Set.of("TRADE", "PET").contains(domain())) {
             String fingerprint = clean(draft.get("confirmationFingerprint"));
             if (!"VALIDATED".equals(draft.get("status")) || !fingerprint.matches("[0-9a-f]{64}") || !fingerprint.equals(clean(at(xsd, "rbuImportConfirmation.confirmationFingerprint"))) || !clean(at(a, "importFile._id")).equals(clean(at(draft, "file.id"))) || !settings.get("dataType").equals(draft.get("dataType"))) throw new IllegalStateException("Validation fingerprint/file/type is stale; revalidate before confirming");
             confirmation.put("confirmationFingerprint", fingerprint);
@@ -305,7 +305,7 @@ public final class DevCli {
         return new ProcessBuilder(java, "@" + args).directory(repo.toFile()).inheritIO().start().waitFor();
     }
     public static void main(String[] args) throws Exception {
-        if (args.length < 2) { System.out.println("dev.cmd build | init NAME ADVERTISING|TRADE CONTEXT_JSON [НТО|Рынки|Ярмарки] | deploy NAME | create NAME ROIV|OMSU | upload NAME XLSX [--session|--token] | upload-extra NAME FILE [--session|--token] | upload-documents NAME DIRECTORY [--session|--token] | attach NAME | start NAME | status NAME | confirm NAME | next NAME [--repeat] | worker NAME [--write] | files NAME SDK_LIB"); return; }
+        if (args.length < 2) { System.out.println("dev.cmd build | init NAME ADVERTISING|TRADE|PET CONTEXT_JSON [НТО|Рынки|Ярмарки] | deploy NAME | create NAME ROIV|OMSU | upload NAME XLSX [--session|--token] | upload-extra NAME FILE [--session|--token] | upload-documents NAME DIRECTORY [--session|--token] | attach NAME | start NAME | status NAME | confirm NAME | next NAME [--repeat] | worker NAME [--write] | files NAME SDK_LIB"); return; }
         DevCli cli = new DevCli(Path.of(""), args[1], new HttpTransport());
         RunLock lock = null;
         try {

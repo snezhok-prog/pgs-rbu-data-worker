@@ -54,7 +54,7 @@ public final class DevCliTest {
     record Fixture(Path home, DevCli cli, Fake fake, Path input) { }
     static Fixture fixture(Path source, String domain, String type, String name) throws Exception {
         Path home = Files.createTempDirectory("rbu-dev-cli-test-");
-        for (String file : List.of("config/worker.dev.properties", "tools/dev-cli/templates/advertising-acceptance.bpmn", "tools/dev-cli/templates/trade-acceptance.bpmn")) {
+        for (String file : List.of("config/worker.dev.properties", "tools/dev-cli/templates/advertising-acceptance.bpmn", "tools/dev-cli/templates/trade-acceptance.bpmn", "tools/dev-cli/templates/pet-acceptance.bpmn")) {
             Path to = home.resolve(file); Files.createDirectories(to.getParent()); Files.copy(source.resolve(file), to);
         }
         Path context = home.resolve("context.local.json"); DevCli.write(context, context()); Fake fake = new Fake(); DevCli cli = new DevCli(home, name, fake); cli.init(domain, context, type); fake.processKey = clean(cli.settings.get("processKey"));
@@ -74,6 +74,14 @@ public final class DevCliTest {
     }
     public static void main(String[] args) throws Exception {
         Path source = Path.of(args[0]);
+        for (String profile : List.of("ROIV", "OMSU")) {
+            Fixture pet = fixture(source, "PET", "", "pet01");
+            ready(pet, profile);
+            check("Мой питомец".equals(pet.fake.appeal.get("dataType")), "PET data type retained");
+            check("PET".equals(at(pet.fake.started, "variables.rbuDomain.value")), "PET domain retained");
+            validated(pet); pet.cli.confirm();
+            check("a".repeat(64).equals(at(list(pet.fake.appeal.get("subservices")).getFirst(), "xsdData.rbuImportConfirmation.confirmationFingerprint")), "PET confirmation has current fingerprint");
+        }
         for (String type : List.of("НТО", "Рынки", "Ярмарки")) for (String profile : List.of("ROIV", "OMSU")) {
             Fixture f = fixture(source, "TRADE", type, "trade01");
             check(f.fake.mutations == 0, "init is local"); check(Files.readString(f.cli.run.resolve("acceptance.bpmn")).contains(clean(f.cli.settings.get("topic"))), "BPMN topic isolated");

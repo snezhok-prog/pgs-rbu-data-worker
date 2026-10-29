@@ -8,6 +8,7 @@ public final class Operations {
     public Operations(CheckpointStore journal,Lease lease,boolean writes,String ui){this.journal=journal;this.lease=lease;this.writes=writes;this.ui=ui;}
     public Map<String,Object> execute(Context c)throws Exception{
         if(c.command.domain==Command.Domain.TRADE)return new TradeOperations(journal,lease,writes,ui).execute(c);
+        if(c.command.domain==Command.Domain.PET)return new PetOperations(journal,lease,writes,ui).execute(c);
         switch(c.command.operation){
             case PARSE_VALIDATE:return validate(c);
             case IMPORT_CANCEL:return cancel(c);
@@ -23,7 +24,7 @@ public final class Operations {
     public Map<String,Object> validate(Context c)throws Exception{
         AdvertisingGuard guard=new AdvertisingGuard(c,false);Map<String,Object> reload=map(first(c.xsd.get("rbuImportReload"),at(c.sub,"mainElement.xsdData.rbuImportReload")));
         Map<String,Object> file=file(first(reload.get("importFile"),c.appeal.get("importFile"),c.xsd.get("importFile")));String fileId=clean(first(file.get("_id"),file.get("id"),file.get("fileId")));if(fileId.isEmpty())throw new IllegalArgumentException("Не выбран файл XLSX");if(!clean(first(file.get("originalName"),file.get("name"))).toLowerCase(Locale.ROOT).endsWith(".xlsx"))throw new IllegalArgumentException("Необходимо загрузить файл .xlsx");
-        lease.check();byte[] bytes=c.api.download(fileId,XlsxReader.MAX_FILE);String fileHash=sha(bytes),revision=hash(obj("file",fileHash,"context",guard.context()));String opKey=c.command.key(revision);Map<String,Object> state=journal.read(opKey);
+        lease.check();byte[] bytes=c.download(fileId,XlsxReader.MAX_FILE);String fileHash=sha(bytes),revision=hash(obj("file",fileHash,"context",guard.context()));String opKey=c.command.key(revision);Map<String,Object> state=journal.read(opKey);
         // Cache only the same task delivery. A later loop through the same node revalidates registries.
         if(Arrays.asList("RESULT_READY","COMPLETED").contains(clean(state.get("status")))&&c.command.taskId.equals(state.get("taskId"))){
             c.reload();AdvertisingGuard freshGuard=new AdvertisingGuard(c,false);
@@ -45,6 +46,6 @@ public final class Operations {
         lease.check();c.saveAppeal(obj("importFile",file,"importDraft",publicDraft,"migrationLog",result.get("migrationLog"),"validationErrors",result.get("errors"),"validationStatus",status,"isValid",!blocked,"validationCompletedAt",result.get("processedAt"),"applicationStatus","VALIDATION_COMPLETED"));lease.check();c.saveResult(publicDraft,result);
         readyState.put("status","COMPLETED");journal.save(opKey,readyState);return variables;
     }
-    private Map<String,Object> cancel(Context c)throws Exception{lease.check();Map<String,Object>d=copy(map(first(c.appeal.get("importDraft"),c.sub.get("rbuImportDraft"))));if(Arrays.asList("APPLIED","APPLYING").contains(clean(d.get("status"))))throw new IllegalArgumentException("Нельзя отменить уже начатый импорт этим действием");d.put("status","CANCELLED");d.put("cancelledAt",now());Map<String,Object>r=copy(map(c.sub.get("rbuImportResult")));r.put("processingStatus","Импорт отменён");r.put("applicationStatus","CANCELLED");c.saveAppeal(obj("importDraft",d,"applicationStatus","CANCELLED"));c.saveResult(d,r);return obj("rbuApplicationStatus","CANCELLED","rbuCanApply",false,"rbuApplyHasMoreBatches",false);}
+    private Map<String,Object> cancel(Context c)throws Exception{lease.check();Map<String,Object>d=copy(map(first(c.appeal.get("importDraft"),c.sub.get("rbuImportDraft"))));if(ImportLifecycle.hasStarted(c,journal)||Arrays.asList("APPLIED","APPLYING").contains(clean(d.get("status")))||!journal.read(hash(obj("process",c.command.processId,"mainId",c.command.mainId,"file",clean(at(d,"file.sha256")),"operation","IMPORT"))).isEmpty())throw new IllegalArgumentException("Нельзя отменить уже начатый импорт этим действием");d.put("status","CANCELLED");d.put("cancelledAt",now());Map<String,Object>r=copy(map(c.sub.get("rbuImportResult")));r.put("processingStatus","Импорт отменён");r.put("applicationStatus","CANCELLED");c.saveAppeal(obj("importDraft",d,"applicationStatus","CANCELLED"));c.saveResult(d,r);return obj("rbuApplicationStatus","CANCELLED","rbuCanApply",false,"rbuApplyHasMoreBatches",false);}
     public static Map<String,Object> compactDraft(Map<String,Object>draft){Map<String,Object>out=new LinkedHashMap<String,Object>(draft);List<Object>sheets=new ArrayList<Object>();for(Map<String,Object>s:maps(draft.get("sheets"))){Map<String,Object>meta=new LinkedHashMap<String,Object>(s);meta.put("rows",Collections.emptyList());sheets.add(meta);}out.put("sheets",sheets);out.put("workerDataExternal",true);return out;}
 }

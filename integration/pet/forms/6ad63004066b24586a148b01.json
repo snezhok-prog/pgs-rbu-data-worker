@@ -1,0 +1,76 @@
+{
+  "format": "sha256-guarded-json-patch-v1",
+  "collection": "xsd",
+  "id": "6ad63004066b24586a148b01",
+  "expectedXsdContentSha256": "3707ecf85ee00ad4ea5590949629271bb51f4602c0b27991c362c94f3f86fe02",
+  "standardCode": 47615,
+  "changes": [
+    {
+      "op": "add",
+      "path": "/xsdContent/-",
+      "value": {
+        "cols": [
+          {
+            "size": 12,
+            "content": [
+              {
+                "icon": "icon-typography",
+                "type": "input",
+                "options": {
+                  "name": "migrationProgressDisplay",
+                  "type": "text",
+                  "readOnly": true,
+                  "required": false,
+                  "displayName": "Ход миграции",
+                  "useFormStateMainModelWhenCheckingDisplayCondition": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/xsdContent/-",
+      "value": {
+        "cols": [
+          {
+            "size": 6,
+            "content": [
+              {
+                "icon": "icon-typography",
+                "type": "input",
+                "options": {
+                  "name": "createdRecords",
+                  "type": "number",
+                  "readOnly": true,
+                  "required": false,
+                  "displayName": "Создано записей",
+                  "useFormStateMainModelWhenCheckingDisplayCondition": true
+                }
+              }
+            ]
+          },
+          {
+            "size": 6,
+            "content": [
+              {
+                "icon": "icon-typography",
+                "type": "input",
+                "options": {
+                  "name": "patchedRecords",
+                  "type": "number",
+                  "readOnly": true,
+                  "required": false,
+                  "displayName": "Обновлено связей",
+                  "useFormStateMainModelWhenCheckingDisplayCondition": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

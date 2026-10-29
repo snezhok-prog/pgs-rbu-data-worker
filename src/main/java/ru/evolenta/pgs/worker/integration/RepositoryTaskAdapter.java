@@ -13,8 +13,11 @@ public final class RepositoryTaskAdapter {
     private final CheckpointStore journal;
     private final boolean writes;
     private final String uiBaseUrl;
-    public RepositoryTaskAdapter(PgsApi api, CheckpointStore journal, boolean writes, String uiBaseUrl) {
+    private final StandardAllowlist standards;
+    public RepositoryTaskAdapter(PgsApi api, CheckpointStore journal, boolean writes, String uiBaseUrl,
+                                 StandardAllowlist standards) {
         this.api=api; this.journal=journal; this.writes=writes; this.uiBaseUrl=uiBaseUrl;
+        this.standards=java.util.Objects.requireNonNull(standards);
     }
     public CompleteExternalTaskReqDTO execute(ExternalTaskFetchAndLockRespDTO task,
                                               Operations.Lease lease) throws Exception {
@@ -25,6 +28,7 @@ public final class RepositoryTaskAdapter {
         Command command=new Command(Util.obj("id",task.getId(),"processInstanceId",task.getProcessInstanceId(),
                 "activityId",task.getActivityId(),"variables",variables));
         Context context=new Context(command,api);context.setLease(lease);
+        standards.require(context);
         Map<String,Object> result=new Operations(journal,lease,writes,uiBaseUrl).execute(context);
         lease.check();
         Map<String,ValueObjectDTO> output=new LinkedHashMap<String,ValueObjectDTO>();

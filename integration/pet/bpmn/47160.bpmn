@@ -1,0 +1,407 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_RbuPetRollback" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:message id="Message_RbuConfirmPetRollback" name="Удалить импортированные данные" />
+  <bpmn:message id="Message_RbuReviewPetRollback" name="Ознакомиться с результатами удаления данных" />
+  <bpmn:process id="Process_RbuPetRollback" isExecutable="true" name="Питомец — Удаление импортированных данных">
+    <bpmn:startEvent id="StartEvent_RbuPetRollback" name="Дело зарегистрировано">
+      <bpmn:outgoing>Flow_StartToPrepare</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuPreparePetRollback" name="Подготовить безопасный план удаления" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="rbuOperation">ROLLBACK_PREPARE</camunda:inputParameter>
+          <camunda:inputParameter name="rbuDomain">PET</camunda:inputParameter>
+          <camunda:inputParameter name="rbuProfile">ROIV</camunda:inputParameter>
+          <camunda:inputParameter name="rbuContractVersion">1</camunda:inputParameter>
+          <camunda:inputParameter name="collectionName">rbuModulesAppeals.subservices</camunda:inputParameter>
+          <camunda:inputParameter name="mainId">${mainId}</camunda:inputParameter>
+          <camunda:inputParameter name="camundaBusinessInfoId">${camundaBusinessInfoId}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0mzkfrk</bpmn:incoming>
+      <bpmn:outgoing>Flow_PrepareToConfirm</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:intermediateCatchEvent id="Event_RbuConfirmPetRollback" name="Удалить импортированные данные">
+      <bpmn:incoming>Flow_PrepareToConfirm</bpmn:incoming>
+      <bpmn:outgoing>Flow_ConfirmToDeleteBatch</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="Message_RbuConfirmPetRollback" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuDeletePetRollbackBatch" name="Удалить пачку записей на сервере" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+      <bpmn:extensionElements>
+        <camunda:failedJobRetryTimeCycle>R5/PT5M</camunda:failedJobRetryTimeCycle>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="rbuOperation">ROLLBACK_EXECUTE</camunda:inputParameter>
+          <camunda:inputParameter name="rbuDomain">PET</camunda:inputParameter>
+          <camunda:inputParameter name="rbuProfile">ROIV</camunda:inputParameter>
+          <camunda:inputParameter name="rbuContractVersion">1</camunda:inputParameter>
+          <camunda:inputParameter name="collectionName">rbuModulesAppeals.subservices</camunda:inputParameter>
+          <camunda:inputParameter name="mainId">${mainId}</camunda:inputParameter>
+          <camunda:inputParameter name="camundaBusinessInfoId">${camundaBusinessInfoId}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_ConfirmToDeleteBatch</bpmn:incoming>
+      <bpmn:incoming>Flow_PetExternalRollbackMore</bpmn:incoming>
+      <bpmn:outgoing>Flow_PetExternalRollbackExecuteToBatch</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask camunda:asyncBefore="true" id="Activity_RbuFinalizePetRollback" name="Зафиксировать результат удаления" camunda:type="external" camunda:topic="pgs-rbu-data-processing-v1">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="rbuOperation">ROLLBACK_FINALIZE</camunda:inputParameter>
+          <camunda:inputParameter name="rbuDomain">PET</camunda:inputParameter>
+          <camunda:inputParameter name="rbuProfile">ROIV</camunda:inputParameter>
+          <camunda:inputParameter name="rbuContractVersion">1</camunda:inputParameter>
+          <camunda:inputParameter name="collectionName">rbuModulesAppeals.subservices</camunda:inputParameter>
+          <camunda:inputParameter name="mainId">${mainId}</camunda:inputParameter>
+          <camunda:inputParameter name="camundaBusinessInfoId">${camundaBusinessInfoId}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0v18ir6</bpmn:incoming>
+      <bpmn:outgoing>Flow_FinalizeToNotifyFork</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:parallelGateway id="Gateway_RbuPetRollbackNotifyFork" name="Результат и уведомление">
+      <bpmn:incoming>Flow_FinalizeToNotifyFork</bpmn:incoming>
+      <bpmn:outgoing>Flow_FinalizeToReview</bpmn:outgoing>
+      <bpmn:outgoing>Flow_RbuNotifyPetRollback</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:serviceTask camunda:asyncBefore="true" camunda:class="io.aimc.bpmn.camunda.UniversalServiceConnector" id="Activity_RbuNotifyPetRollback" name="Уведомить об удалении мигрированных данных">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="target_url">http://camunda-integration:8080/exchange/event</camunda:inputParameter>
+          <camunda:inputParameter name="async">false</camunda:inputParameter>
+          <camunda:inputParameter name="invocation_properties">
+            <camunda:map>
+              <camunda:entry key="method">POST</camunda:entry>
+              <camunda:entry key="type">generateMessage</camunda:entry>
+              <camunda:entry key="receiverType">allUsersInUnit</camunda:entry>
+              <camunda:entry key="notificationCode">rbuPetImportRollbackCompleted</camunda:entry>
+              <camunda:entry key="routing">/rbuModulesPetCoordination/import-data/common-appeals/edit</camunda:entry>
+            </camunda:map>
+          </camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_RbuNotifyPetRollback</bpmn:incoming>
+      <bpmn:outgoing>Flow_RbuNotifyPetRollbackEnd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="EndEvent_RbuPetRollbackNotify" name="Уведомление обработано">
+      <bpmn:incoming>Flow_RbuNotifyPetRollbackEnd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:intermediateCatchEvent id="Event_RbuReviewPetRollback" name="Ознакомиться с результатами удаления данных">
+      <bpmn:incoming>Flow_FinalizeToReview</bpmn:incoming>
+      <bpmn:outgoing>Flow_ReviewToEnd</bpmn:outgoing>
+      <bpmn:messageEventDefinition messageRef="Message_RbuReviewPetRollback" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:endEvent id="EndEvent_RbuPetRollback" name="Удаление завершено">
+      <bpmn:incoming>Flow_PetCompleteStatusToEnd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_StartToPrepare" sourceRef="StartEvent_RbuPetRollback" targetRef="Event_0mvaa6x" />
+    <bpmn:sequenceFlow id="Flow_PrepareToConfirm" sourceRef="Activity_RbuPreparePetRollback" targetRef="Event_RbuConfirmPetRollback" />
+    <bpmn:sequenceFlow id="Flow_ConfirmToDeleteBatch" sourceRef="Event_RbuConfirmPetRollback" targetRef="Activity_RbuDeletePetRollbackBatch" />
+    <bpmn:sequenceFlow id="Flow_FinalizeToNotifyFork" sourceRef="Activity_RbuFinalizePetRollback" targetRef="Gateway_RbuPetRollbackNotifyFork" />
+    <bpmn:sequenceFlow id="Flow_FinalizeToReview" sourceRef="Gateway_RbuPetRollbackNotifyFork" targetRef="Event_RbuReviewPetRollback" />
+    <bpmn:sequenceFlow id="Flow_RbuNotifyPetRollback" sourceRef="Gateway_RbuPetRollbackNotifyFork" targetRef="Activity_RbuNotifyPetRollback" />
+    <bpmn:sequenceFlow id="Flow_RbuNotifyPetRollbackEnd" sourceRef="Activity_RbuNotifyPetRollback" targetRef="EndEvent_RbuPetRollbackNotify" />
+    <bpmn:sequenceFlow id="Flow_ReviewToEnd" sourceRef="Event_RbuReviewPetRollback" targetRef="Activity_RbuCompletePetRollbackStatus" />
+    <bpmn:serviceTask camunda:topic="business-external-tasks-executor-status" camunda:type="external" id="Activity_RbuCompletePetRollbackStatus" name="Установить статус «Завершено»">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="type">executeAction</camunda:inputParameter>
+          <camunda:inputParameter name="nextStatusCode">complete</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_ReviewToEnd</bpmn:incoming>
+      <bpmn:outgoing>Flow_PetCompleteStatusToEnd</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_PetCompleteStatusToEnd" sourceRef="Activity_RbuCompletePetRollbackStatus" targetRef="EndEvent_RbuPetRollback" />
+    <bpmn:scriptTask camunda:asyncBefore="true" id="Activity_RbuReadAppealNumber" name="Проверить номер заявления" scriptFormat="groovy">
+      <bpmn:incoming>Flow_08258i5</bpmn:incoming>
+      <bpmn:outgoing>Flow_RbuNumberRead</bpmn:outgoing>
+      <bpmn:script>import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import ru.evolenta.sier.Core
+
+String collection = execution.getVariable('collectionName')?.toString()?.split(/\.subservices/)[0]
+String id = execution.getVariable('mainId')?.toString()?.trim()
+if (!collection || !id) throw new IllegalStateException('Невозможно проверить номер: не определено дело')
+
+def slurper = new JsonSlurper()
+
+def appealSearchQuery = [
+    search: [
+        search: [
+            [field: '_id', operator: 'eq', value: id]
+        ]
+    ],
+    page: 0,
+    size: 1,
+    needCount: false,
+    prj: 'rbuAppealNumberOnly'
+]
+
+String responseJson = Core.search(
+    collection,
+    JsonOutput.toJson(appealSearchQuery),
+    execution
+)
+
+def result = slurper.parseText(responseJson)
+
+if (!(result instanceof Map)) {
+    throw new IllegalStateException(
+        'Не удалось проверить номер: некорректный ответ поиска'
+    )
+}
+
+if (result.error || result.errors || result.success == false) {
+    throw new IllegalStateException(
+        'Не удалось проверить номер: сервис поиска вернул ошибку'
+    )
+}
+
+if (!(result.content instanceof List)) {
+    throw new IllegalStateException(
+        'Не удалось проверить номер: в ответе отсутствует список content'
+    )
+}
+
+List records = result.content as List
+
+if (records.isEmpty()) {
+    throw new IllegalStateException(
+        'Не удалось проверить номер: дело не найдено'
+    )
+}
+
+def appeal = records[0]
+
+if (!(appeal instanceof Map) || appeal._id?.toString() != id) {
+    throw new IllegalStateException(
+        'Не удалось проверить номер: найденная запись не соответствует делу'
+    )
+}
+
+
+if (appeal.number != null &amp;&amp; !(appeal.number instanceof CharSequence)) {
+    throw new IllegalStateException('Номер дела имеет некорректный тип')
+}
+String number = appeal.number?.toString()?.trim() ?: ''
+def rawUnitId = appeal.unitId
+if (rawUnitId == null || (rawUnitId instanceof CharSequence &amp;&amp; !rawUnitId.toString().trim())) {
+    rawUnitId = appeal.unit instanceof Map ? appeal.unit.id : null
+}
+if (!number &amp;&amp; rawUnitId != null &amp;&amp; !(rawUnitId instanceof CharSequence)) {
+    throw new IllegalStateException('Невозможно присвоить номер: некорректный идентификатор организации')
+}
+String unitId = rawUnitId instanceof CharSequence ? rawUnitId.toString().trim() : ''
+if (!number &amp;&amp; !unitId) throw new IllegalStateException('Невозможно присвоить номер: не определена организация дела')
+execution.setVariable('rbuAppealNumberPresent', !number.isEmpty())
+execution.setVariable('rbuAppealNumber', number)
+execution.setVariable('rbuAppealNumberTag', unitId ?: '')</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:exclusiveGateway default="Flow_RbuNumberMissing" id="Gateway_RbuHasAppealNumber" name="Номер присвоен?">
+      <bpmn:incoming>Flow_RbuNumberRead</bpmn:incoming>
+      <bpmn:outgoing>Flow_RbuNumberPresent</bpmn:outgoing>
+      <bpmn:outgoing>Flow_RbuNumberMissing</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask camunda:topic="business-external-tasks-executor-number" camunda:type="external" id="Activity_RbuAssignAppealNumber" name="Присвоить номер заявления">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="type">assignEntryNumber</camunda:inputParameter>
+          <camunda:inputParameter name="algorithm">NNNNNNNN</camunda:inputParameter>
+          <camunda:inputParameter name="tag">${rbuAppealNumberTag}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_RbuNumberMissing</bpmn:incoming>
+      <bpmn:outgoing>Flow_RbuNumberAssigned</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_RbuNumberRead" sourceRef="Activity_RbuReadAppealNumber" targetRef="Gateway_RbuHasAppealNumber" />
+    <bpmn:sequenceFlow id="Flow_RbuNumberPresent" sourceRef="Gateway_RbuHasAppealNumber" targetRef="Gateway_1e4860i">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${execution.getVariable('rbuAppealNumberPresent') == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_RbuNumberMissing" sourceRef="Gateway_RbuHasAppealNumber" targetRef="Activity_RbuAssignAppealNumber" />
+    <bpmn:sequenceFlow id="Flow_RbuNumberAssigned" sourceRef="Activity_RbuAssignAppealNumber" targetRef="Gateway_1e4860i" />
+    <bpmn:intermediateCatchEvent id="Event_0mvaa6x">
+      <bpmn:incoming>Flow_StartToPrepare</bpmn:incoming>
+      <bpmn:outgoing>Flow_08258i5</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0v4d9kr">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT5S</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_08258i5" sourceRef="Event_0mvaa6x" targetRef="Activity_RbuReadAppealNumber" />
+    <bpmn:exclusiveGateway id="Gateway_1e4860i" name="Номер присвоен?">
+      <bpmn:incoming>Flow_RbuNumberPresent</bpmn:incoming>
+      <bpmn:incoming>Flow_RbuNumberAssigned</bpmn:incoming>
+      <bpmn:outgoing>Flow_0mzkfrk</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0mzkfrk" sourceRef="Gateway_1e4860i" targetRef="Activity_RbuPreparePetRollback" />
+    <bpmn:sequenceFlow id="Flow_0v18ir6" sourceRef="Gateway_PetExternalRollbackBatch" targetRef="Activity_RbuFinalizePetRollback" />
+    <bpmn:exclusiveGateway id="Gateway_PetExternalRollbackBatch" name="Есть следующий пакет серверного отката?" default="Flow_0v18ir6">
+      <bpmn:incoming>Flow_PetExternalRollbackExecuteToBatch</bpmn:incoming>
+      <bpmn:outgoing>Flow_0v18ir6</bpmn:outgoing>
+      <bpmn:outgoing>Flow_PetExternalRollbackMore</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_PetExternalRollbackExecuteToBatch" sourceRef="Activity_RbuDeletePetRollbackBatch" targetRef="Gateway_PetExternalRollbackBatch" />
+    <bpmn:sequenceFlow id="Flow_PetExternalRollbackMore" sourceRef="Gateway_PetExternalRollbackBatch" targetRef="Activity_RbuDeletePetRollbackBatch">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${rbuRollbackHasMore == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_47160">
+    <bpmndi:BPMNPlane bpmnElement="Process_RbuPetRollback" id="Plane_47160">
+      <bpmndi:BPMNShape bpmnElement="StartEvent_RbuPetRollback" id="StartEvent_RbuPetRollback_di">
+        <dc:Bounds height="36" width="36" x="100" y="307" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="43" y="351" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuPreparePetRollback" id="Activity_RbuPreparePetRollback_di">
+        <dc:Bounds height="90" width="180" x="1160" y="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_RbuConfirmPetRollback" id="Event_RbuConfirmPetRollback_di">
+        <dc:Bounds height="36" width="36" x="1482" y="307" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="27" width="139" x="1431" y="351" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuDeletePetRollbackBatch" id="Activity_RbuDeletePetRollbackBatch_di">
+        <dc:Bounds height="90" width="180" x="1650" y="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuFinalizePetRollback" id="Activity_RbuFinalizePetRollback_di">
+        <dc:Bounds height="90" width="180" x="2010.0" y="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_RbuPetRollbackNotifyFork" id="Gateway_RbuPetRollbackNotifyFork_di">
+        <dc:Bounds height="50" width="50" x="2216.0" y="110" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14" width="131" x="2175.0" y="86" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuNotifyPetRollback" id="Activity_RbuNotifyPetRollback_di">
+        <dc:Bounds height="90" width="180" x="2386.0" y="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="EndEvent_RbuPetRollbackNotify" id="EndEvent_RbuPetRollbackNotify_di">
+        <dc:Bounds height="36" width="36" x="2686.0" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="2629.0" y="161" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_RbuReviewPetRollback" id="Event_RbuReviewPetRollback_di">
+        <dc:Bounds height="36" width="36" x="2458.0" y="280" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="2401.0" y="324" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="EndEvent_RbuPetRollback" id="EndEvent_RbuPetRollback_di">
+        <dc:Bounds height="36" width="36" x="2986.0" y="280" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="45" width="150" x="2929.0" y="324" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuCompletePetRollbackStatus" id="Activity_RbuCompletePetRollbackStatus_di">
+        <dc:Bounds height="90" width="180" x="2686.0" y="253" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuReadAppealNumber" id="Activity_RbuReadAppealNumber_di">
+        <dc:Bounds height="90" width="180" x="256" y="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_RbuHasAppealNumber" id="Gateway_RbuHasAppealNumber_di" isMarkerVisible="true">
+        <dc:Bounds height="50" width="50" x="556" y="300" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14" width="91" x="535" y="276" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Activity_RbuAssignAppealNumber" id="Activity_RbuAssignAppealNumber_di">
+        <dc:Bounds height="90" width="180" x="726" y="361" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Event_0mvaa6x" id="Event_06vxvo6_di">
+        <dc:Bounds height="36" width="36" x="172" y="307" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="Gateway_1e4860i" id="BPMNShape_0xgab00" isMarkerVisible="true">
+        <dc:Bounds height="50" width="50" x="945" y="300" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14" width="91" x="924" y="276" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="Flow_StartToPrepare" id="Flow_StartToPrepare_di">
+        <di:waypoint x="136" y="325" />
+        <di:waypoint x="172" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_PrepareToConfirm" id="Flow_PrepareToConfirm_di">
+        <di:waypoint x="1340" y="325" />
+        <di:waypoint x="1482" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_ConfirmToDeleteBatch" id="Flow_ConfirmToDeleteBatch_di">
+        <di:waypoint x="1518" y="325" />
+        <di:waypoint x="1650" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_FinalizeToNotifyFork" id="Flow_FinalizeToNotifyFork_di">
+        <di:waypoint x="2190.0" y="325" />
+        <di:waypoint x="2241.0" y="325" />
+        <di:waypoint x="2241.0" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_FinalizeToReview" id="Flow_FinalizeToReview_di">
+        <di:waypoint x="2266.0" y="135" />
+        <di:waypoint x="2276.0" y="135" />
+        <di:waypoint x="2276.0" y="298" />
+        <di:waypoint x="2458.0" y="298" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_RbuNotifyPetRollback" id="Flow_RbuNotifyPetRollback_di">
+        <di:waypoint x="2251.0" y="120" />
+        <di:waypoint x="2326.0" y="120" />
+        <di:waypoint x="2326.0" y="135" />
+        <di:waypoint x="2386.0" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_RbuNotifyPetRollbackEnd" id="Flow_RbuNotifyPetRollbackEnd_di">
+        <di:waypoint x="2566.0" y="135" />
+        <di:waypoint x="2686.0" y="135" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_ReviewToEnd" id="Flow_ReviewToEnd_di">
+        <di:waypoint x="2494.0" y="298" />
+        <di:waypoint x="2686.0" y="298" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_PetCompleteStatusToEnd" id="Flow_PetCompleteStatusToEnd_di">
+        <di:waypoint x="2866.0" y="298" />
+        <di:waypoint x="2986.0" y="298" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_RbuNumberRead" id="Flow_RbuNumberRead_di">
+        <di:waypoint x="436" y="325" />
+        <di:waypoint x="556" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_RbuNumberPresent" id="Flow_RbuNumberPresent_di">
+        <di:waypoint x="606" y="325" />
+        <di:waypoint x="945" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_RbuNumberMissing" id="Flow_RbuNumberMissing_di">
+        <di:waypoint x="581" y="350" />
+        <di:waypoint x="581" y="406" />
+        <di:waypoint x="726" y="406" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_RbuNumberAssigned" id="Flow_RbuNumberAssigned_di">
+        <di:waypoint x="906" y="406" />
+        <di:waypoint x="970" y="406" />
+        <di:waypoint x="970" y="350" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_08258i5" id="Flow_08258i5_di">
+        <di:waypoint x="208" y="325" />
+        <di:waypoint x="256" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0mzkfrk" id="Flow_0mzkfrk_di">
+        <di:waypoint x="995" y="325" />
+        <di:waypoint x="1160" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="Flow_0v18ir6" id="Flow_0v18ir6_di">
+        <di:waypoint x="1935.0" y="325.0" />
+        <di:waypoint x="2010.0" y="325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Gateway_PetExternalRollbackBatch_di" bpmnElement="Gateway_PetExternalRollbackBatch" isMarkerVisible="true">
+        <dc:Bounds x="1885.0" y="300.0" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_PetExternalRollbackExecuteToBatch_di" bpmnElement="Flow_PetExternalRollbackExecuteToBatch">
+        <di:waypoint x="1830.0" y="325.0" />
+        <di:waypoint x="1885.0" y="325.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PetExternalRollbackMore_di" bpmnElement="Flow_PetExternalRollbackMore">
+        <di:waypoint x="1910.0" y="300.0" />
+        <di:waypoint x="1910.0" y="225.0" />
+        <di:waypoint x="1740.0" y="225.0" />
+        <di:waypoint x="1740.0" y="280.0" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

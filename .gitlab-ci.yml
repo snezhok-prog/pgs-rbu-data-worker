@@ -1,0 +1,74 @@
+spec:
+  inputs:
+    MAVEN_PROFILE:
+      description: |
+        Профиль Maven:
+        - default — сборка без дополнительного профиля
+        - gostech — сборка для ПГС (Гостех)
+        - blitz — сборка для ФЗО (Blitz)
+      type: string
+      default: gostech
+      options: [default, gostech, blitz]
+---
+stages:
+  - sonar-check
+  - prepare-deploy-release
+  - dockerize
+  - retag
+  - deploy
+  - sast
+  - mr-approve
+
+include:
+  - project: "$MR_APPROVE_CI_PROJECT"
+    ref: "$MR_APPROVE_CI_VERSION"
+    file: "$MR_APPROVE_CI_SOURCE"
+  - project: "$CI_TEMPLATE_PROJECT"
+    ref: "$CI_TEMPLATE_VERSION"
+    file: "$CI_TEMPLATE_FILE"
+  - project: "$CI_TEMPLATE_PROJECT"
+    ref: "$CI_TEMPLATE_VERSION"
+    file: 'sonarqube-maven.yml'
+    inputs:
+      service_name: "$SERVICENAME"
+      runner_tag: "$BUILD_RUNNER"
+      java_compile_image_version: "$BUILD_IMAGE"
+
+variables:
+  SERVICENAME: 'business-rbu-data-worker'
+  MAVEN_PROFILE: '$[[ inputs.MAVEN_PROFILE ]]'
+  MAVEN_CLI_OPTS: '-s ci_settings.xml --batch-mode'
+  MAVEN_OPTS: >-
+    -Dmaven.repo.local=/.m2/repository
+    -Daether.syncContext.named.factory=file-lock
+    -Daether.syncContext.named.nameMapper=file-gav
+    -Daether.syncContext.named.time=120
+  BUILD_IMAGE: '${NEXUS_DOCKER_PROXY}/maven:3.9.16-eclipse-temurin-25'
+  DOCKER_IMAGE: '${NEXUS_DOCKER_PROXY}/docker:stable'
+  DOCKER_REGISTRY_URL: 'newharbor.evolenta.ru'
+
+prepare-deploy-release:
+  extends: .maven-release
+  rules: !reference [.rules-release, rules]
+
+dockerize:
+  extends: .docker-build
+  rules: !reference [.rules-release, rules]
+
+dockerize-psi:
+  extends: .docker-retag
+  variables:
+    TARGET_REGISTRY: '$GT_DOCKER_REGISTRY_URL'
+    TARGET_IMAGE: '${GT_DOCKER_REGISTRY_URL}/digitalgov-torknd-docker/${SERVICENAME}'
+    TARGET_LOGIN: '$GT_DOCKER_LOGIN'
+    TARGET_PASSWORD: '$GT_DOCKER_PASSWORD'
+  rules: !reference [.rules-gostech, rules]
+
+dockerize-dev:
+  extends: .docker-retag
+  variables:
+    TARGET_REGISTRY: '$GT_DEV_DOCKER_REGISTRY_URL'
+    TARGET_IMAGE: '${GT_DEV_DOCKER_REGISTRY_URL}/torknd_docker/${SERVICENAME}'
+    TARGET_LOGIN: '$GT_DEV_DOCKER_LOGIN'
+    TARGET_PASSWORD: '$GT_DEV_DOCKER_PASSWORD'
+  rules: !reference [.rules-gostech, rules]

@@ -25,6 +25,8 @@ settings.local.xml
 **/acceptance-*/
 **/surefire-reports/
 src/main/docker/opt/*.crt
+!src/main/docker/opt/pd40.crt
+!src/main/docker/opt/rootCA.PD15.GTP.crt
 *.p7b
 *.der
 *.inspect.ndjson

@@ -8,4 +8,7 @@ public interface PgsApi {
     Map<String,Object> create(String collection,Map<String,Object> value)throws Exception;
     void delete(String collection,String id,String guid)throws Exception;
     byte[] download(String fileId,long maxBytes)throws Exception;
+    default byte[] download(String collection,String appealId,String fileId,long maxBytes)throws Exception {
+        return download(fileId,maxBytes);
+    }
 }

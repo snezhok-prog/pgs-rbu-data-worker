@@ -54,3 +54,7 @@ Runtime самостоятельного runner содержит 20 JAR: 12 со
 - После интеграции торговли, канонизации чисел в business hash, безопасной HTTP-диагностики и настройки logging выполнен `mvn verify` без очистки: 62 JUnit-теста и 203 проверки четырёх main-наборов прошли. Отдельный logging smoke в новой JVM подтвердил работу Apache POI, реальный SLF4J provider, читаемый INFO и отсутствие WARN/ERROR/созданных log-файлов в standalone. Отдельный CMD-клиент прошёл 138 локальных контрактных проверок без обращений к DEV; его адаптер файлов скомпилирован с настоящим SDK. Публичный CI настроен для Linux и Windows; его фактический результат фиксируется отдельно от локальных проверок.
 
 Источники: [шаблон сервиса Эволенты](https://git.evolenta.ru/sier/pgs/back-end/business-example-service), [exec:java](https://www.mojohaus.org/exec-maven-plugin/java-mojo.html), [настройка тестового classpath](https://www.mojohaus.org/exec-maven-plugin/examples/example-exec-or-java-change-classpath-scope.html).
+
+## Проверка 29.10.2026
+
+Повторно подтверждены258SDK SHA-256, standalone142JUnit+204assertions, CMD144checks,93main SDKsourcecompile+21platformtests. НастоящиеFileStorageServiceImpl/StorageEngineS3Impl иproductionSdkFilePgsApiпрочитали39файловDEVссовпавшимSHA. Корпоративныйparent8.0.7теперьвернулявныйHTTP401; полнаяMaven-сборкаиобразнеподтверждены. POMdependencyManagementвынесенизdefaultвкорень,чтобызакреплённыеверсииприменялисьтакжеприкорпоративном-Pgostech.

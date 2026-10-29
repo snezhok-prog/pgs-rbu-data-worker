@@ -1,0 +1,84 @@
+{
+  "format": "sha256-guarded-json-patch-v1",
+  "collection": "xsd",
+  "id": "6aa69899bfb5bbb9e40687cb",
+  "expectedXsdContentSha256": "c6559ff600a58216474470d226760bb309c8e4986d3fe1eeaf8debea74020c56",
+  "standardCode": 47160,
+  "changes": [
+    {
+      "op": "add",
+      "path": "/xsdContent/-",
+      "value": {
+        "cols": [
+          {
+            "size": 4,
+            "content": [
+              {
+                "icon": "icon-typography",
+                "type": "input",
+                "options": {
+                  "name": "pendingRecords",
+                  "type": "number",
+                  "handler": [],
+                  "readOnly": true,
+                  "required": false,
+                  "displayName": "Ожидают выполнения",
+                  "placeholder": "",
+                  "useFormStateMainModelWhenCheckingDisplayCondition": true
+                }
+              }
+            ]
+          },
+          {
+            "size": 4,
+            "content": [
+              {
+                "icon": "icon-typography",
+                "type": "input",
+                "options": {
+                  "name": "alreadyDeletedRecords",
+                  "type": "number",
+                  "handler": [],
+                  "readOnly": true,
+                  "required": false,
+                  "displayName": "Уже отсутствовали до удаления",
+                  "placeholder": "",
+                  "useFormStateMainModelWhenCheckingDisplayCondition": true
+                }
+              }
+            ]
+          },
+          {
+            "size": 4,
+            "content": [
+              {
+                "icon": "icon-typography",
+                "type": "input",
+                "options": {
+                  "name": "technicalErrors",
+                  "type": "number",
+                  "handler": [],
+                  "readOnly": true,
+                  "required": false,
+                  "displayName": "Технические ошибки",
+                  "placeholder": "",
+                  "useFormStateMainModelWhenCheckingDisplayCondition": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/xsdContent/5/cols/0/content/0/options/tableSettings/headers/3/headerName",
+      "value": "Состояние записи"
+    },
+    {
+      "op": "replace",
+      "path": "/xsdContent/4/cols/0/content/3/options/displayName",
+      "value": "Последняя сохранённая контрольная точка (МСК)"
+    }
+  ]
+}
